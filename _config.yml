@@ -1,1 +1,1 @@
-include: ["phpunit-code-coverage/.*"]
+include: [".css", ".icons", ".js", "phpunit-code-coverage/.css", "phpunit-code-coverage/.icons", "phpunit-code-coverage/.js"]
