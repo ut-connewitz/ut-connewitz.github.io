@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="jobbar-app : PHP static analysis report by Exakat (https://www.exakat.io/) ">
+  <meta name="generator" content="Exakat 1.6.0 (build 849)">
+  <title>No Issues Analysis, by Exakat</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="styles/vendor.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/tree.css">
+  
+  <script src="scripts/vendor/modernizr.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-yellow-light sidebar-mini">
+  <div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>J</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">jobbar-app</span>
+      </a>
+
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+                <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+          <li class="header">&nbsp;</li>
+          <!-- Optionally, you can add icons to the links -->
+          <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+          <li><a href="files.html"><i class="fa fa-file-code-o"></i> <span>Files</span></a></li>
+          <li><a href="analyzers.html"><i class="fa fa-line-chart"></i> <span>Analyzers</span></a></li>
+          <li><a href="neoissues.html"><i class="fa fa-flag"></i> <span>New Issues</span></a></li>
+          <li><a href="issues.html"><i class="fa fa-flag"></i> <span>Issues</span></a></li>
+          <li><a href="security_issues.html"><i class="fa fa-flag"></i> <span>Security</span></a></li>
+          <li><a href="performances_issues.html"><i class="fa fa-flag"></i> <span>Performances</span></a></li>
+          <li><a href="deadcode_issues.html"><i class="fa fa-flag"></i> <span>Dead code</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-certificate"></i> <span>Compatibility</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="compatibility_compilations.html"><i class="fa fa-circle-o"></i>Compilations</a></li>
+              <li><a href="compatibility_version.html"><i class="fa fa-circle-o"></i>PHP Version</a></li>
+                            <li><a href="compatibility_php74.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.4</a></li>
+
+              <li><a href="compatibility_php73.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.3</a></li>
+
+              <li><a href="compatibility_php72.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.2</a></li>
+
+              <li><a href="compatibility_php71.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.1</a></li>
+
+              <li><a href="compatibility_php70.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.0</a></li>
+
+              <li><a href="compatibility_php56.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.6</a></li>
+
+              <li><a href="compatibility_php55.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.5</a></li>
+
+              <li><a href="compatibility_php54.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.4</a></li>
+
+              <li><a href="compatibility_php53.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.3</a></li>
+
+              <li><a href="compatibility_issues.html"><i class="fa fa-circle-o"></i>Compatibility Violations</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-certificate"></i> <span>Favorites</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="favorites_dashboard.html"><i class="fa fa-circle-o"></i>Overview</a></li>
+              <li><a href="favorites_issues.html"><i class="fa fa-circle-o"></i>Violations</a></li>
+            </ul>
+          </li>
+          <li><a href="suggestions.html"><i class="fa fa-flag"></i> <span>Suggestions</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-sliders"></i> <span>Audit logs</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="appinfo.html"><i class="fa fa-circle-o"></i>Appinfo()</a></li>
+              <li><a href="bugfixes.html"><i class="fa fa-circle-o"></i>Bugfixes</a></li>
+              <li><a href="php_compilation.html"><i class="fa fa-circle-o"></i>PHP Compilation Directives</a></li>
+              <li><a href="directive_list.html"><i class="fa fa-circle-o"></i>Directive List</a></li>
+              <li><a href="altered_directives.html"><i class="fa fa-circle-o"></i>Altered Directive</a></li>
+              <li><a href="extension_list.html"><i class="fa fa-circle-o"></i>Extensions usage</a></li>
+              <li><a href="ext_lib.html"><i class="fa fa-circle-o"></i>External Libraries</a></li>
+              <li><a href="external_services.html"><i class="fa fa-circle-o"></i>External services</a></li>
+              <li><a href="parameters_counts.html"><i class="fa fa-circle-o"></i>Parameters counts</a></li>
+              <li><a href="changed_classes.html"><i class="fa fa-circle-o"></i>Changed classes</a></li>
+              <li><a href="stats.html"><i class="fa fa-circle-o"></i>Statistics</a></li>
+              <li><a href="visibility_suggestions.html"><i class="fa fa-circle-o"></i>Visibility Review</a></li>
+              <li><a href="class_options_suggestions.html"><i class="fa fa-circle-o"></i>Final/Abstract Review</a></li>
+              <li><a href="complex_expressions.html"><i class="fa fa-circle-o"></i>Complex Expressions</a></li>
+              <li><a href="cit_size.html"><i class="fa fa-circle-o"></i>Classes size</a></li>
+              <li><a href="method_size.html"><i class="fa fa-circle-o"></i>Method size</a></li>
+              <li><a href="no_issues.html"><i class="fa fa-circle-o"></i>No Issues</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-list-ul"></i> <span>Inventories</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="dynamic_code.html"><i class="fa fa-circle-o"></i>Dynamic codes</a></li>
+              <li><a href="globals.html"><i class="fa fa-circle-o"></i>Global variables</a></li>
+              <li><a href="error_messages.html"><i class="fa fa-circle-o"></i>Error messages</a></li>
+              <li><a href="inventories_exceptions.html"><i class="fa fa-circle-o"></i>Exceptions tree</a></li>
+              <li><a href="inventories_namespaces.html"><i class="fa fa-circle-o"></i>Namespaces tree</a></li>
+              <li><a href="inventories_classtree.html"><i class="fa fa-circle-o"></i>Classes tree</a></li> 
+              <li><a href="inventories_traittree.html"><i class="fa fa-circle-o"></i>Traits tree</a></li> 
+              <li><a href="inventories_traitmatrix.html"><i class="fa fa-circle-o"></i>Traits matrix</a></li> 
+              <li><a href="inventories_interfacetree.html"><i class="fa fa-circle-o"></i>Interfaces tree</a></li> 
+              <li><a href="phpfunctions_list.html"><i class="fa fa-circle-o"></i>PHP native function usage</a></li>
+              <li><a href="phpconstants_list.html"><i class="fa fa-circle-o"></i>PHP native constants usage</a></li>
+              <li><a href="phpclasses_list.html"><i class="fa fa-circle-o"></i>PHP native classes usage</a></li>
+              <li><a href="files_tree.html"><i class="fa fa-circle-o"></i>Files dependencies</a></li>
+              <li><a href="variables_confusing.html"><i class="fa fa-circle-o"></i>Confusing variables</a></li>
+                            <li><a href="inventories_constants.html"><i class="fa fa-circle-o"></i>Constants</a></li>
+
+              <li><a href="inventories_classes.html"><i class="fa fa-circle-o"></i>Classes</a></li>
+
+              <li><a href="inventories_interfaces.html"><i class="fa fa-circle-o"></i>Interfaces</a></li>
+
+              <li><a href="inventories_functions.html"><i class="fa fa-circle-o"></i>Functions</a></li>
+
+              <li><a href="inventories_traits.html"><i class="fa fa-circle-o"></i>Traits</a></li>
+
+              <li><a href="inventories_namespaces.html"><i class="fa fa-circle-o"></i>Namespaces</a></li>
+
+              <li><a href="inventories_url.html"><i class="fa fa-circle-o"></i>URL</a></li>
+
+              <li><a href="inventories_sql.html"><i class="fa fa-circle-o"></i>SQL</a></li>
+
+              <li><a href="inventories_email.html"><i class="fa fa-circle-o"></i>Email</a></li>
+
+              <li><a href="inventories_path.html"><i class="fa fa-circle-o"></i>Paths</a></li>
+
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-sticky-note-o"></i> <span>Annexes</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="annex_settings.html"><i class="fa fa-circle-o"></i>Analyzer Settings</a></li>
+              <li><a href="proc_files.html"><i class="fa fa-circle-o"></i>Processed Files</a></li>
+              <li><a href="proc_analyzers.html"><i class="fa fa-circle-o"></i>Processed Analyzers</a></li>
+              <li><a href="analyzers_doc.html"><i class="fa fa-circle-o"></i>Analyzers Documentation</a></li>
+              <li><a href="codes.html"><i class="fa fa-circle-o"></i>Codes</a></li>
+              <li><a href="credits.html"><i class="fa fa-circle-o"></i>Credits</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div id="main">
+      <div class="content-wrapper" id="ajax-content">
+        <!-- Main content -->
+        <!-- Content Header (Page header) -->
+        
+    		<section class="content-header">
+    		<h1>
+    		  No Issues Analysis
+    		</h1>
+    		</section>
+
+    		<!-- Main content -->
+    		<section id="files_overview" class="content">
+    			<div class="row">
+    				<div class="col-xs-12">
+    				    <p>
+Here is the list of analysis that didn't yield any results. The more there are here, the better you're coding. 
+    				    </p>
+    					<div class="box">
+    				    <div class="box-body">
+    				      <table id="bloc-datatables" class="table table-bordered table-striped">
+    				        <thead>
+    				          <tr>
+    				            <th>Analysis</th>
+    				          </tr>
+    				        </thead>
+    				        <tbody>
+                    <tr><td><a href="analyzers_doc.html#analyzer=Interfaces/IsExtInterface" id="interfaces_isextinterface"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Is An Extension Interface</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Traits/IsExtTrait" id="traits_isexttrait"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Is Extension Trait</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Continents" id="type_continents"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Continents</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/HttpHeader" id="type_httpheader"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Http Headers</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/MimeType" id="type_mimetype"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Mime Types</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Pcre" id="type_pcre"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Perl Regex</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Ports" id="type_ports"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Internet Ports</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/SessionVariables" id="php_sessionvariables"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Session Variables</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/IncomingVariables" id="php_incomingvariables"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Incoming Variables</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/CookiesVariables" id="php_cookiesvariables"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Cookies Variables</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/ConstantDefinition" id="classes_constantdefinition"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Constant Definition</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/StaticProperties" id="classes_staticproperties"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Static Properties</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Exceptions/DefinedExceptions" id="exceptions_definedexceptions"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Defined Exceptions</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extbcmath" id="extensions_extbcmath"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/bcmath</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extbzip2" id="extensions_extbzip2"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/bzip2</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extcalendar" id="extensions_extcalendar"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/calendar</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extcrypto" id="extensions_extcrypto"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/crypto</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extctype" id="extensions_extctype"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ctype</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extcurl" id="extensions_extcurl"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/curl</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extdom" id="extensions_extdom"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/dom</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extenchant" id="extensions_extenchant"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/enchant</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extexif" id="extensions_extexif"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/exif</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extfileinfo" id="extensions_extfileinfo"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/fileinfo</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extfilter" id="extensions_extfilter"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/filter</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extftp" id="extensions_extftp"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ftp</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgd" id="extensions_extgd"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/gd</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgmp" id="extensions_extgmp"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/gmp</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgnupg" id="extensions_extgnupg"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/gnupgp</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exthash" id="extensions_exthash"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/hash</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exticonv" id="extensions_exticonv"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/iconv</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extkdm5" id="extensions_extkdm5"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/kdm5</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extldap" id="extensions_extldap"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ldap</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extlibxml" id="extensions_extlibxml"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/libxml</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmbstring" id="extensions_extmbstring"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/mbstring</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmongo" id="extensions_extmongo"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/mongo</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmssql" id="extensions_extmssql"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/mssql</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmysqli" id="extensions_extmysqli"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/mysqli</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extodbc" id="extensions_extodbc"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/odbc</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extopenssl" id="extensions_extopenssl"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/openssl</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extpcre" id="extensions_extpcre"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/pcre</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extpdo" id="extensions_extpdo"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/pdo</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extpgsql" id="extensions_extpgsql"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/pgsql</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extphar" id="extensions_extphar"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/phar</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extposix" id="extensions_extposix"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/posix</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extreadline" id="extensions_extreadline"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/readline</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extreflection" id="extensions_extreflection"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/reflection</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsem" id="extensions_extsem"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/sem</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsession" id="extensions_extsession"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/session</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extshmop" id="extensions_extshmop"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/shmop</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsimplexml" id="extensions_extsimplexml"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/simplexml</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsnmp" id="extensions_extsnmp"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/snmp</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsoap" id="extensions_extsoap"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/soap</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsockets" id="extensions_extsockets"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/sockets</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extspl" id="extensions_extspl"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/spl</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsqlite" id="extensions_extsqlite"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/sqlite</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsqlite3" id="extensions_extsqlite3"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/sqlite3</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extssh2" id="extensions_extssh2"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ssh2</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exttidy" id="extensions_exttidy"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/tidy</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exttokenizer" id="extensions_exttokenizer"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/tokenizer</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extwddx" id="extensions_extwddx"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/wddx</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxdebug" id="extensions_extxdebug"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xdebug</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxmlreader" id="extensions_extxmlreader"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xmlreader</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxmlrpc" id="extensions_extxmlrpc"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xmlrpc</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxmlwriter" id="extensions_extxmlwriter"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xmlwriter</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxsl" id="extensions_extxsl"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xsl</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extyaml" id="extensions_extyaml"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/yaml</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extzip" id="extensions_extzip"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/zip</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extzlib" id="extensions_extzlib"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/zlib</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/Functionnames" id="functions_functionnames"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Functions Glossary</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Interfaces/Interfacenames" id="interfaces_interfacenames"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Interfaces Glossary</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/AutoloadUsage" id="php_autoloadusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Autoloading</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/Gotonames" id="php_gotonames"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Goto Names</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/Haltcompiler" id="php_haltcompiler"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; __halt_compiler</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/Labelnames" id="php_labelnames"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Labels</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/TriggerErrorUsage" id="php_triggererrorusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Trigger Errors</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ShortTags" id="structures_shorttags"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Using Short Tags</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Heredoc" id="type_heredoc"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Heredoc Delimiter Glossary</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Hexadecimal" id="type_hexadecimal"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Hexadecimal Glossary</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Md5String" id="type_md5string"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Md5 Strings</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Nowdoc" id="type_nowdoc"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Nowdoc Delimiter Glossary</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Octal" id="type_octal"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Octal Glossary</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Variables/References" id="variables_references"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; References</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Variables/StaticVariables" id="variables_staticvariables"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Static Variables</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Variables/VariableLong" id="variables_variablelong"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Variables With Long Names</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Variables/VariableVariables" id="variables_variablevariables"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Variables Variables</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/CloningUsage" id="classes_cloningusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Clone Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Constants/VariableConstant" id="constants_variableconstant"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Variable Constants</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Traits/Php" id="traits_php"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Redefined PHP Traits</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Traits/Traitnames" id="traits_traitnames"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Trait Names</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/AlternativeSyntax" id="php_alternativesyntax"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Alternative Syntax</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extffmpeg" id="extensions_extffmpeg"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ffmpeg</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extinfo" id="extensions_extinfo"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/info</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmath" id="extensions_extmath"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/math</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extyis" id="extensions_extyis"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/yis</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/AssertionUsage" id="php_assertionusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Assertions</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/NestedLoops" id="structures_nestedloops"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Nested Loops</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/EchoTagUsage" id="php_echotagusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; <?= Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extpcntl" id="extensions_extpcntl"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/pcntl</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extredis" id="extensions_extredis"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/redis</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extcyrus" id="extensions_extcyrus"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/cyrus</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsqlsrv" id="extensions_extsqlsrv"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/sqlsrv</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extzmq" id="extensions_extzmq"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/0mq</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmemcache" id="extensions_extmemcache"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/memcache</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmemcached" id="extensions_extmemcached"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/memcached</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/VariableArguments" id="functions_variablearguments"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Has Variable Arguments</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/MultipleCatch" id="structures_multiplecatch"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Multiple Catch</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/VariableClasses" id="classes_variableclasses"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Dynamically Called Classes</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/ConditionedFunctions" id="functions_conditionedfunctions"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Conditioned Function</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Constants/ConditionedConstants" id="constants_conditionedconstants"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Conditioned Constants</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/IsGenerator" id="functions_isgenerator"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Is Generator</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/TryFinally" id="structures_tryfinally"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Try With Finally</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extimagick" id="extensions_extimagick"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/imagick</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extoci8" id="extensions_extoci8"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/oci8</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extimap" id="extensions_extimap"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/imap</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/OverwrittenConst" id="classes_overwrittenconst"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Overwritten Class Const</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/DynamicConstantCall" id="classes_dynamicconstantcall"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Dynamic Class Constant</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/DynamicMethodCall" id="classes_dynamicmethodcall"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Dynamic Methodcall</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/DynamicNew" id="classes_dynamicnew"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Dynamic New</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/DynamicPropertyCall" id="classes_dynamicpropertycall"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Dynamic Property</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/DynamicClass" id="classes_dynamicclass"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Dynamic Classes</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/MultipleClassesInFile" id="classes_multipleclassesinfile"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Multiple Classes In One File</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/FileUploadUsage" id="structures_fileuploadusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; File Uploads</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extintl" id="extensions_extintl"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/intl</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extcairo" id="extensions_extcairo"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/cairo</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extpspell" id="extensions_extpspell"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/pspell</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/NoDirectAccess" id="structures_nodirectaccess"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; No Direct Access</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extopcache" id="extensions_extopcache"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/opcache</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extexpect" id="extensions_extexpect"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/expect</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extrecode" id="extensions_extrecode"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/recode</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extparsekit" id="extensions_extparsekit"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/parsekit</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extrunkit" id="extensions_extrunkit"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/runkit</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgettext" id="extensions_extgettext"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/gettext</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/SuperGlobalUsage" id="php_superglobalusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Super Global Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/ClassAliasUsage" id="classes_classaliasusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Usage Of class_alias()</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extapache" id="extensions_extapache"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/apache</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exteaccelerator" id="extensions_exteaccelerator"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/eaccelerator</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extfpm" id="extensions_extfpm"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/fpm</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extiis" id="extensions_extiis"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/iis</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxcache" id="extensions_extxcache"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xcache</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extwincache" id="extensions_extwincache"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/wincache</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ResourcesUsage" id="structures_resourcesusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Resources Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ShellUsage" id="structures_shellusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Shell Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/FileUsage" id="structures_fileusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; File Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/MailUsage" id="structures_mailusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Mail Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/TestClass" id="classes_testclass"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Test Class</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extdio" id="extensions_extdio"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/dio</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extphalcon" id="extensions_extphalcon"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/phalcon</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extapcu" id="extensions_extapcu"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/apcu</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exttrader" id="extensions_exttrader"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/trader</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmailparse" id="extensions_extmailparse"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/mailparse</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmail" id="extensions_extmail"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/mail</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/ReturnTypehintUsage" id="php_returntypehintusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Return Typehint Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extob" id="extensions_extob"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ob</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgeoip" id="extensions_extgeoip"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/geoip</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extevent" id="extensions_extevent"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/event</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extamqp" id="extensions_extamqp"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/amqp</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgearman" id="extensions_extgearman"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/gearman</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extcom" id="extensions_extcom"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/com</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgmagick" id="extensions_extgmagick"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/gmagick</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extibase" id="extensions_extibase"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ibase</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extinotify" id="extensions_extinotify"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/inotify</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extproctitle" id="extensions_extproctitle"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/proctitle</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extwikidiff2" id="extensions_extwikidiff2"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/wikidiff2</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxdiff" id="extensions_extxdiff"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xdiff</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extlibevent" id="extensions_extlibevent"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/libevent</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extev" id="extensions_extev"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ev</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extast" id="extensions_extast"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/php-ast</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxml" id="extensions_extxml"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xml</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxhprof" id="extensions_extxhprof"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xhprof</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/DirectivesUsage" id="php_directivesusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Directives Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extfann" id="extensions_extfann"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/fann</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/UseCli" id="php_usecli"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use Cli</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ErrorMessages" id="structures_errormessages"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Error Messages</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/RedefinedMethods" id="classes_redefinedmethods"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Redefined Methods</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Files/IsCliScript" id="files_iscliscript"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Is CLI Script</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exttokyotyrant" id="extensions_exttokyotyrant"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/tokyotyrant</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extv8js" id="extensions_extv8js"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/v8js</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extlua" id="extensions_extlua"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/lua</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsuhosin" id="extensions_extsuhosin"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/suhosin</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extrar" id="extensions_extrar"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/rar</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extnsapi" id="extensions_extnsapi"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/nsapi</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extnewt" id="extensions_extnewt"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/newt</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extncurses" id="extensions_extncurses"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ncurses</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extzbarcode" id="extensions_extzbarcode"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/zbarcode</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmongodb" id="extensions_extmongodb"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/mongodb</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/ErrorLogUsage" id="php_errorlogusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Error_Log() Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extds" id="extensions_extds"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/ds</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsphinx" id="extensions_extsphinx"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/sphinx</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/TryMultipleCatch" id="php_trymultiplecatch"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Try With Multiple Catch</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgrpc" id="extensions_extgrpc"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/grpc</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/UseBrowscap" id="php_usebrowscap"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use Browscap</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/UseDebug" id="structures_usedebug"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use Debug</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Psr/Psr16Usage" id="psr_psr16usage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; PSR-16 Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Psr/Psr7Usage" id="psr_psr7usage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; PSR-7 Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Psr/Psr6Usage" id="psr_psr6usage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; PSR-6 Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Psr/Psr3Usage" id="psr_psr3usage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; PSR-3 Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Psr/Psr11Usage" id="psr_psr11usage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; PSR-11 Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Psr/Psr13Usage" id="psr_psr13usage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; PSR-13 Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extstats" id="extensions_extstats"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/stats</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Patterns/DependencyInjection" id="patterns_dependencyinjection"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Dependency Injection</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extgender" id="extensions_extgender"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/gender</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extjudy" id="extensions_extjudy"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/judy</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Vendors/Codeigniter" id="vendors_codeigniter"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Codeigniter usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Vendors/Wordpress" id="vendors_wordpress"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Wordpress usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Vendors/Ez" id="vendors_ez"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Ez cms usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/MultipleDeclarations" id="functions_multipledeclarations"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Multiple Functions Declarations</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extswoole" id="extensions_extswoole"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/swoole</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/IsNAN" id="php_isnan"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Manipulates NaN</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/IsINF" id="php_isinf"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Manipulates INF</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ConstDefineFavorite" id="structures_constdefinefavorite"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Const Or Define</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extlapack" id="extensions_extlapack"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/lapack</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxattr" id="extensions_extxattr"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xattr</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extrdkafka" id="extensions_extrdkafka"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/rdkafka</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extfam" id="extensions_extfam"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/fam</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Vendors/Drupal" id="vendors_drupal"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Drupal Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Vendors/Phalcon" id="vendors_phalcon"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Phalcon Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/DlUsage" id="php_dlusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Dl() Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/FallbackFunction" id="functions_fallbackfunction"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Fallback Function</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exthrtime" id="extensions_exthrtime"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/hrtime</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extxxtea" id="extensions_extxxtea"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/xxtea</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extuopz" id="extensions_extuopz"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/uopz</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extvarnish" id="extensions_extvarnish"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/varnish</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extopencensus" id="extensions_extopencensus"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/opencensus</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extleveldb" id="extensions_extleveldb"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/leveldb</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extdb2" id="extensions_extdb2"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/db2</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extzookeeper" id="extensions_extzookeeper"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/zookeeper</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extcmark" id="extensions_extcmark"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/cmark</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exteio" id="extensions_exteio"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/eio</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extcsprng" id="extensions_extcsprng"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/csprng</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extlzf" id="extensions_extlzf"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/lzf</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extmsgpack" id="extensions_extmsgpack"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/msgpack</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extseaslog" id="extensions_extseaslog"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/seaslog</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Pack" id="type_pack"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Pack Format Inventory</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Printf" id="type_printf"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Printf Format Inventory</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extdecimal" id="extensions_extdecimal"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/decimal</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extpsr" id="extensions_extpsr"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/psr</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extsdl" id="extensions_extsdl"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/sdl</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extasync" id="extensions_extasync"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/async</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extwasm" id="extensions_extwasm"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/wasm</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/Abstractclass" id="classes_abstractclass"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Abstract Class Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/Abstractmethods" id="classes_abstractmethods"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Abstract Methods Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/Coalesce" id="php_coalesce"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Coalesce</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Exthttp" id="extensions_exthttp"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/pecl_http</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/RealFunctions" id="functions_realfunctions"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Real Functions</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/YieldUsage" id="php_yieldusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Yield Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/YieldFromUsage" id="php_yieldfromusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Yield From Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/PearUsage" id="php_pearusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Pear Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Security/CantDisableFunction" id="security_cantdisablefunction"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Can't Disable Function</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/FunctionsUsingReference" id="functions_functionsusingreference"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Functions Using Reference</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extstring" id="extensions_extstring"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; String</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extlibsodium" id="extensions_extlibsodium"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/libsodium</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/UseCookies" id="php_usecookies"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use Cookies</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Patterns/CourrierAntiPattern" id="patterns_courrierantipattern"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Courrier Anti-Pattern</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Vendors/Yii" id="vendors_yii"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Yii usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Vendors/Joomla" id="vendors_joomla"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Joomla usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/NonBreakableSpaceInNames" id="structures_nonbreakablespaceinnames"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Non Breakable Space In Names</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extparle" id="extensions_extparle"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/parle</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/Regex" id="type_regex"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Regex Inventory</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Vendors/Fuel" id="vendors_fuel"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; FuelPHP Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/Argon2Usage" id="php_argon2usage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Argon2 Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/CryptoUsage" id="php_cryptousage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Crypto Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Type/GPCIndex" id="type_gpcindex"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Incoming Variable Index Inventory</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extvips" id="extensions_extvips"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/vips</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Extensions/Extigbinary" id="extensions_extigbinary"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ext/igbinary</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/UnusedFunctions" id="functions_unusedfunctions"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Unused Functions</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/UnusedLabel" id="structures_unusedlabel"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Unused Label</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Exceptions/AlreadyCaught" id="exceptions_alreadycaught"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Exception Order</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Exceptions/Rethrown" id="exceptions_rethrown"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Rethrown Exceptions</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Traits/SelfUsingTrait" id="traits_selfusingtrait"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Self Using Trait</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/AvoidUsing" id="classes_avoidusing"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Custom Class Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Constants/InconsistantCase" id="constants_inconsistantcase"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; True False Inconsistant Case</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/EchoPrintConsistance" id="structures_echoprintconsistance"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Echo Or Print</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ConstantComparisonConsistance" id="structures_constantcomparisonconsistance"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Constant Comparison</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/DieExitConsistance" id="structures_dieexitconsistance"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Die Exit Consistence</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/GlobalsVsGlobal" id="php_globalsvsglobal"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; $GLOBALS Or global</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/UnsetOrCast" id="php_unsetorcast"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Unset() Or (unset)</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/OneExpressionBracketsConsistency" id="structures_oneexpressionbracketsconsistency"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; One Expression Brackets Consistency</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/NewOnFunctioncallOrIdentifier" id="classes_newonfunctioncalloridentifier"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; New On Functioncall Or Identifier</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/NewLineStyle" id="structures_newlinestyle"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; New Line Style</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/RegexDelimiter" id="structures_regexdelimiter"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Regex Delimiter</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Arrays/EmptyFinal" id="arrays_emptyfinal"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Empty Final Element</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/DifferencePreference" id="structures_differencepreference"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Difference Consistence</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ConcatenationInterpolationFavorite" id="structures_concatenationinterpolationfavorite"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Concatenation Interpolation Consistence</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/DeclareStrict" id="php_declarestrict"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; strict_types Preference</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/DeclareStrictType" id="php_declarestricttype"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Declare strict_types Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/DeclareEncoding" id="php_declareencoding"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Encoding Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/DeclareTicks" id="php_declareticks"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Ticks Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/LetterCharsLogicalFavorite" id="php_lettercharslogicalfavorite"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Logical Operators Favorite</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/ShellFavorite" id="php_shellfavorite"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Shell Favorite</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/PPPDeclarationStyle" id="classes_pppdeclarationstyle"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Properties Declaration Consistence</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ComparisonFavorite" id="structures_comparisonfavorite"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Strict Or Relaxed Comparison</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/GtOrLtFavorite" id="structures_gtorltfavorite"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; > Or < Comparisons</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Constants/ConstDefinePreference" id="constants_constdefinepreference"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Const Or Define Preference</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Constants/DefineInsensitivePreference" id="constants_defineinsensitivepreference"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Constant Case Preference</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/NewExponent" id="php_newexponent"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; ** For Exponent</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Arrays/ShouldPreprocess" id="arrays_shouldpreprocess"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Preprocess Arrays</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Interfaces/UnusedInterfaces" id="interfaces_unusedinterfaces"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Unused Interfaces</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/PregMatchAllFlag" id="php_pregmatchallflag"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; preg_match_all() Flag</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/CouldReturnVoid" id="functions_couldreturnvoid"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Could Return Void</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/CouldTypehint" id="functions_couldtypehint"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Could Typehint</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/UseSessionStartOptions" id="php_usesessionstartoptions"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use session_start() Options</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/IssetMultipleArgs" id="php_issetmultipleargs"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Isset Multiple Arguments</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ShouldUseForeach" id="structures_shoulduseforeach"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Should Use Foreach</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/UseListWithForeach" id="structures_uselistwithforeach"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use List With Foreach</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/ShouldUseArrayFilter" id="php_shouldusearrayfilter"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Should Use array_filter()</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ReuseVariable" id="structures_reusevariable"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Reuse Variable</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/GoToKeyDirectly" id="structures_gotokeydirectly"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Find Key Directly</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/ShouldUseMath" id="structures_shouldusemath"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Should Use Math</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/CouldUseCompact" id="structures_couldusecompact"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Could Use Compact</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/CouldUseArrayFillKeys" id="structures_couldusearrayfillkeys"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Could Use array_fill_keys</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/UseCountRecursive" id="structures_usecountrecursive"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use Count Recursive</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/TooManyParameters" id="functions_toomanyparameters"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Too Many Parameters</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/ShouldPreprocess" id="php_shouldpreprocess"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Should Preprocess Chr</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/PossibleIncrement" id="structures_possibleincrement"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Possible Increment</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/SubstrLastArg" id="structures_substrlastarg"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Drop Substr Last Arg</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/OneIfIsSufficient" id="structures_oneifissufficient"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; One If Is Sufficient</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/CouldUseArrayUnique" id="structures_couldusearrayunique"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Could Use array_unique</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/CouldUseIsCountable" id="php_coulduseiscountable"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use is_countable</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Php/AvoidReal" id="php_avoidreal"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Avoid Real</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/JsonWithOption" id="structures_jsonwithoption"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use json_decode() Options</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Functions/AddDefaultValue" id="functions_adddefaultvalue"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Add Default Value</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/NamedRegex" id="structures_namedregex"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Named Regex</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/BasenameSuffix" id="structures_basenamesuffix"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Use Basename Suffix</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/DontLoopOnYield" id="structures_dontlooponyield"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Don't Loop On Yield</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Structures/DirectlyUseFile" id="structures_directlyusefile"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Directly Use File</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Traits/MultipleUsage" id="traits_multipleusage"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Multiple Usage Of Same Trait</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/Finalclass" id="classes_finalclass"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Final Class Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/Finalmethod" id="classes_finalmethod"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Final Methods Usage</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/RedefinedProperty" id="classes_redefinedproperty"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Redefined Property</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/RaisedAccessLevel" id="classes_raisedaccesslevel"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Raised Access Level</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/CouldBePrivateConstante" id="classes_couldbeprivateconstante"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Could Be Private Class Constant</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/CouldBeProtectedConstant" id="classes_couldbeprotectedconstant"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Could Be Protected Class Constant</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Classes/UnreachableConstant" id="classes_unreachableconstant"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Unreachable Class Constant</td></tr><tr><td><a href="analyzers_doc.html#analyzer=Interfaces/AvoidSelfInInterface" id="interfaces_avoidselfininterface"><i class="fa fa-book" style="font-size: 14px"></i></a>
+                         &nbsp; Avoid Self In Interface</td></tr>
+    				        </tbody>
+    				      </table>
+    				    </div><!-- /.box-body -->
+    				  </div><!-- /.box -->
+    				</div>
+    			</div>
+    		</section>
+    		<!-- /.content -->
+
+
+        <!-- /.content -->
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+        <span class="logo-exakat">
+          <img src="images/logo.png" alt="Exakat">
+          An <a href="https://www.exakat.io" title="exakat">Exakat</a> report
+        </span>
+      </div>
+      <!-- Default to the left -->
+<strong>.</strong>
+      
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Create the tabs -->
+      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      </ul>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+  </div>
+  <!-- ./wrapper -->
+
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/exakat.js"></script>
+  <script src="scripts/facetedsearch.js"></script>
+  <script src="scripts/datatables.js"></script>
+
+</body>
+</html>
+        

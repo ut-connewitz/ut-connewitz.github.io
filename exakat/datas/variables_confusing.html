@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="jobbar-app : PHP static analysis report by Exakat (https://www.exakat.io/) ">
+  <meta name="generator" content="Exakat 1.6.0 (build 849)">
+  <title>PHP Static analysis for jobbar-app, by Exakat</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="styles/vendor.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/tree.css">
+  
+  <script src="scripts/vendor/modernizr.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-yellow-light sidebar-mini">
+  <div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>J</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">jobbar-app</span>
+      </a>
+
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+                <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+          <li class="header">&nbsp;</li>
+          <!-- Optionally, you can add icons to the links -->
+          <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+          <li><a href="files.html"><i class="fa fa-file-code-o"></i> <span>Files</span></a></li>
+          <li><a href="analyzers.html"><i class="fa fa-line-chart"></i> <span>Analyzers</span></a></li>
+          <li><a href="neoissues.html"><i class="fa fa-flag"></i> <span>New Issues</span></a></li>
+          <li><a href="issues.html"><i class="fa fa-flag"></i> <span>Issues</span></a></li>
+          <li><a href="security_issues.html"><i class="fa fa-flag"></i> <span>Security</span></a></li>
+          <li><a href="performances_issues.html"><i class="fa fa-flag"></i> <span>Performances</span></a></li>
+          <li><a href="deadcode_issues.html"><i class="fa fa-flag"></i> <span>Dead code</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-certificate"></i> <span>Compatibility</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="compatibility_compilations.html"><i class="fa fa-circle-o"></i>Compilations</a></li>
+              <li><a href="compatibility_version.html"><i class="fa fa-circle-o"></i>PHP Version</a></li>
+                            <li><a href="compatibility_php74.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.4</a></li>
+
+              <li><a href="compatibility_php73.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.3</a></li>
+
+              <li><a href="compatibility_php72.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.2</a></li>
+
+              <li><a href="compatibility_php71.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.1</a></li>
+
+              <li><a href="compatibility_php70.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.0</a></li>
+
+              <li><a href="compatibility_php56.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.6</a></li>
+
+              <li><a href="compatibility_php55.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.5</a></li>
+
+              <li><a href="compatibility_php54.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.4</a></li>
+
+              <li><a href="compatibility_php53.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.3</a></li>
+
+              <li><a href="compatibility_issues.html"><i class="fa fa-circle-o"></i>Compatibility Violations</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-certificate"></i> <span>Favorites</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="favorites_dashboard.html"><i class="fa fa-circle-o"></i>Overview</a></li>
+              <li><a href="favorites_issues.html"><i class="fa fa-circle-o"></i>Violations</a></li>
+            </ul>
+          </li>
+          <li><a href="suggestions.html"><i class="fa fa-flag"></i> <span>Suggestions</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-sliders"></i> <span>Audit logs</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="appinfo.html"><i class="fa fa-circle-o"></i>Appinfo()</a></li>
+              <li><a href="bugfixes.html"><i class="fa fa-circle-o"></i>Bugfixes</a></li>
+              <li><a href="php_compilation.html"><i class="fa fa-circle-o"></i>PHP Compilation Directives</a></li>
+              <li><a href="directive_list.html"><i class="fa fa-circle-o"></i>Directive List</a></li>
+              <li><a href="altered_directives.html"><i class="fa fa-circle-o"></i>Altered Directive</a></li>
+              <li><a href="extension_list.html"><i class="fa fa-circle-o"></i>Extensions usage</a></li>
+              <li><a href="ext_lib.html"><i class="fa fa-circle-o"></i>External Libraries</a></li>
+              <li><a href="external_services.html"><i class="fa fa-circle-o"></i>External services</a></li>
+              <li><a href="parameters_counts.html"><i class="fa fa-circle-o"></i>Parameters counts</a></li>
+              <li><a href="changed_classes.html"><i class="fa fa-circle-o"></i>Changed classes</a></li>
+              <li><a href="stats.html"><i class="fa fa-circle-o"></i>Statistics</a></li>
+              <li><a href="visibility_suggestions.html"><i class="fa fa-circle-o"></i>Visibility Review</a></li>
+              <li><a href="class_options_suggestions.html"><i class="fa fa-circle-o"></i>Final/Abstract Review</a></li>
+              <li><a href="complex_expressions.html"><i class="fa fa-circle-o"></i>Complex Expressions</a></li>
+              <li><a href="cit_size.html"><i class="fa fa-circle-o"></i>Classes size</a></li>
+              <li><a href="method_size.html"><i class="fa fa-circle-o"></i>Method size</a></li>
+              <li><a href="no_issues.html"><i class="fa fa-circle-o"></i>No Issues</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-list-ul"></i> <span>Inventories</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="dynamic_code.html"><i class="fa fa-circle-o"></i>Dynamic codes</a></li>
+              <li><a href="globals.html"><i class="fa fa-circle-o"></i>Global variables</a></li>
+              <li><a href="error_messages.html"><i class="fa fa-circle-o"></i>Error messages</a></li>
+              <li><a href="inventories_exceptions.html"><i class="fa fa-circle-o"></i>Exceptions tree</a></li>
+              <li><a href="inventories_namespaces.html"><i class="fa fa-circle-o"></i>Namespaces tree</a></li>
+              <li><a href="inventories_classtree.html"><i class="fa fa-circle-o"></i>Classes tree</a></li> 
+              <li><a href="inventories_traittree.html"><i class="fa fa-circle-o"></i>Traits tree</a></li> 
+              <li><a href="inventories_traitmatrix.html"><i class="fa fa-circle-o"></i>Traits matrix</a></li> 
+              <li><a href="inventories_interfacetree.html"><i class="fa fa-circle-o"></i>Interfaces tree</a></li> 
+              <li><a href="phpfunctions_list.html"><i class="fa fa-circle-o"></i>PHP native function usage</a></li>
+              <li><a href="phpconstants_list.html"><i class="fa fa-circle-o"></i>PHP native constants usage</a></li>
+              <li><a href="phpclasses_list.html"><i class="fa fa-circle-o"></i>PHP native classes usage</a></li>
+              <li><a href="files_tree.html"><i class="fa fa-circle-o"></i>Files dependencies</a></li>
+              <li><a href="variables_confusing.html"><i class="fa fa-circle-o"></i>Confusing variables</a></li>
+                            <li><a href="inventories_constants.html"><i class="fa fa-circle-o"></i>Constants</a></li>
+
+              <li><a href="inventories_classes.html"><i class="fa fa-circle-o"></i>Classes</a></li>
+
+              <li><a href="inventories_interfaces.html"><i class="fa fa-circle-o"></i>Interfaces</a></li>
+
+              <li><a href="inventories_functions.html"><i class="fa fa-circle-o"></i>Functions</a></li>
+
+              <li><a href="inventories_traits.html"><i class="fa fa-circle-o"></i>Traits</a></li>
+
+              <li><a href="inventories_namespaces.html"><i class="fa fa-circle-o"></i>Namespaces</a></li>
+
+              <li><a href="inventories_url.html"><i class="fa fa-circle-o"></i>URL</a></li>
+
+              <li><a href="inventories_sql.html"><i class="fa fa-circle-o"></i>SQL</a></li>
+
+              <li><a href="inventories_email.html"><i class="fa fa-circle-o"></i>Email</a></li>
+
+              <li><a href="inventories_path.html"><i class="fa fa-circle-o"></i>Paths</a></li>
+
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-sticky-note-o"></i> <span>Annexes</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="annex_settings.html"><i class="fa fa-circle-o"></i>Analyzer Settings</a></li>
+              <li><a href="proc_files.html"><i class="fa fa-circle-o"></i>Processed Files</a></li>
+              <li><a href="proc_analyzers.html"><i class="fa fa-circle-o"></i>Processed Analyzers</a></li>
+              <li><a href="analyzers_doc.html"><i class="fa fa-circle-o"></i>Analyzers Documentation</a></li>
+              <li><a href="codes.html"><i class="fa fa-circle-o"></i>Codes</a></li>
+              <li><a href="credits.html"><i class="fa fa-circle-o"></i>Credits</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div id="main">
+      <div class="content-wrapper" id="ajax-content">
+        <!-- Main content -->
+        <!-- Content Header (Page header) -->
+                <!-- Content Header (Page header) -->
+        <section class="content-header">
+        <h1>
+          Similar looking variables
+        </h1>
+        </section>
+
+        <!-- Main content -->
+        <section id="used_settings" class="content">
+        	<div class="box">
+        		<div class="box-body">
+        			<div class="row">
+        				<div class="col-xs-12">
+        					<p class="textLead">This is the list of similar looking variables, found across the application.</p>
+        					<table class="table table-striped">
+        						<tr></tr>
+        						<tr><th>Variable</th><th>Variables</th><th>Reason</th></tr>
+        						<tr><td rowspan="1">$job</td><td><ul><li>$jobs</li></ul>
+</td><td>One letter</td></tr>
+
+
+<tr><td rowspan="1">$user</td><td><ul><li>$users</li></ul>
+</td><td>One letter</td></tr>
+
+
+<tr><td rowspan="1">$child</td><td><ul><li>$childs</li></ul>
+</td><td>One letter</td></tr>
+
+
+<tr><td rowspan="1">$event</td><td><ul><li>$events</li></ul>
+</td><td>One letter</td></tr>
+
+
+<tr><td rowspan="1">$calendar</td><td><ul><li>$calendars</li></ul>
+</td><td>One letter</td></tr>
+
+
+<tr><td rowspan="1">$template</td><td><ul><li>$templates</li></ul>
+</td><td>One letter</td></tr>
+
+
+        					</table>
+            		</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+
+        <!-- /.content -->
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+        <span class="logo-exakat">
+          <img src="images/logo.png" alt="Exakat">
+          An <a href="https://www.exakat.io" title="exakat">Exakat</a> report
+        </span>
+      </div>
+      <!-- Default to the left -->
+<strong>.</strong>
+      
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Create the tabs -->
+      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      </ul>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+  </div>
+  <!-- ./wrapper -->
+
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/exakat.js"></script>
+  <script src="scripts/facetedsearch.js"></script>
+  
+
+</body>
+</html>
+        

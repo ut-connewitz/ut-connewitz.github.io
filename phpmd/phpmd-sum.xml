@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="@project.version@" timestamp="2019-03-22T11:45:44+00:00">
+  <file name="/var/www/app/Console/Kernel.php">
+    <violation beginline="31" endline="31" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Jobs\CaldavSync' in method 'schedule'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Http/Controllers/Auth/RegisterController.php">
+    <violation beginline="51" endline="55" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Validator' in method 'validator'.
+    </violation>
+    <violation beginline="66" endline="70" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\User' in method 'create'.
+    </violation>
+    <violation beginline="69" endline="69" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Hash' in method 'create'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Http/Controllers/JobController.php">
+    <violation beginline="25" endline="30" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'getAll'.
+    </violation>
+    <violation beginline="36" endline="36" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Job' in method 'getAll'.
+    </violation>
+    <violation beginline="41" endline="43" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method getAll uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="77" endline="77" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $r. Configured minimum length is 3.
+    </violation>
+    <violation beginline="102" endline="102" rule="BooleanArgumentFlag" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#booleanargumentflag" priority="1">
+      The method create has a boolean flag argument $isParent, which is a certain sign of a Single Responsibility Principle violation.
+    </violation>
+    <violation beginline="104" endline="115" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'create'.
+    </violation>
+    <violation beginline="124" endline="124" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Job' in method 'create'.
+    </violation>
+    <violation beginline="126" endline="126" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'create'.
+    </violation>
+    <violation beginline="127" endline="127" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Job' in method 'create'.
+    </violation>
+    <violation beginline="131" endline="131" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="139" endline="139" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'create'.
+    </violation>
+    <violation beginline="144" endline="144" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'create'.
+    </violation>
+    <violation beginline="160" endline="160" rule="BooleanArgumentFlag" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#booleanargumentflag" priority="1">
+      The method update has a boolean flag argument $isParent, which is a certain sign of a Single Responsibility Principle violation.
+    </violation>
+    <violation beginline="160" endline="229" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="App\Http\Controllers" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="JobController" method="update" priority="3">
+      The method update() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="162" endline="173" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'update'.
+    </violation>
+    <violation beginline="182" endline="182" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Job' in method 'update'.
+    </violation>
+    <violation beginline="184" endline="184" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="192" endline="192" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $v. Configured minimum length is 3.
+    </violation>
+    <violation beginline="205" endline="205" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Job' in method 'update'.
+    </violation>
+    <violation beginline="207" endline="207" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="212" endline="212" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="215" endline="221" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method update uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="218" endline="218" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="224" endline="224" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="241" endline="241" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="261" endline="263" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'addSubscriber'.
+    </violation>
+    <violation beginline="296" endline="298" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'deleteSubscriber'.
+    </violation>
+    <violation beginline="339" endline="339" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="351" endline="353" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'createChild'.
+    </violation>
+    <violation beginline="366" endline="366" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $r. Configured minimum length is 3.
+    </violation>
+    <violation beginline="374" endline="376" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'updateChild'.
+    </violation>
+    <violation beginline="389" endline="389" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $r. Configured minimum length is 3.
+    </violation>
+  </file>
+  <file name="/var/www/app/Http/Controllers/TemplateController.php">
+    <violation beginline="16" endline="16" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$request'.
+    </violation>
+    <violation beginline="18" endline="18" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Template' in method 'getAll'.
+    </violation>
+    <violation beginline="40" endline="40" rule="BooleanArgumentFlag" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#booleanargumentflag" priority="1">
+      The method create has a boolean flag argument $isParent, which is a certain sign of a Single Responsibility Principle violation.
+    </violation>
+    <violation beginline="42" endline="50" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'create'.
+    </violation>
+    <violation beginline="59" endline="59" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Template' in method 'create'.
+    </violation>
+    <violation beginline="61" endline="61" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'create'.
+    </violation>
+    <violation beginline="62" endline="62" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Template' in method 'create'.
+    </violation>
+    <violation beginline="66" endline="66" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="74" endline="74" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'create'.
+    </violation>
+    <violation beginline="79" endline="79" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'create'.
+    </violation>
+    <violation beginline="87" endline="87" rule="BooleanArgumentFlag" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#booleanargumentflag" priority="1">
+      The method update has a boolean flag argument $isParent, which is a certain sign of a Single Responsibility Principle violation.
+    </violation>
+    <violation beginline="87" endline="154" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="App\Http\Controllers" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="TemplateController" method="update" priority="3">
+      The method update() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="89" endline="97" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'update'.
+    </violation>
+    <violation beginline="106" endline="106" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Template' in method 'update'.
+    </violation>
+    <violation beginline="108" endline="108" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="116" endline="116" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $v. Configured minimum length is 3.
+    </violation>
+    <violation beginline="129" endline="129" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Template' in method 'update'.
+    </violation>
+    <violation beginline="131" endline="131" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="137" endline="137" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="140" endline="146" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method update uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="143" endline="143" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="149" endline="149" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\DB' in method 'update'.
+    </violation>
+    <violation beginline="160" endline="160" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="174" endline="176" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'createChild'.
+    </violation>
+    <violation beginline="191" endline="193" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'updateChild'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Http/Controllers/UserController.php">
+    <violation beginline="22" endline="22" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Auth' in method 'login'.
+    </violation>
+    <violation beginline="23" endline="23" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Auth' in method 'login'.
+    </violation>
+    <violation beginline="27" endline="29" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method login uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="40" endline="46" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'register'.
+    </violation>
+    <violation beginline="52" endline="52" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\User' in method 'register'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Http/Middleware/AuthenticateAdmin.php">
+    <violation beginline="27" endline="27" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$request'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Http/Middleware/AuthenticateAuthor.php">
+    <violation beginline="28" endline="28" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$request'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Http/Middleware/AuthenticateUser.php">
+    <violation beginline="31" endline="31" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$request'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Job.php">
+    <violation beginline="12" endline="136" rule="CamelCasePropertyName" ruleset="Controversial Rules" package="App" externalInfoUrl="#" class="Job" priority="1">
+      The property $meta_table is not named in camelCase.
+    </violation>
+    <violation beginline="80" endline="80" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Carbon\Carbon' in method 'getStartAtFromRequest'.
+    </violation>
+    <violation beginline="94" endline="94" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Carbon\Carbon' in method 'getEndAtFromRequest'.
+    </violation>
+    <violation beginline="119" endline="119" rule="BooleanArgumentFlag" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#booleanargumentflag" priority="1">
+      The method setChilds has a boolean flag argument $setChildMeta, which is a certain sign of a Single Responsibility Principle violation.
+    </violation>
+  </file>
+  <file name="/var/www/app/Jobs/CaldavSync.php">
+    <violation beginline="18" endline="226" rule="CamelCasePropertyName" ruleset="Controversial Rules" package="App\Jobs" externalInfoUrl="#" class="CaldavSync" priority="1">
+      The property $include_only_categories is not named in camelCase.
+    </violation>
+    <violation beginline="18" endline="226" rule="CamelCasePropertyName" ruleset="Controversial Rules" package="App\Jobs" externalInfoUrl="#" class="CaldavSync" priority="1">
+      The property $exclude_categories is not named in camelCase.
+    </violation>
+    <violation beginline="45" endline="45" rule="UnusedPrivateField" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedprivatefield" priority="3">
+      Avoid unused private fields such as '$include_only_categories'.
+    </violation>
+    <violation beginline="53" endline="53" rule="UnusedPrivateField" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedprivatefield" priority="3">
+      Avoid unused private fields such as '$exclude_categories'.
+    </violation>
+    <violation beginline="99" endline="99" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$eventsToImport'.
+    </violation>
+    <violation beginline="100" endline="100" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$insertErrors'.
+    </violation>
+    <violation beginline="112" endline="112" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="114" endline="114" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Sabre\VObject\Reader' in method 'syncCalendar'.
+    </violation>
+    <violation beginline="136" endline="175" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="App\Jobs" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="CaldavSync" method="syncEvent" priority="3">
+      The method syncEvent() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="136" endline="175" rule="NPathComplexity" ruleset="Code Size Rules" package="App\Jobs" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="CaldavSync" method="syncEvent" priority="3">
+      The method syncEvent() has an NPath complexity of 384. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="163" endline="163" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\App\Job' in method 'syncEvent'.
+    </violation>
+    <violation beginline="203" endline="221" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="App\Jobs" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedprivatemethod" class="CaldavSync" method="setLastUpdate" priority="3">
+      Avoid unused private methods such as 'setLastUpdate'.
+    </violation>
+    <violation beginline="216" endline="220" rule="ElseExpression" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#elseexpression" priority="1">
+      The method setLastUpdate uses an else expression. Else is never necessary and you can simplify the code to work without else.
+    </violation>
+    <violation beginline="223" endline="225" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="App\Jobs" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedprivatemethod" class="CaldavSync" method="getUpdatePeriod" priority="3">
+      Avoid unused private methods such as 'getUpdatePeriod'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Providers/AppServiceProvider.php">
+    <violation beginline="20" endline="22" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Validator' in method 'boot'.
+    </violation>
+    <violation beginline="20" endline="20" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$attribute'.
+    </violation>
+    <violation beginline="20" endline="20" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$parameters'.
+    </violation>
+    <violation beginline="20" endline="20" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$validator'.
+    </violation>
+    <violation beginline="27" endline="27" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'boot'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Providers/AuthServiceProvider.php">
+    <violation beginline="28" endline="28" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Laravel\Passport\Passport' in method 'boot'.
+    </violation>
+  </file>
+  <file name="/var/www/app/Providers/BroadcastServiceProvider.php">
+    <violation beginline="17" endline="17" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Broadcast' in method 'boot'.
+    </violation>
+  </file>
+  <file name="/var/www/database/migrations/2014_10_12_000000_create_users_table.php">
+    <violation beginline="14" endline="26" rule="ShortMethodName" ruleset="Naming Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/naming.html#shortmethodname" class="CreateUsersTable" method="up" priority="3">
+      Avoid using short method names like CreateUsersTable::up(). The configured minimum method name length is 3.
+    </violation>
+    <violation beginline="16" endline="25" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+    </violation>
+    <violation beginline="35" endline="35" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+    </violation>
+  </file>
+  <file name="/var/www/database/migrations/2014_10_12_100000_create_password_resets_table.php">
+    <violation beginline="14" endline="21" rule="ShortMethodName" ruleset="Naming Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/naming.html#shortmethodname" class="CreatePasswordResetsTable" method="up" priority="3">
+      Avoid using short method names like CreatePasswordResetsTable::up(). The configured minimum method name length is 3.
+    </violation>
+    <violation beginline="16" endline="20" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+    </violation>
+    <violation beginline="30" endline="30" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+    </violation>
+  </file>
+  <file name="/var/www/database/migrations/2019_02_05_203554_create_jobs_table.php">
+    <violation beginline="14" endline="36" rule="ShortMethodName" ruleset="Naming Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/naming.html#shortmethodname" class="CreateJobsTable" method="up" priority="3">
+      Avoid using short method names like CreateJobsTable::up(). The configured minimum method name length is 3.
+    </violation>
+    <violation beginline="16" endline="35" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'up'.
+    </violation>
+    <violation beginline="45" endline="45" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Schema' in method 'down'.
+    </violation>
+  </file>
+  <file name="/var/www/database/seeds/JobSeeder.php">
+    <violation beginline="15" endline="15" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class 'Job' in method 'run'.
+    </violation>
+    <violation beginline="17" endline="17" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Faker\Factory' in method 'run'.
+    </violation>
+    <violation beginline="21" endline="24" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class 'Job' in method 'run'.
+    </violation>
+  </file>
+  <file name="/var/www/tests/TestCase.php">
+    <violation beginline="16" endline="16" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Illuminate\Support\Facades\Artisan' in method 'setUp'.
+    </violation>
+  </file>
+  <file name="/var/www/tests/Unit/JobTest.php">
+    <violation beginline="36" endline="39" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Laravel\Passport\Passport' in method 'testCannotCreateJobsAsUser'.
+    </violation>
+    <violation beginline="47" endline="50" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Laravel\Passport\Passport' in method 'testCreateJobsAsAuthor'.
+    </violation>
+    <violation beginline="89" endline="92" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Laravel\Passport\Passport' in method 'testGetAllJobsAsAuthor'.
+    </violation>
+    <violation beginline="106" endline="106" rule="ShortVariable" ruleset="Naming Rules" externalInfoUrl="http://phpmd.org/rules/naming.html#shortvariable" priority="3">
+      Avoid variables with short names like $t. Configured minimum length is 3.
+    </violation>
+    <violation beginline="106" endline="106" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$t'.
+    </violation>
+    <violation beginline="117" endline="120" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Laravel\Passport\Passport' in method 'testGetOnlyPublicJobsAsUser'.
+    </violation>
+    <violation beginline="135" endline="138" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Laravel\Passport\Passport' in method 'testGetOnlyPublicJobsAsUser'.
+    </violation>
+    <violation beginline="150" endline="153" rule="StaticAccess" ruleset="Clean Code Rules" externalInfoUrl="http://phpmd.org/rules/cleancode.html#staticaccess" priority="1">
+      Avoid using static access to class '\Laravel\Passport\Passport' in method 'testUpdateJob'.
+    </violation>
+  </file>
+</pmd>

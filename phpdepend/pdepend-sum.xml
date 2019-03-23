@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metrics generated="2019-03-23T09:12:08" pdepend="@package_version@" ahh="1.6153846153846" andc="0.16393442622951" calls="463" ccn="190" ccn2="210" cloc="682" clsa="1" clsc="40" eloc="1503" fanout="64" leafs="19" lloc="799" loc="2605" maxDIT="3" ncloc="1923" noc="41" nof="0" noi="0" nom="94" nop="14" roots="20">
+  <files>
+    <file name="/var/www/database/migrations/2014_10_12_000000_create_users_table.php" loc="38" cloc="10" eloc="24" lloc="16" ncloc="28"/>
+    <file name="/var/www/database/migrations/2014_10_12_100000_create_password_resets_table.php" loc="33" cloc="10" eloc="19" lloc="11" ncloc="23"/>
+    <file name="/var/www/database/migrations/2019_02_05_203554_create_jobs_table.php" loc="48" cloc="14" eloc="30" lloc="22" ncloc="34"/>
+    <file name="/var/www/database/seeds/DatabaseSeeder.php" loc="18" cloc="6" eloc="8" lloc="2" ncloc="12"/>
+    <file name="/var/www/database/seeds/JobSeeder.php" loc="28" cloc="7" eloc="16" lloc="6" ncloc="21"/>
+    <file name="/var/www/app/Console/Commands/FooCommand.php" loc="44" cloc="21" eloc="16" lloc="8" ncloc="23"/>
+    <file name="/var/www/app/Console/Kernel.php" loc="47" cloc="17" eloc="22" lloc="13" ncloc="30"/>
+    <file name="/var/www/app/Exceptions/Handler.php" loc="63" cloc="24" eloc="32" lloc="14" ncloc="39"/>
+    <file name="/var/www/app/Http/Controllers/Auth/ForgotPasswordController.php" loc="33" cloc="15" eloc="12" lloc="6" ncloc="18"/>
+    <file name="/var/www/app/Http/Controllers/Auth/LoginController.php" loc="40" cloc="20" eloc="13" lloc="7" ncloc="20"/>
+    <file name="/var/www/app/Http/Controllers/Auth/RegisterController.php" loc="73" cloc="32" eloc="32" lloc="14" ncloc="41"/>
+    <file name="/var/www/app/Http/Controllers/Auth/ResetPasswordController.php" loc="40" cloc="20" eloc="13" lloc="7" ncloc="20"/>
+    <file name="/var/www/app/Http/Controllers/Auth/VerificationController.php" loc="42" cloc="20" eloc="15" lloc="9" ncloc="22"/>
+    <file name="/var/www/app/Http/Controllers/Controller.php" loc="14" cloc="0" eloc="10" lloc="6" ncloc="14"/>
+    <file name="/var/www/app/Http/Controllers/JobController.php" loc="395" cloc="65" eloc="270" lloc="168" ncloc="330"/>
+    <file name="/var/www/app/Http/Controllers/TemplateController.php" loc="207" cloc="2" eloc="168" lloc="112" ncloc="205"/>
+    <file name="/var/www/app/Http/Controllers/UserController.php" loc="75" cloc="19" eloc="48" lloc="28" ncloc="56"/>
+    <file name="/var/www/app/Http/Kernel.php" loc="86" cloc="28" eloc="50" lloc="6" ncloc="58"/>
+    <file name="/var/www/app/Http/Middleware/Authenticate.php" loc="22" cloc="6" eloc="12" lloc="5" ncloc="16"/>
+    <file name="/var/www/app/Http/Middleware/AuthenticateAdmin.php" loc="31" cloc="8" eloc="17" lloc="9" ncloc="23"/>
+    <file name="/var/www/app/Http/Middleware/AuthenticateAuthor.php" loc="32" cloc="7" eloc="18" lloc="10" ncloc="25"/>
+    <file name="/var/www/app/Http/Middleware/AuthenticateUser.php" loc="39" cloc="9" eloc="24" lloc="14" ncloc="30"/>
+    <file name="/var/www/app/Http/Middleware/CheckForMaintenanceMode.php" loc="18" cloc="6" eloc="8" lloc="3" ncloc="12"/>
+    <file name="/var/www/app/Http/Middleware/EncryptCookies.php" loc="18" cloc="6" eloc="8" lloc="3" ncloc="12"/>
+    <file name="/var/www/app/Http/Middleware/ExecuteCron.php" loc="57" cloc="30" eloc="13" lloc="7" ncloc="27"/>
+    <file name="/var/www/app/Http/Middleware/RedirectIfAuthenticated.php" loc="27" cloc="8" eloc="14" lloc="7" ncloc="19"/>
+    <file name="/var/www/app/Http/Middleware/TrimStrings.php" loc="19" cloc="5" eloc="10" lloc="3" ncloc="14"/>
+    <file name="/var/www/app/Http/Middleware/TrustProxies.php" loc="24" cloc="10" eloc="9" lloc="5" ncloc="14"/>
+    <file name="/var/www/app/Http/Middleware/VerifyCsrfToken.php" loc="25" cloc="11" eloc="9" lloc="4" ncloc="14"/>
+    <file name="/var/www/app/Job.php" loc="137" cloc="43" eloc="77" lloc="39" ncloc="94"/>
+    <file name="/var/www/app/Template.php" loc="106" cloc="22" eloc="66" lloc="34" ncloc="84"/>
+    <file name="/var/www/app/User.php" loc="40" cloc="15" eloc="17" lloc="9" ncloc="25"/>
+    <file name="/var/www/app/Jobs/CaldavSync.php" loc="228" cloc="46" eloc="139" lloc="86" ncloc="182"/>
+    <file name="/var/www/app/Providers/AppServiceProvider.php" loc="40" cloc="16" eloc="18" lloc="10" ncloc="24"/>
+    <file name="/var/www/app/Providers/AuthServiceProvider.php" loc="31" cloc="10" eloc="16" lloc="8" ncloc="21"/>
+    <file name="/var/www/app/Providers/BroadcastServiceProvider.php" loc="22" cloc="5" eloc="12" lloc="6" ncloc="17"/>
+    <file name="/var/www/app/Providers/EventServiceProvider.php" loc="35" cloc="11" eloc="18" lloc="8" ncloc="24"/>
+    <file name="/var/www/app/Providers/RouteServiceProvider.php" loc="74" cloc="33" eloc="30" lloc="13" ncloc="41"/>
+    <file name="/var/www/tests/CreatesApplication.php" loc="23" cloc="5" eloc="12" lloc="6" ncloc="18"/>
+    <file name="/var/www/tests/TestCase.php" loc="19" cloc="0" eloc="14" lloc="8" ncloc="19"/>
+    <file name="/var/www/tests/Feature/ExampleTest.php" loc="22" cloc="5" eloc="12" lloc="6" ncloc="17"/>
+    <file name="/var/www/tests/Unit/JobTest.php" loc="192" cloc="35" eloc="132" lloc="41" ncloc="157"/>
+  </files>
+  <package name="+global" noc="5" noi="0" nom="8" nof="0" cr="0.15" rcr="0.405">
+    <class name="CreateUsersTable" fqname="+global\CreateUsersTable" start="7" end="37" loc="31" cloc="10" eloc="15" lloc="11" ncloc="21" dit="2" noam="2" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.1925" ca="0" cbo="2" ce="2" impl="0" cis="2" csz="2" npm="2" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/var/www/database/migrations/2014_10_12_000000_create_users_table.php"/>
+      <method name="up" start="14" end="26" ccn="1" ccn2="1" loc="13" cloc="0" eloc="12" lloc="10" ncloc="13" npath="1" hnt="20" hnd="44" hv="109.18863237275" hd="3.6111111111111" hl="0.27692307692308" he="394.29228356825" ht="21.905126864903" hb="0.0179235595811" hi="30.236852041683" mi="62.052931045602"/>
+      <method name="down" start="33" end="36" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="4" hl="0.25" he="62.039100017308" ht="3.4466166676282" hb="0.0052238304343202" hi="3.8774437510817" mi="81.120955834208"/>
+    </class>
+    <class name="CreatePasswordResetsTable" fqname="+global\CreatePasswordResetsTable" start="7" end="32" loc="26" cloc="10" eloc="10" lloc="6" ncloc="16" dit="2" noam="2" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.1925" ca="0" cbo="2" ce="2" impl="0" cis="2" csz="2" npm="2" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/var/www/database/migrations/2014_10_12_100000_create_password_resets_table.php"/>
+      <method name="up" start="14" end="21" ccn="1" ccn2="1" loc="8" cloc="0" eloc="7" lloc="5" ncloc="8" npath="1" hnt="12" hnd="22" hv="53.513179423648" hd="4.375" hl="0.22857142857143" he="234.12015997846" ht="13.006675554359" hb="0.012662067375153" hi="12.231583868262" mi="69.327853890094"/>
+      <method name="down" start="28" end="31" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="4" hl="0.25" he="62.039100017308" ht="3.4466166676282" hb="0.0052238304343202" hi="3.8774437510817" mi="81.120955834208"/>
+    </class>
+    <class name="CreateJobsTable" fqname="+global\CreateJobsTable" start="7" end="47" loc="41" cloc="14" eloc="21" lloc="17" ncloc="27" dit="2" noam="2" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.1925" ca="0" cbo="2" ce="2" impl="0" cis="2" csz="2" npm="2" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/var/www/database/migrations/2019_02_05_203554_create_jobs_table.php"/>
+      <method name="up" start="14" end="36" ccn="1" ccn2="1" loc="23" cloc="4" eloc="18" lloc="16" ncloc="19" npath="1" hnt="31" hnd="82" hv="197.08411214316" hd="3.7121212121212" hl="0.26938775510204" he="731.6001132587" ht="40.644450736595" hb="0.027064162224024" hi="53.092046536525" mi="56.415847010223"/>
+      <method name="down" start="43" end="46" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="4" hl="0.25" he="62.039100017308" ht="3.4466166676282" hb="0.0052238304343202" hi="3.8774437510817" mi="81.120955834208"/>
+    </class>
+    <class name="DatabaseSeeder" fqname="+global\DatabaseSeeder" start="5" end="17" loc="13" cloc="6" eloc="2" lloc="0" ncloc="7" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.21375" ca="0" cbo="0" ce="0" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/database/seeds/DatabaseSeeder.php"/>
+      <method name="run" start="12" end="16" ccn="1" ccn2="1" loc="5" cloc="1" eloc="2" lloc="0" ncloc="4" npath="1" hnt="2" hnd="2" hv="2" hd="2" hl="0.5" he="4" ht="0.22222222222222" hb="0.00083994736659658" hi="1" mi="91.191023588314"/>
+    </class>
+    <class name="JobSeeder" fqname="+global\JobSeeder" start="5" end="27" loc="23" cloc="7" eloc="10" lloc="4" ncloc="16" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.21375" ca="0" cbo="2" ce="2" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/var/www/database/seeds/JobSeeder.php"/>
+      <method name="run" start="12" end="26" ccn="2" ccn2="2" loc="15" cloc="2" eloc="10" lloc="4" ncloc="13" npath="2" hnt="24" hnd="37" hv="125.02688077509" hd="9.8571428571429" hl="0.10144927536232" he="1232.4078247831" ht="68.467101376838" hb="0.038316136344989" hi="12.683886455444" mi="63.233784759941"/>
+    </class>
+  </package>
+  <package name="App\Console\Commands" noc="1" noi="0" nom="2" nof="0" cr="0.15" rcr="0.2775">
+    <class name="FooCommand" fqname="App\Console\Commands\FooCommand" start="8" end="43" loc="36" cloc="21" eloc="5" lloc="1" ncloc="15" dit="2" noam="2" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="2" csz="4" npm="2" vars="2" varsi="2" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/var/www/app/Console/Commands/FooCommand.php"/>
+      <method name="__construct" start="29" end="32" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="12.5" hl="0.08" he="193.87218755409" ht="10.770677086338" hb="0.011165780490257" hi="1.2407820003462" mi="81.120955834208"/>
+      <method name="handle" start="39" end="42" ccn="1" ccn2="1" loc="4" cloc="1" eloc="2" lloc="0" ncloc="3" npath="1" hnt="2" hnd="2" hv="2" hd="2" hl="0.5" he="4" ht="0.22222222222222" hb="0.00083994736659658" hi="1" mi="91.191023588314"/>
+    </class>
+  </package>
+  <package name="App\Console" noc="1" noi="0" nom="2" nof="0" cr="0.15" rcr="0.2775">
+    <class name="Kernel" fqname="App\Console\Kernel" start="11" end="46" loc="36" cloc="17" eloc="9" lloc="5" ncloc="19" dit="2" noam="2" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.2775" ca="0" cbo="2" ce="2" impl="0" cis="0" csz="3" npm="0" vars="1" varsi="1" varsnp="0" wmc="2" wmci="2" wmcnp="0">
+      <file name="/var/www/app/Console/Kernel.php"/>
+      <method name="schedule" start="28" end="33" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="3" ncloc="6" npath="1" hnt="6" hnd="10" hv="19.931568569324" hd="8" hl="0.125" he="159.45254855459" ht="8.8584749196996" hb="0.0098016619936881" hi="2.4914460711655" mi="75.518784021209"/>
+      <method name="commands" start="40" end="45" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="11" hnd="13" hv="40.704836899552" hd="4.8" hl="0.20833333333333" he="195.38321711785" ht="10.854623173214" hb="0.011223722387817" hi="8.4801743540733" mi="75.46141948748"/>
+    </class>
+  </package>
+  <package name="App\Exceptions" noc="1" noi="0" nom="2" nof="0" cr="0.15" rcr="0.2775">
+    <class name="Handler" fqname="App\Exceptions\Handler" start="10" end="62" loc="53" cloc="24" eloc="15" lloc="5" ncloc="29" dit="2" noam="2" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.2775" ca="0" cbo="4" ce="4" impl="0" cis="2" csz="4" npm="2" vars="2" varsi="2" varsnp="0" wmc="5" wmci="5" wmcnp="5">
+      <file name="/var/www/app/Exceptions/Handler.php"/>
+      <method name="report" start="37" end="40" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="7" hnd="7" hv="19.651484454403" hd="6.25" hl="0.16" he="122.82177784002" ht="6.8234321022233" hb="0.0082362400950509" hi="3.1442375127045" mi="80.401219851729"/>
+      <method name="render" start="49" end="61" ccn="3" ccn2="4" loc="13" cloc="0" eloc="12" lloc="4" ncloc="13" npath="4" hnt="21" hnd="33" hv="105.93227650653" hd="12" hl="0.083333333333333" he="1271.1873180783" ht="70.621517671018" hb="0.039115760614904" hi="8.8276897088773" mi="61.741492590874"/>
+    </class>
+  </package>
+  <package name="App\Http\Controllers\Auth" noc="5" noi="0" nom="7" nof="0" cr="0.15" rcr="0.385875">
+    <class name="ForgotPasswordController" fqname="App\Http\Controllers\Auth\ForgotPasswordController" start="8" end="32" loc="25" cloc="15" eloc="3" lloc="1" ncloc="10" dit="3" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.179484375" ca="0" cbo="0" ce="0" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/app/Http/Controllers/Auth/ForgotPasswordController.php"/>
+      <method name="__construct" start="28" end="31" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="4" hl="0.25" he="62.039100017308" ht="3.4466166676282" hb="0.0052238304343202" hi="3.8774437510817" mi="81.120955834208"/>
+    </class>
+    <class name="LoginController" fqname="App\Http\Controllers\Auth\LoginController" start="8" end="39" loc="32" cloc="20" eloc="3" lloc="1" ncloc="12" dit="3" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.179484375" ca="0" cbo="0" ce="0" impl="0" cis="1" csz="2" npm="1" vars="1" varsi="1" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/app/Http/Controllers/Auth/LoginController.php"/>
+      <method name="__construct" start="35" end="38" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="7" hnd="8" hv="21" hd="3.3333333333333" hl="0.3" he="70" ht="3.8888888888889" hb="0.0056616641741394" hi="6.3" mi="80.199394296734"/>
+    </class>
+    <class name="RegisterController" fqname="App\Http\Controllers\Auth\RegisterController" start="11" end="72" loc="62" cloc="32" eloc="17" lloc="3" ncloc="30" dit="3" noam="3" nocc="0" noom="0" nom="3" cr="0.15" rcr="0.179484375" ca="0" cbo="4" ce="4" impl="0" cis="1" csz="4" npm="1" vars="1" varsi="1" varsnp="0" wmc="3" wmci="3" wmcnp="1">
+      <file name="/var/www/app/Http/Controllers/Auth/RegisterController.php"/>
+      <method name="__construct" start="38" end="41" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="4" hl="0.25" he="62.039100017308" ht="3.4466166676282" hb="0.0052238304343202" hi="3.8774437510817" mi="81.120955834208"/>
+      <method name="validator" start="49" end="56" ccn="1" ccn2="1" loc="8" cloc="0" eloc="7" lloc="1" ncloc="8" npath="1" hnt="19" hnd="42" hv="102.4540310328" hd="5.8823529411765" hl="0.17" he="602.67077078116" ht="33.481709487842" hb="0.023782937681864" hi="17.417185275575" mi="67.3528079766"/>
+      <method name="create" start="64" end="71" ccn="1" ccn2="1" loc="8" cloc="0" eloc="7" lloc="1" ncloc="8" npath="1" hnt="14" hnd="27" hv="66.568425030289" hd="5.8181818181818" hl="0.171875" he="387.30720017622" ht="21.517066676457" hb="0.017711246430551" hi="11.441448052081" mi="68.664010338947"/>
+    </class>
+    <class name="ResetPasswordController" fqname="App\Http\Controllers\Auth\ResetPasswordController" start="8" end="39" loc="32" cloc="20" eloc="3" lloc="1" ncloc="12" dit="3" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.179484375" ca="0" cbo="0" ce="0" impl="0" cis="1" csz="2" npm="1" vars="1" varsi="1" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/app/Http/Controllers/Auth/ResetPasswordController.php"/>
+      <method name="__construct" start="35" end="38" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="4" hl="0.25" he="62.039100017308" ht="3.4466166676282" hb="0.0052238304343202" hi="3.8774437510817" mi="81.120955834208"/>
+    </class>
+    <class name="VerificationController" fqname="App\Http\Controllers\Auth\VerificationController" start="8" end="41" loc="34" cloc="20" eloc="5" lloc="3" ncloc="14" dit="3" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.179484375" ca="0" cbo="0" ce="0" impl="0" cis="1" csz="2" npm="1" vars="1" varsi="1" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/app/Http/Controllers/Auth/VerificationController.php"/>
+      <method name="__construct" start="35" end="40" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="3" ncloc="6" npath="1" hnt="11" hnd="20" hv="47.541209043761" hd="3.0555555555556" hl="0.32727272727273" he="145.26480541149" ht="8.0702669673051" hb="0.0092112594779544" hi="15.558941141595" mi="72.875322790113"/>
+    </class>
+  </package>
+  <package name="App\Http\Controllers" noc="4" noi="0" nom="21" nof="0" cr="0.2775" rcr="0.2775">
+    <class name="Controller" fqname="App\Http\Controllers\Controller" start="10" end="13" loc="4" cloc="0" eloc="0" lloc="0" ncloc="4" dit="2" noam="0" nocc="8" noom="0" nom="0" cr="1.17" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="0" csz="0" npm="0" vars="0" varsi="0" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/var/www/app/Http/Controllers/Controller.php"/>
+    </class>
+    <class name="JobController" fqname="App\Http\Controllers\JobController" start="14" end="394" loc="381" cloc="65" eloc="250" lloc="149" ncloc="316" dit="3" noam="11" nocc="0" noom="0" nom="11" cr="0.15" rcr="0.179484375" ca="0" cbo="6" ce="6" impl="0" cis="9" csz="11" npm="9" vars="0" varsi="0" varsnp="0" wmc="42" wmci="42" wmcnp="34">
+      <file name="/var/www/app/Http/Controllers/JobController.php"/>
+      <method name="getAll" start="23" end="65" ccn="6" ccn2="6" loc="43" cloc="0" eloc="35" lloc="23" ncloc="43" npath="32" hnt="57" hnd="146" hv="409.81999985616" hd="9.7540983606557" hl="0.10252100840336" he="3997.4245887609" ht="222.07914382005" hb="0.083958679291557" hi="42.015159649119" mi="47.217326083843"/>
+      <method name="getAllPublic" start="73" end="80" ccn="1" ccn2="1" loc="8" cloc="0" eloc="7" lloc="5" ncloc="8" npath="1" hnt="15" hnd="27" hv="71.323312532452" hd="5.0909090909091" hl="0.19642857142857" he="363.10050016521" ht="20.172250009178" hb="0.016965368998972" hi="14.009936390303" mi="68.454207454893"/>
+      <method name="get" start="88" end="94" ccn="1" ccn2="1" loc="7" cloc="0" eloc="6" lloc="4" ncloc="7" npath="1" hnt="9" hnd="14" hv="34.266194298518" hd="6.25" hl="0.16" he="214.16371436574" ht="11.89798413143" hb="0.011931892691732" hi="5.482591087763" mi="72.143782658883"/>
+      <method name="create" start="102" end="151" ccn="6" ccn2="6" loc="50" cloc="3" eloc="40" lloc="23" ncloc="47" npath="16" hnt="67" hnd="170" hv="496.42919272123" hd="9.7605633802817" hl="0.1024531024531" he="4845.4285993776" ht="269.1904777432" hb="0.095448009847291" hi="50.860710942579" mi="45.369275069546"/>
+      <method name="update" start="160" end="229" ccn="11" ccn2="11" loc="70" cloc="4" eloc="58" lloc="38" ncloc="66" npath="116" hnt="93" hnd="274" hv="753.11698371533" hd="13.017857142857" hl="0.07681755829904" he="9803.9693058656" ht="544.66496143698" hb="0.15269097697188" hi="57.852607802549" mi="39.909284357699"/>
+      <method name="delete" start="237" end="251" ccn="2" ccn2="2" loc="15" cloc="0" eloc="11" lloc="6" ncloc="15" npath="2" hnt="23" hnd="37" hv="119.81742740947" hd="6.6" hl="0.15151515151515" he="790.79502090247" ht="43.933056716804" hb="0.028505020832793" hi="18.154155668101" mi="62.460267264121"/>
+      <method name="addSubscriber" start="260" end="286" ccn="2" ccn2="2" loc="27" cloc="0" eloc="21" lloc="10" ncloc="27" npath="2" hnt="37" hnd="84" hv="236.51574464281" hd="8.5" hl="0.11764705882353" he="2010.3838294639" ht="111.68799052577" hb="0.053096358080182" hi="27.825381722684" mi="54.266350676454"/>
+      <method name="deleteSubscriber" start="295" end="323" ccn="3" ccn2="3" loc="29" cloc="0" eloc="23" lloc="13" ncloc="29" npath="4" hnt="47" hnd="115" hv="321.73803239439" hd="9.75" hl="0.1025641025641" he="3136.9458158453" ht="174.27476754696" hb="0.071430456138498" hi="32.99877255327" mi="52.334244397495"/>
+      <method name="getActivities" start="331" end="347" ccn="2" ccn2="2" loc="17" cloc="0" eloc="15" lloc="5" ncloc="17" npath="2" hnt="25" hnd="49" hv="140.36774610288" hd="6.6666666666667" hl="0.15" he="935.7849740192" ht="51.988054112178" hb="0.031890607338903" hi="21.055161915432" mi="59.04058766777"/>
+      <method name="createChild" start="349" end="370" ccn="3" ccn2="4" loc="22" cloc="0" eloc="17" lloc="11" ncloc="22" npath="6" hnt="36" hnd="85" hv="230.73807370096" hd="8.25" hl="0.12121212121212" he="1903.5891080329" ht="105.75495044627" hb="0.051198930149195" hi="27.968251357692" mi="56.074427633516"/>
+      <method name="updateChild" start="372" end="393" ccn="3" ccn2="4" loc="22" cloc="0" eloc="17" lloc="11" ncloc="22" npath="6" hnt="37" hnd="88" hv="238.99896988958" hd="8.3285714285714" hl="0.12006861063465" he="1990.5199920804" ht="110.58444400446" hb="0.052746029642912" hi="28.696274257754" mi="55.967459513882"/>
+    </class>
+    <class name="TemplateController" fqname="App\Http\Controllers\TemplateController" start="14" end="206" loc="193" cloc="2" eloc="149" lloc="97" ncloc="191" dit="3" noam="7" nocc="0" noom="0" nom="7" cr="0.15" rcr="0.179484375" ca="0" cbo="4" ce="4" impl="0" cis="5" csz="7" npm="5" vars="0" varsi="0" varsnp="0" wmc="29" wmci="29" wmcnp="21">
+      <file name="/var/www/app/Http/Controllers/TemplateController.php"/>
+      <method name="getAll" start="16" end="30" ccn="1" ccn2="1" loc="15" cloc="0" eloc="12" lloc="10" ncloc="15" npath="1" hnt="20" hnd="42" hv="107.84634845558" hd="5.6875" hl="0.17582417582418" he="613.37610684108" ht="34.07645038006" hb="0.024063750445819" hi="18.961995332848" mi="62.090545729416"/>
+      <method name="get" start="32" end="38" ccn="1" ccn2="1" loc="7" cloc="0" eloc="6" lloc="4" ncloc="7" npath="1" hnt="9" hnd="14" hv="34.266194298518" hd="6.25" hl="0.16" he="214.16371436574" ht="11.89798413143" hb="0.011931892691732" hi="5.482591087763" mi="72.143782658883"/>
+      <method name="create" start="40" end="85" ccn="6" ccn2="6" loc="46" cloc="0" eloc="39" lloc="25" ncloc="46" npath="16" hnt="66" hnd="170" hv="489.01980178509" hd="9.7605633802817" hl="0.1024531024531" he="4773.1087695361" ht="265.17270941867" hb="0.094495900080435" hi="50.101595853884" mi="45.654857205008"/>
+      <method name="update" start="87" end="154" ccn="11" ccn2="11" loc="68" cloc="2" eloc="57" lloc="40" ncloc="66" npath="116" hnt="91" hnd="274" hv="736.92091954941" hd="13.017857142857" hl="0.07681755829904" he="9593.1312562771" ht="532.95173645984" hb="0.15049393677257" hi="56.608465699269" mi="40.140158136904"/>
+      <method name="delete" start="156" end="170" ccn="2" ccn2="2" loc="15" cloc="0" eloc="11" lloc="6" ncloc="15" npath="2" hnt="23" hnd="37" hv="119.81742740947" hd="6.6" hl="0.15151515151515" he="790.79502090247" ht="43.933056716804" hb="0.028505020832793" hi="18.154155668101" mi="62.460267264121"/>
+      <method name="createChild" start="172" end="187" ccn="3" ccn2="4" loc="16" cloc="0" eloc="12" lloc="6" ncloc="16" npath="6" hnt="31" hnd="60" hv="183.11360846386" hd="8.8478260869565" hl="0.11302211302211" he="1620.1573618433" ht="90.008742324629" hb="0.045981543373555" hi="20.69588695169" mi="60.077167872314"/>
+      <method name="updateChild" start="189" end="204" ccn="3" ccn2="4" loc="16" cloc="0" eloc="12" lloc="6" ncloc="16" npath="6" hnt="32" hnd="62" hv="190.53428193238" hd="8.7083333333333" hl="0.11483253588517" he="1659.2360384945" ht="92.17977991636" hb="0.046717994722877" hi="21.879534767355" mi="59.956365594208"/>
+    </class>
+    <class name="UserController" fqname="App\Http\Controllers\UserController" start="12" end="74" loc="63" cloc="19" eloc="34" lloc="17" ncloc="44" dit="3" noam="3" nocc="0" noom="0" nom="3" cr="0.15" rcr="0.179484375" ca="0" cbo="6" ce="6" impl="0" cis="4" csz="4" npm="3" vars="1" varsi="1" varsnp="1" wmc="6" wmci="6" wmcnp="6">
+      <file name="/var/www/app/Http/Controllers/UserController.php"/>
+      <method name="login" start="21" end="31" ccn="2" ccn2="2" loc="11" cloc="1" eloc="10" lloc="5" ncloc="10" npath="2" hnt="24" hnd="44" hv="131.0263588473" hd="9.5294117647059" hl="0.10493827160494" he="1248.604125486" ht="69.366895860333" hb="0.038651105693352" hi="13.749679632124" mi="63.091256849539"/>
+      <method name="register" start="38" end="56" ccn="2" ccn2="2" loc="19" cloc="0" eloc="18" lloc="9" ncloc="19" npath="2" hnt="37" hnd="90" hv="240.1985645642" hd="6.8421052631579" hl="0.14615384615385" he="1643.4638628077" ht="91.303547933759" hb="0.046421465986649" hi="35.10594405169" mi="55.679739571479"/>
+      <method name="details" start="63" end="72" ccn="2" ccn2="2" loc="10" cloc="3" eloc="6" lloc="3" ncloc="7" npath="2" hnt="13" hnd="22" hv="57.972611042285" hd="8.5714285714286" hl="0.11666666666667" he="496.90809464816" ht="27.606005258231" hb="0.020912026773606" hi="6.7634712882666" mi="70.41032110255"/>
+    </class>
+  </package>
+  <package name="App\Http" noc="1" noi="0" nom="0" nof="0" cr="0.15" rcr="0.2775">
+    <class name="Kernel" fqname="App\Http\Kernel" start="7" end="85" loc="79" cloc="28" eloc="0" lloc="0" ncloc="51" dit="2" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="0" csz="4" npm="0" vars="4" varsi="4" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/var/www/app/Http/Kernel.php"/>
+    </class>
+  </package>
+  <package name="App\Http\Middleware" noc="11" noi="0" nom="9" nof="0" cr="0.15" rcr="0.66">
+    <class name="Authenticate" fqname="App\Http\Middleware\Authenticate" start="7" end="21" loc="15" cloc="6" eloc="5" lloc="2" ncloc="9" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="0" csz="1" npm="0" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="0">
+      <file name="/var/www/app/Http/Middleware/Authenticate.php"/>
+      <method name="redirectTo" start="15" end="20" ccn="2" ccn2="2" loc="6" cloc="0" eloc="5" lloc="2" ncloc="6" npath="2" hnt="10" hnd="12" hv="35.849625007212" hd="10.5" hl="0.095238095238095" he="376.42106257572" ht="20.912281254207" hb="0.017377795792053" hi="3.4142500006868" mi="73.599165884488"/>
+    </class>
+    <class name="AuthenticateAdmin" fqname="App\Http\Middleware\AuthenticateAdmin" start="9" end="30" loc="22" cloc="7" eloc="9" lloc="4" ncloc="15" dit="0" noam="0" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.15" ca="0" cbo="2" ce="2" impl="0" cis="2" csz="2" npm="2" vars="0" varsi="0" varsnp="0" wmc="5" wmci="5" wmcnp="5">
+      <file name="/var/www/app/Http/Middleware/AuthenticateAdmin.php"/>
+      <method name="handle" start="18" end="25" ccn="2" ccn2="3" loc="8" cloc="0" eloc="6" lloc="3" ncloc="8" npath="3" hnt="16" hnd="23" hv="72.376991296912" hd="8.4375" hl="0.11851851851852" he="610.6808640677" ht="33.926714670428" hb="0.023993206190414" hi="8.5780137833377" mi="69.600980504738"/>
+      <method name="checkAuth" start="27" end="29" ccn="1" ccn2="2" loc="3" cloc="0" eloc="3" lloc="1" ncloc="3" npath="1" hnt="12" hnd="16" hv="48" hd="8.8" hl="0.11363636363636" he="422.4" ht="23.466666666667" hb="0.018765552331001" hi="5.4545454545455" mi="77.551015009857"/>
+    </class>
+    <class name="AuthenticateAuthor" fqname="App\Http\Middleware\AuthenticateAuthor" start="8" end="31" loc="24" cloc="7" eloc="10" lloc="5" ncloc="17" dit="0" noam="0" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.15" ca="0" cbo="2" ce="2" impl="0" cis="2" csz="2" npm="2" vars="0" varsi="0" varsnp="0" wmc="7" wmci="7" wmcnp="7">
+      <file name="/var/www/app/Http/Middleware/AuthenticateAuthor.php"/>
+      <method name="handle" start="17" end="26" ccn="2" ccn2="4" loc="10" cloc="0" eloc="7" lloc="4" ncloc="10" npath="4" hnt="18" hnd="36" hv="93.058650025962" hd="8.8461538461538" hl="0.11304347826087" he="823.21113484505" ht="45.733951935836" hb="0.029278775030073" hi="10.519673481196" mi="67.241789414174"/>
+      <method name="checkAuth" start="28" end="30" ccn="1" ccn2="3" loc="3" cloc="0" eloc="3" lloc="1" ncloc="3" npath="2" hnt="14" hnd="24" hv="64.189475010096" hd="9" hl="0.11111111111111" he="577.70527509087" ht="32.094737505048" hb="0.02312151572338" hi="7.1321638900107" mi="76.532699876748"/>
+    </class>
+    <class name="AuthenticateUser" fqname="App\Http\Middleware\AuthenticateUser" start="9" end="38" loc="30" cloc="8" eloc="16" lloc="9" ncloc="22" dit="0" noam="0" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.15" ca="0" cbo="2" ce="2" impl="0" cis="2" csz="2" npm="2" vars="0" varsi="0" varsnp="0" wmc="11" wmci="11" wmcnp="11">
+      <file name="/var/www/app/Http/Middleware/AuthenticateUser.php"/>
+      <method name="handle" start="18" end="29" ccn="3" ccn2="6" loc="12" cloc="1" eloc="9" lloc="5" ncloc="11" npath="6" hnt="21" hnd="40" hv="111.76048999263" hd="7.5" hl="0.13333333333333" he="838.20367494476" ht="46.566870830264" hb="0.029633193188362" hi="14.901398665685" mi="64.035029082432"/>
+      <method name="checkAuth" start="31" end="37" ccn="2" ccn2="5" loc="7" cloc="0" eloc="7" lloc="4" ncloc="7" npath="4" hnt="19" hnd="36" hv="98.228575027404" hd="7.8571428571429" hl="0.12727272727273" he="771.79594664389" ht="42.877552591327" hb="0.028046612069663" hi="12.501818639851" mi="66.942871548323"/>
+    </class>
+    <class name="CheckForMaintenanceMode" fqname="App\Http\Middleware\CheckForMaintenanceMode" start="7" end="17" loc="11" cloc="6" eloc="0" lloc="0" ncloc="5" dit="2" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="0" csz="1" npm="0" vars="1" varsi="1" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/var/www/app/Http/Middleware/CheckForMaintenanceMode.php"/>
+    </class>
+    <class name="EncryptCookies" fqname="App\Http\Middleware\EncryptCookies" start="7" end="17" loc="11" cloc="6" eloc="0" lloc="0" ncloc="5" dit="2" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="0" csz="1" npm="0" vars="1" varsi="1" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/var/www/app/Http/Middleware/EncryptCookies.php"/>
+    </class>
+    <class name="ExecuteCron" fqname="App\Http\Middleware\ExecuteCron" start="11" end="56" loc="46" cloc="30" eloc="3" lloc="1" ncloc="16" dit="0" noam="0" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.15" ca="0" cbo="1" ce="1" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/app/Http/Middleware/ExecuteCron.php"/>
+      <method name="handle" start="20" end="55" ccn="1" ccn2="1" loc="36" cloc="23" eloc="3" lloc="1" ncloc="13" npath="1" hnt="7" hnd="7" hv="19.651484454403" hd="6.25" hl="0.16" he="122.82177784002" ht="6.8234321022233" hb="0.0082362400950509" hi="3.1442375127045" mi="80.401219851729"/>
+    </class>
+    <class name="RedirectIfAuthenticated" fqname="App\Http\Middleware\RedirectIfAuthenticated" start="8" end="26" loc="19" cloc="8" eloc="6" lloc="3" ncloc="11" dit="0" noam="0" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.15" ca="0" cbo="2" ce="2" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="2">
+      <file name="/var/www/app/Http/Middleware/RedirectIfAuthenticated.php"/>
+      <method name="handle" start="18" end="25" ccn="2" ccn2="2" loc="8" cloc="0" eloc="6" lloc="3" ncloc="8" npath="2" hnt="12" hnd="18" hv="50.039100017308" hd="6" hl="0.16666666666667" he="300.23460010385" ht="16.679700005769" hb="0.014945802496243" hi="8.3398500028846" mi="70.857843367026"/>
+    </class>
+    <class name="TrimStrings" fqname="App\Http\Middleware\TrimStrings" start="7" end="18" loc="12" cloc="5" eloc="0" lloc="0" ncloc="7" dit="2" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="0" csz="1" npm="0" vars="1" varsi="1" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/var/www/app/Http/Middleware/TrimStrings.php"/>
+    </class>
+    <class name="TrustProxies" fqname="App\Http\Middleware\TrustProxies" start="8" end="23" loc="16" cloc="10" eloc="0" lloc="0" ncloc="6" dit="2" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="0" csz="2" npm="0" vars="2" varsi="2" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/var/www/app/Http/Middleware/TrustProxies.php"/>
+    </class>
+    <class name="VerifyCsrfToken" fqname="App\Http\Middleware\VerifyCsrfToken" start="7" end="24" loc="18" cloc="11" eloc="0" lloc="0" ncloc="7" dit="2" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="0" csz="2" npm="0" vars="2" varsi="2" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/var/www/app/Http/Middleware/VerifyCsrfToken.php"/>
+    </class>
+  </package>
+  <package name="App" noc="3" noi="0" nom="15" nof="0" cr="0.15" rcr="0.405">
+    <class name="Job" fqname="App\Job" start="12" end="136" loc="125" cloc="43" eloc="44" lloc="21" ncloc="82" dit="2" noam="7" nocc="0" noom="0" nom="7" cr="0.15" rcr="0.21375" ca="3" cbo="4" ce="4" impl="0" cis="7" csz="12" npm="7" vars="5" varsi="5" varsnp="0" wmc="14" wmci="14" wmcnp="14">
+      <file name="/var/www/app/Job.php"/>
+      <method name="getStartAtFromRequest" start="78" end="83" ccn="2" ccn2="2" loc="6" cloc="0" eloc="6" lloc="3" ncloc="6" npath="2" hnt="14" hnd="19" hv="59.47098518821" hd="7.7142857142857" hl="0.12962962962963" he="458.77617145191" ht="25.487565080662" hb="0.019828018426675" hi="7.7092017836569" mi="70.332722888869"/>
+      <method name="getEndAtFromRequest" start="92" end="97" ccn="2" ccn2="2" loc="6" cloc="0" eloc="6" lloc="3" ncloc="6" npath="2" hnt="14" hnd="19" hv="59.47098518821" hd="7.7142857142857" hl="0.12962962962963" he="458.77617145191" ht="25.487565080662" hb="0.019828018426675" hi="7.7092017836569" mi="70.332722888869"/>
+      <method name="getSubscribersFromRequest" start="99" end="106" ccn="3" ccn2="3" loc="8" cloc="0" eloc="8" lloc="3" ncloc="8" npath="3" hnt="16" hnd="24" hv="73.359400011539" hd="7" hl="0.14285714285714" he="513.51580008077" ht="28.528655560043" hb="0.021375418142508" hi="10.479914287363" mi="66.834572894036"/>
+      <method name="setCreator" start="108" end="112" ccn="2" ccn2="2" loc="5" cloc="0" eloc="5" lloc="2" ncloc="5" npath="2" hnt="11" hnd="14" hv="41.880904142634" hd="6.3" hl="0.15873015873016" he="263.84969609859" ht="14.658316449922" hb="0.013712494850049" hi="6.6477625623228" mi="73.126309912485"/>
+      <method name="setSubscribers" start="114" end="117" ccn="2" ccn2="2" loc="4" cloc="1" eloc="3" lloc="1" ncloc="3" npath="2" hnt="11" hnd="13" hv="40.704836899552" hd="6.4" hl="0.15625" he="260.51095615713" ht="14.472830897618" hb="0.013596571386089" hi="6.360130765555" mi="78.052325670942"/>
+      <method name="setChilds" start="119" end="129" ccn="2" ccn2="2" loc="11" cloc="0" eloc="11" lloc="8" ncloc="11" npath="2" hnt="20" hnd="33" hv="100.88788238717" hd="9" hl="0.11111111111111" he="907.99094148452" ht="50.443941193585" hb="0.031255977757854" hi="11.209764709685" mi="62.983184497841"/>
+      <method name="setMeta" start="131" end="135" ccn="1" ccn2="1" loc="5" cloc="0" eloc="5" lloc="1" ncloc="5" npath="1" hnt="10" hnd="12" hv="35.849625007212" hd="6" hl="0.16666666666667" he="215.09775004327" ht="11.949875002404" hb="0.01196656002761" hi="5.9749375012019" mi="73.733668808464"/>
+    </class>
+    <class name="Template" fqname="App\Template" start="11" end="105" loc="95" cloc="22" eloc="37" lloc="17" ncloc="73" dit="2" noam="8" nocc="0" noom="0" nom="8" cr="0.15" rcr="0.21375" ca="1" cbo="2" ce="2" impl="0" cis="8" csz="12" npm="8" vars="4" varsi="4" varsnp="0" wmc="15" wmci="15" wmcnp="15">
+      <file name="/var/www/app/Template.php"/>
+      <method name="getSubscribedUsers" start="58" end="62" ccn="2" ccn2="2" loc="5" cloc="1" eloc="4" lloc="2" ncloc="4" npath="2" hnt="13" hnd="16" hv="52" hd="7.5" hl="0.13333333333333" he="390" ht="21.666666666667" hb="0.017793244641606" hi="6.9333333333333" mi="74.58220117733"/>
+      <method name="createSubscribedUsers" start="64" end="66" ccn="1" ccn2="1" loc="3" cloc="0" eloc="3" lloc="1" ncloc="3" npath="1" hnt="7" hnd="7" hv="19.651484454403" hd="6.25" hl="0.16" he="122.82177784002" ht="6.8234321022233" hb="0.0082362400950509" hi="3.1442375127045" mi="80.401219851729"/>
+      <method name="setCreator" start="68" end="72" ccn="2" ccn2="2" loc="5" cloc="0" eloc="5" lloc="2" ncloc="5" npath="2" hnt="11" hnd="14" hv="41.880904142634" hd="6.3" hl="0.15873015873016" he="263.84969609859" ht="14.658316449922" hb="0.013712494850049" hi="6.6477625623228" mi="73.126309912485"/>
+      <method name="getCreator" start="74" end="76" ccn="2" ccn2="2" loc="3" cloc="0" eloc="3" lloc="1" ncloc="3" npath="2" hnt="13" hnd="14" hv="49.495613986749" hd="7.2" hl="0.13888888888889" he="356.36842070459" ht="19.7982455947" hb="0.016755017543125" hi="6.8743908314929" mi="77.457709833397"/>
+      <method name="setChilds" start="78" end="86" ccn="1" ccn2="1" loc="9" cloc="0" eloc="8" lloc="6" ncloc="9" npath="1" hnt="16" hnd="26" hv="75.207035490257" hd="6.6111111111111" hl="0.15126050420168" he="497.20206796337" ht="27.622337109076" hb="0.020920273733701" hi="11.37585410777" mi="67.02793809936"/>
+      <method name="setSubscribers" start="88" end="90" ccn="2" ccn2="2" loc="3" cloc="0" eloc="3" lloc="1" ncloc="3" npath="2" hnt="11" hnd="13" hv="40.704836899552" hd="6.4" hl="0.15625" he="260.51095615713" ht="14.472830897618" hb="0.013596571386089" hi="6.360130765555" mi="78.052325670942"/>
+      <method name="getSubscribers" start="92" end="94" ccn="2" ccn2="2" loc="3" cloc="0" eloc="3" lloc="1" ncloc="3" npath="2" hnt="12" hnd="13" hv="44.405276617693" hd="10.125" hl="0.098765432098765" he="449.60342575414" ht="24.977968097452" hb="0.019562836251717" hi="4.3857063326117" mi="77.787729670739"/>
+      <method name="getSubscribersFromRequest" start="96" end="103" ccn="3" ccn2="3" loc="8" cloc="0" eloc="8" lloc="3" ncloc="8" npath="3" hnt="16" hnd="24" hv="73.359400011539" hd="7" hl="0.14285714285714" he="513.51580008077" ht="28.528655560043" hb="0.021375418142508" hi="10.479914287363" mi="66.834572894036"/>
+    </class>
+    <class name="User" fqname="App\User" start="11" end="39" loc="29" cloc="15" eloc="0" lloc="0" ncloc="14" dit="2" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.2775" ca="5" cbo="0" ce="0" impl="0" cis="0" csz="3" npm="0" vars="3" varsi="3" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+      <file name="/var/www/app/User.php"/>
+    </class>
+  </package>
+  <package name="App\Jobs" noc="1" noi="0" nom="9" nof="0" cr="0.15" rcr="0.2775">
+    <class name="CaldavSync" fqname="App\Jobs\CaldavSync" start="18" end="226" loc="209" cloc="46" eloc="115" lloc="58" ncloc="163" dit="0" noam="0" nocc="0" noom="0" nom="9" cr="0.15" rcr="0.2775" ca="1" cbo="5" ce="5" impl="1" cis="2" csz="17" npm="2" vars="8" varsi="8" varsnp="0" wmc="30" wmci="30" wmcnp="5">
+      <file name="/var/www/app/Jobs/CaldavSync.php"/>
+      <method name="__construct" start="55" end="60" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="3" ncloc="6" npath="1" hnt="15" hnd="27" hv="71.323312532452" hd="3.75" hl="0.26666666666667" he="267.4624219967" ht="14.859023444261" hb="0.013837381901101" hi="19.019550008654" mi="71.641839170252"/>
+      <method name="handle" start="83" end="105" ccn="4" ccn2="4" loc="23" cloc="1" eloc="17" lloc="10" ncloc="22" npath="8" hnt="33" hnd="67" hv="200.18094328511" hd="10.92" hl="0.091575091575092" he="2185.9759006734" ht="121.44310559296" hb="0.056144729241098" hi="18.331588212922" mi="56.506427556535"/>
+      <method name="syncCalendar" start="107" end="134" ccn="4" ccn2="5" loc="28" cloc="3" eloc="22" lloc="14" ncloc="25" npath="6" hnt="39" hnd="86" hv="250.62432543338" hd="11.111111111111" hl="0.09" he="2784.7147270376" ht="154.70637372431" hb="0.065978011105484" hi="22.556189289004" mi="53.245933158885"/>
+      <method name="syncEvent" start="136" end="175" ccn="9" ccn2="10" loc="40" cloc="8" eloc="28" lloc="10" ncloc="32" npath="384" hnt="58" hnd="132" hv="408.57485892279" hd="8.1475409836066" hl="0.12273641851107" he="3328.8804079447" ht="184.93780044137" hb="0.074315181140956" hi="50.147014877847" mi="48.802559152972"/>
+      <method name="fetchEventsFromCalendar" start="177" end="189" ccn="2" ccn2="2" loc="13" cloc="1" eloc="12" lloc="9" ncloc="12" npath="2" hnt="26" hnd="53" hv="148.92593181864" hd="6.5217391304348" hl="0.15333333333333" he="971.25607707811" ht="53.958670948784" hb="0.032691479681433" hi="22.835309545525" mi="60.974606464934"/>
+      <method name="getCalendars" start="191" end="193" ccn="1" ccn2="1" loc="3" cloc="0" eloc="3" lloc="1" ncloc="3" npath="1" hnt="9" hnd="9" hv="28.529325012981" hd="12.25" hl="0.081632653061224" he="349.48423140901" ht="19.415790633834" hb="0.016538538763157" hi="2.3289244908556" mi="79.267620989406"/>
+      <method name="getLastUpdate" start="195" end="201" ccn="1" ccn2="1" loc="7" cloc="0" eloc="7" lloc="3" ncloc="7" npath="1" hnt="14" hnd="21" hv="61.492443918903" hd="4.6666666666667" hl="0.21428571428571" he="286.96473828821" ht="15.942485460456" hb="0.014502106886687" hi="13.176952268336" mi="68.905205382274"/>
+      <method name="setLastUpdate" start="203" end="221" ccn="5" ccn2="5" loc="19" cloc="0" eloc="18" lloc="7" ncloc="19" npath="16" hnt="30" hnd="61" hv="177.92212012689" hd="9.4230769230769" hl="0.10612244897959" he="1676.5738242726" ht="93.142990237366" hb="0.047042876154529" hi="18.881531115506" mi="56.188876433209"/>
+      <method name="getUpdatePeriod" start="223" end="225" ccn="1" ccn2="1" loc="3" cloc="0" eloc="3" lloc="1" ncloc="3" npath="1" hnt="7" hnd="9" hv="22.189475010096" hd="5" hl="0.2" he="110.94737505048" ht="6.1637430583601" hb="0.0076964437497892" hi="4.4378950020192" mi="80.031851999384"/>
+    </class>
+  </package>
+  <package name="App\Providers" noc="5" noi="0" nom="9" nof="0" cr="0.15" rcr="0.405">
+    <class name="AppServiceProvider" fqname="App\Providers\AppServiceProvider" start="9" end="39" loc="31" cloc="16" eloc="8" lloc="4" ncloc="15" dit="2" noam="2" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.21375" ca="0" cbo="2" ce="2" impl="0" cis="2" csz="2" npm="2" vars="0" varsi="0" varsnp="0" wmc="3" wmci="3" wmcnp="3">
+      <file name="/var/www/app/Providers/AppServiceProvider.php"/>
+      <method name="boot" start="16" end="28" ccn="1" ccn2="2" loc="13" cloc="5" eloc="6" lloc="4" ncloc="8" npath="1" hnt="14" hnd="21" hv="61.492443918903" hd="5.6875" hl="0.17582417582418" he="349.73827478876" ht="19.429904154931" hb="0.016546552472219" hi="10.811858271455" mi="70.231077319818"/>
+      <method name="register" start="35" end="38" ccn="1" ccn2="1" loc="4" cloc="1" eloc="2" lloc="0" ncloc="3" npath="1" hnt="2" hnd="2" hv="2" hd="2" hl="0.5" he="4" ht="0.22222222222222" hb="0.00083994736659658" hi="1" mi="91.191023588314"/>
+    </class>
+    <class name="AuthServiceProvider" fqname="App\Providers\AuthServiceProvider" start="9" end="30" loc="22" cloc="10" eloc="4" lloc="2" ncloc="12" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.2775" ca="0" cbo="1" ce="1" impl="0" cis="1" csz="2" npm="1" vars="1" varsi="1" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/app/Providers/AuthServiceProvider.php"/>
+      <method name="boot" start="25" end="29" ccn="1" ccn2="1" loc="5" cloc="0" eloc="4" lloc="2" ncloc="5" npath="1" hnt="6" hnd="8" hv="18" hd="6" hl="0.16666666666667" he="108" ht="6" hb="0.0075595262993692" hi="3" mi="77.942747490525"/>
+    </class>
+    <class name="BroadcastServiceProvider" fqname="App\Providers\BroadcastServiceProvider" start="8" end="21" loc="14" cloc="5" eloc="4" lloc="2" ncloc="9" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.21375" ca="0" cbo="1" ce="1" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/app/Providers/BroadcastServiceProvider.php"/>
+      <method name="boot" start="15" end="20" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="8" hnd="10" hv="26.575424759099" hd="5.8333333333333" hl="0.17142857142857" he="155.02331109474" ht="8.6124061719302" hb="0.0096192988542301" hi="4.5557871015598" mi="76.757952883514"/>
+    </class>
+    <class name="EventServiceProvider" fqname="App\Providers\EventServiceProvider" start="10" end="34" loc="25" cloc="11" eloc="3" lloc="1" ncloc="14" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="0" cis="1" csz="2" npm="1" vars="1" varsi="1" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/app/Providers/EventServiceProvider.php"/>
+      <method name="boot" start="28" end="33" ccn="1" ccn2="1" loc="6" cloc="1" eloc="3" lloc="1" ncloc="5" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="12.5" hl="0.08" he="193.87218755409" ht="10.770677086338" hb="0.011165780490257" hi="1.2407820003462" mi="81.120955834208"/>
+    </class>
+    <class name="RouteServiceProvider" fqname="App\Providers\RouteServiceProvider" start="8" end="73" loc="66" cloc="33" eloc="18" lloc="5" ncloc="33" dit="2" noam="4" nocc="0" noom="0" nom="4" cr="0.15" rcr="0.2775" ca="0" cbo="1" ce="1" impl="0" cis="2" csz="5" npm="2" vars="1" varsi="1" varsnp="0" wmc="4" wmci="4" wmcnp="2">
+      <file name="/var/www/app/Providers/RouteServiceProvider.php"/>
+      <method name="boot" start="24" end="29" ccn="1" ccn2="1" loc="6" cloc="1" eloc="3" lloc="1" ncloc="5" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="12.5" hl="0.08" he="193.87218755409" ht="10.770677086338" hb="0.011165780490257" hi="1.2407820003462" mi="81.120955834208"/>
+      <method name="map" start="36" end="43" ccn="1" ccn2="1" loc="8" cloc="1" eloc="4" lloc="2" ncloc="7" npath="1" hnt="6" hnd="8" hv="18" hd="6" hl="0.16666666666667" he="108" ht="6" hb="0.0075595262993692" hi="3" mi="77.942747490525"/>
+      <method name="mapWebRoutes" start="52" end="57" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="1" ncloc="6" npath="1" hnt="9" hnd="12" hv="32.26466250649" hd="2.8" hl="0.35714285714286" he="90.341055018173" ht="5.0189475010096" hb="0.0067112309460288" hi="11.523093752318" mi="74.054063359003"/>
+      <method name="mapApiRoutes" start="66" end="72" ccn="1" ccn2="1" loc="7" cloc="0" eloc="6" lloc="1" ncloc="7" npath="1" hnt="10" hnd="14" hv="38.073549220576" hd="2.6666666666667" hl="0.375" he="101.5294645882" ht="5.6405258104557" hb="0.0072544887115339" hi="14.277580957716" mi="71.823388108345"/>
+    </class>
+  </package>
+  <package name="Tests" noc="1" noi="0" nom="1" nof="0" cr="0.405" rcr="0.2775">
+    <trait name="CreatesApplication" fqname="Tests\CreatesApplication" start="7" end="22" ca="0" cbo="2" ce="2" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/tests/CreatesApplication.php"/>
+      <method name="createApplication" start="14" end="21" ccn="1" ccn2="1" loc="8" cloc="0" eloc="5" lloc="3" ncloc="8" npath="1" hnt="13" hnd="17" hv="53.137016936254" hd="7.3333333333333" hl="0.13636363636364" he="389.67145753253" ht="21.648414307363" hb="0.017783250355149" hi="7.2459568549438" mi="72.536936867786"/>
+    </trait>
+    <class name="TestCase" fqname="Tests\TestCase" start="9" end="18" loc="10" cloc="0" eloc="4" lloc="2" ncloc="10" dit="2" noam="1" nocc="2" noom="0" nom="1" cr="0.405" rcr="0.2775" ca="0" cbo="1" ce="1" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="/var/www/tests/TestCase.php"/>
+      <method name="setUp" start="13" end="17" ccn="1" ccn2="1" loc="5" cloc="0" eloc="4" lloc="2" ncloc="5" npath="1" hnt="8" hnd="10" hv="26.575424759099" hd="5.8333333333333" hl="0.17142857142857" he="155.02331109474" ht="8.6124061719302" hb="0.0096192988542301" hi="4.5557871015598" mi="76.757952883514"/>
+    </class>
+  </package>
+  <package name="Tests\Feature" noc="1" noi="0" nom="1" nof="0" cr="0.15" rcr="0.2679375">
+    <class name="ExampleTest" fqname="Tests\Feature\ExampleTest" start="8" end="21" loc="14" cloc="5" eloc="4" lloc="2" ncloc="9" dit="3" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.2679375" ca="0" cbo="0" ce="0" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="1" wmci="2" wmcnp="1">
+      <file name="/var/www/tests/Feature/ExampleTest.php"/>
+      <method name="testBasicTest" start="15" end="20" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="10" hnd="12" hv="35.849625007212" hd="3.5" hl="0.28571428571429" he="125.47368752524" ht="6.9707604180689" hb="0.008354372837993" hi="10.24275000206" mi="75.847660347231"/>
+    </class>
+  </package>
+  <package name="Tests\Unit" noc="1" noi="0" nom="8" nof="0" cr="0.15" rcr="0.2679375">
+    <class name="JobTest" fqname="Tests\Unit\JobTest" start="13" end="191" loc="179" cloc="35" eloc="120" lloc="25" ncloc="144" dit="3" noam="8" nocc="0" noom="0" nom="8" cr="0.15" rcr="0.2679375" ca="0" cbo="2" ce="2" impl="0" cis="7" csz="8" npm="7" vars="0" varsi="0" varsnp="0" wmc="8" wmci="9" wmcnp="7">
+      <file name="/var/www/tests/Unit/JobTest.php"/>
+      <method name="getUser" start="22" end="27" ccn="1" ccn2="1" loc="6" cloc="1" eloc="5" lloc="3" ncloc="5" npath="1" hnt="11" hnd="16" hv="44" hd="5" hl="0.2" he="220" ht="12.222222222222" hb="0.012147694623972" hi="8.8" mi="73.110713287832"/>
+      <method name="testCannotCreateJobsWithoutUser" start="29" end="32" ccn="1" ccn2="1" loc="4" cloc="1" eloc="4" lloc="1" ncloc="3" npath="1" hnt="9" hnd="10" hv="29.897352853986" hd="3.75" hl="0.26666666666667" he="112.11507320245" ht="6.2286151779138" hb="0.0077503517809905" hi="7.9726274277297" mi="76.399782248769"/>
+      <method name="testCannotCreateJobsAsUser" start="34" end="43" ccn="1" ccn2="1" loc="10" cloc="2" eloc="8" lloc="2" ncloc="8" npath="1" hnt="14" hnd="19" hv="59.47098518821" hd="4.125" hl="0.24242424242424" he="245.31781390137" ht="13.628767438965" hb="0.013062655374275" hi="14.417208530475" mi="67.741816705408"/>
+      <method name="testCreateJobsAsAuthor" start="45" end="80" ccn="1" ccn2="1" loc="36" cloc="1" eloc="33" lloc="5" ncloc="35" npath="1" hnt="32" hnd="103" hv="213.96801686986" hd="4.7659574468085" hl="0.20982142857143" he="1019.7624633798" ht="56.653470187765" hb="0.033771065246874" hi="44.89507496823" mi="50.423555230632"/>
+      <method name="testGetNoJobsWithoutUser" start="82" end="85" ccn="1" ccn2="1" loc="4" cloc="1" eloc="4" lloc="1" ncloc="3" npath="1" hnt="9" hnd="10" hv="29.897352853986" hd="3.75" hl="0.26666666666667" he="112.11507320245" ht="6.2286151779138" hb="0.0077503517809905" hi="7.9726274277297" mi="76.399782248769"/>
+      <method name="testGetAllJobsAsAuthor" start="87" end="113" ccn="1" ccn2="1" loc="27" cloc="1" eloc="23" lloc="4" ncloc="26" npath="1" hnt="31" hnd="92" hv="202.23042063777" hd="4.9756097560976" hl="0.20098039215686" he="1006.219653905" ht="55.90109188361" hb="0.033471404984752" hi="40.644349245826" mi="54.015247623159"/>
+      <method name="testGetOnlyPublicJobsAsUser" start="115" end="146" ccn="1" ccn2="1" loc="32" cloc="2" eloc="26" lloc="5" ncloc="30" npath="1" hnt="29" hnd="82" hv="184.36900813392" hd="4.4722222222222" hl="0.22360248447205" he="824.53917526561" ht="45.8077319592" hb="0.029310255774857" hi="41.225368278393" mi="53.134942746692"/>
+      <method name="testUpdateJob" start="148" end="167" ccn="1" ccn2="1" loc="20" cloc="1" eloc="17" lloc="4" ncloc="19" npath="1" hnt="23" hnd="45" hv="126.31262121558" hd="4.7894736842105" hl="0.20879120879121" he="604.97097529568" ht="33.609498627538" hb="0.02384341390775" hi="26.372964869188" mi="58.310170796063"/>
+    </class>
+  </package>
+</metrics>

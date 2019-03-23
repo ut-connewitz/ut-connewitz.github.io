@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="jobbar-app : PHP static analysis report by Exakat (https://www.exakat.io/) ">
+  <meta name="generator" content="Exakat 1.6.0 (build 849)">
+  <title>Methods size, by Exakat</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="styles/vendor.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/tree.css">
+  
+  <script src="scripts/vendor/modernizr.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-yellow-light sidebar-mini">
+  <div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>J</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">jobbar-app</span>
+      </a>
+
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+                <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+          <li class="header">&nbsp;</li>
+          <!-- Optionally, you can add icons to the links -->
+          <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+          <li><a href="files.html"><i class="fa fa-file-code-o"></i> <span>Files</span></a></li>
+          <li><a href="analyzers.html"><i class="fa fa-line-chart"></i> <span>Analyzers</span></a></li>
+          <li><a href="neoissues.html"><i class="fa fa-flag"></i> <span>New Issues</span></a></li>
+          <li><a href="issues.html"><i class="fa fa-flag"></i> <span>Issues</span></a></li>
+          <li><a href="security_issues.html"><i class="fa fa-flag"></i> <span>Security</span></a></li>
+          <li><a href="performances_issues.html"><i class="fa fa-flag"></i> <span>Performances</span></a></li>
+          <li><a href="deadcode_issues.html"><i class="fa fa-flag"></i> <span>Dead code</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-certificate"></i> <span>Compatibility</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="compatibility_compilations.html"><i class="fa fa-circle-o"></i>Compilations</a></li>
+              <li><a href="compatibility_version.html"><i class="fa fa-circle-o"></i>PHP Version</a></li>
+                            <li><a href="compatibility_php74.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.4</a></li>
+
+              <li><a href="compatibility_php73.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.3</a></li>
+
+              <li><a href="compatibility_php72.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.2</a></li>
+
+              <li><a href="compatibility_php71.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.1</a></li>
+
+              <li><a href="compatibility_php70.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.0</a></li>
+
+              <li><a href="compatibility_php56.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.6</a></li>
+
+              <li><a href="compatibility_php55.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.5</a></li>
+
+              <li><a href="compatibility_php54.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.4</a></li>
+
+              <li><a href="compatibility_php53.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.3</a></li>
+
+              <li><a href="compatibility_issues.html"><i class="fa fa-circle-o"></i>Compatibility Violations</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-certificate"></i> <span>Favorites</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="favorites_dashboard.html"><i class="fa fa-circle-o"></i>Overview</a></li>
+              <li><a href="favorites_issues.html"><i class="fa fa-circle-o"></i>Violations</a></li>
+            </ul>
+          </li>
+          <li><a href="suggestions.html"><i class="fa fa-flag"></i> <span>Suggestions</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-sliders"></i> <span>Audit logs</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="appinfo.html"><i class="fa fa-circle-o"></i>Appinfo()</a></li>
+              <li><a href="bugfixes.html"><i class="fa fa-circle-o"></i>Bugfixes</a></li>
+              <li><a href="php_compilation.html"><i class="fa fa-circle-o"></i>PHP Compilation Directives</a></li>
+              <li><a href="directive_list.html"><i class="fa fa-circle-o"></i>Directive List</a></li>
+              <li><a href="altered_directives.html"><i class="fa fa-circle-o"></i>Altered Directive</a></li>
+              <li><a href="extension_list.html"><i class="fa fa-circle-o"></i>Extensions usage</a></li>
+              <li><a href="ext_lib.html"><i class="fa fa-circle-o"></i>External Libraries</a></li>
+              <li><a href="external_services.html"><i class="fa fa-circle-o"></i>External services</a></li>
+              <li><a href="parameters_counts.html"><i class="fa fa-circle-o"></i>Parameters counts</a></li>
+              <li><a href="changed_classes.html"><i class="fa fa-circle-o"></i>Changed classes</a></li>
+              <li><a href="stats.html"><i class="fa fa-circle-o"></i>Statistics</a></li>
+              <li><a href="visibility_suggestions.html"><i class="fa fa-circle-o"></i>Visibility Review</a></li>
+              <li><a href="class_options_suggestions.html"><i class="fa fa-circle-o"></i>Final/Abstract Review</a></li>
+              <li><a href="complex_expressions.html"><i class="fa fa-circle-o"></i>Complex Expressions</a></li>
+              <li><a href="cit_size.html"><i class="fa fa-circle-o"></i>Classes size</a></li>
+              <li><a href="method_size.html"><i class="fa fa-circle-o"></i>Method size</a></li>
+              <li><a href="no_issues.html"><i class="fa fa-circle-o"></i>No Issues</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-list-ul"></i> <span>Inventories</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="dynamic_code.html"><i class="fa fa-circle-o"></i>Dynamic codes</a></li>
+              <li><a href="globals.html"><i class="fa fa-circle-o"></i>Global variables</a></li>
+              <li><a href="error_messages.html"><i class="fa fa-circle-o"></i>Error messages</a></li>
+              <li><a href="inventories_exceptions.html"><i class="fa fa-circle-o"></i>Exceptions tree</a></li>
+              <li><a href="inventories_namespaces.html"><i class="fa fa-circle-o"></i>Namespaces tree</a></li>
+              <li><a href="inventories_classtree.html"><i class="fa fa-circle-o"></i>Classes tree</a></li> 
+              <li><a href="inventories_traittree.html"><i class="fa fa-circle-o"></i>Traits tree</a></li> 
+              <li><a href="inventories_traitmatrix.html"><i class="fa fa-circle-o"></i>Traits matrix</a></li> 
+              <li><a href="inventories_interfacetree.html"><i class="fa fa-circle-o"></i>Interfaces tree</a></li> 
+              <li><a href="phpfunctions_list.html"><i class="fa fa-circle-o"></i>PHP native function usage</a></li>
+              <li><a href="phpconstants_list.html"><i class="fa fa-circle-o"></i>PHP native constants usage</a></li>
+              <li><a href="phpclasses_list.html"><i class="fa fa-circle-o"></i>PHP native classes usage</a></li>
+              <li><a href="files_tree.html"><i class="fa fa-circle-o"></i>Files dependencies</a></li>
+              <li><a href="variables_confusing.html"><i class="fa fa-circle-o"></i>Confusing variables</a></li>
+                            <li><a href="inventories_constants.html"><i class="fa fa-circle-o"></i>Constants</a></li>
+
+              <li><a href="inventories_classes.html"><i class="fa fa-circle-o"></i>Classes</a></li>
+
+              <li><a href="inventories_interfaces.html"><i class="fa fa-circle-o"></i>Interfaces</a></li>
+
+              <li><a href="inventories_functions.html"><i class="fa fa-circle-o"></i>Functions</a></li>
+
+              <li><a href="inventories_traits.html"><i class="fa fa-circle-o"></i>Traits</a></li>
+
+              <li><a href="inventories_namespaces.html"><i class="fa fa-circle-o"></i>Namespaces</a></li>
+
+              <li><a href="inventories_url.html"><i class="fa fa-circle-o"></i>URL</a></li>
+
+              <li><a href="inventories_sql.html"><i class="fa fa-circle-o"></i>SQL</a></li>
+
+              <li><a href="inventories_email.html"><i class="fa fa-circle-o"></i>Email</a></li>
+
+              <li><a href="inventories_path.html"><i class="fa fa-circle-o"></i>Paths</a></li>
+
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-sticky-note-o"></i> <span>Annexes</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="annex_settings.html"><i class="fa fa-circle-o"></i>Analyzer Settings</a></li>
+              <li><a href="proc_files.html"><i class="fa fa-circle-o"></i>Processed Files</a></li>
+              <li><a href="proc_analyzers.html"><i class="fa fa-circle-o"></i>Processed Analyzers</a></li>
+              <li><a href="analyzers_doc.html"><i class="fa fa-circle-o"></i>Analyzers Documentation</a></li>
+              <li><a href="codes.html"><i class="fa fa-circle-o"></i>Codes</a></li>
+              <li><a href="credits.html"><i class="fa fa-circle-o"></i>Credits</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div id="main">
+      <div class="content-wrapper" id="ajax-content">
+        <!-- Main content -->
+        <!-- Content Header (Page header) -->
+                <!-- Main content -->
+        <section class="content" id="dashboard">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Method Size</h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div class="chart" id="filename"></div>
+                  <div class="clearfix">
+                    <div class="block-cell-name bold">Method</div>
+                    <div class="block-cell-issue bold text-center">Size</div>
+                  </div>
+                  <div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function update(Request $request, Job $job, $isParent = true) { /**/ } </div>
+                      <div class="block-cell-issue text-center">66</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\TemplateController::public function update(Request $request, Template $template, $isParent = true) { /**/ } </div>
+                      <div class="block-cell-issue text-center">64</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function create(Request $request, $isParent = true) { /**/ } </div>
+                      <div class="block-cell-issue text-center">46</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\TemplateController::public function create(Request $request, $isParent = true) { /**/ } </div>
+                      <div class="block-cell-issue text-center">42</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function getAll(Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">39</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\jobs\CaldavSync::private function syncEvent($calendar, $event) { /**/ } </div>
+                      <div class="block-cell-issue text-center">37</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function deleteSubscriber(Request $request, Job $job) { /**/ } </div>
+                      <div class="block-cell-issue text-center">26</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\jobs\CaldavSync::private function syncCalendar($calendar = [ ]) { /**/ } </div>
+                      <div class="block-cell-issue text-center">24</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function addSubscriber(Request $request, Job $job) { /**/ } </div>
+                      <div class="block-cell-issue text-center">24</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\jobs\CaldavSync::public function handle( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">19</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::private function createChild(Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">18</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::private function updateChild(Request $request, Job $job) { /**/ } </div>
+                      <div class="block-cell-issue text-center">18</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\jobs\CaldavSync::private function setLastUpdate($time = null) { /**/ } </div>
+                      <div class="block-cell-issue text-center">15</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\UserController::public function register(Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">15</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function getActivities(Job $job) { /**/ } </div>
+                      <div class="block-cell-issue text-center">14</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\TemplateController::private function createChild(Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">12</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\TemplateController::private function updateChild(Request $request, Template $template) { /**/ } </div>
+                      <div class="block-cell-issue text-center">12</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function delete(Job $job) { /**/ } </div>
+                      <div class="block-cell-issue text-center">11</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\TemplateController::public function getAll(Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">11</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\TemplateController::public function delete(Template $template) { /**/ } </div>
+                      <div class="block-cell-issue text-center">11</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\jobs\CaldavSync::private function fetchEventsFromCalendar($calendar = [ ], $fromDate = null, $toDate = null) { /**/ } </div>
+                      <div class="block-cell-issue text-center">10</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\exceptions\Handler::public function render($request, Exception $exception) { /**/ } </div>
+                      <div class="block-cell-issue text-center">9</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\UserController::public function login( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">8</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Job::public function setChilds($setChildMeta = true) { /**/ } </div>
+                      <div class="block-cell-issue text-center">7</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\AppServiceProvider::public function boot( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">7</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\AuthenticateUser::public function handle($request, Closure $next) { /**/ } </div>
+                      <div class="block-cell-issue text-center">7</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\AuthenticateAuthor::public function handle($request, Closure $next) { /**/ } </div>
+                      <div class="block-cell-issue text-center">6</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Job::public static function getSubscribersFromRequest($data, Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">5</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Template::public function setChilds( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">5</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Template::public static function getSubscribersFromRequest($data, Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">5</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\jobs\CaldavSync::private function getLastUpdate( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">4</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\AuthenticateAdmin::public function handle($request, Closure $next) { /**/ } </div>
+                      <div class="block-cell-issue text-center">4</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\AuthenticateUser::public static function checkAuth($request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">4</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\RedirectIfAuthenticated::public function handle($request, Closure $next, $guard = null) { /**/ } </div>
+                      <div class="block-cell-issue text-center">4</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function getAllPublic(Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">4</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Job::public static function getStartAtFromRequest($data, Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">3</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Job::public static function getEndAtFromRequest($data, Request $request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">3</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\RouteServiceProvider::protected function mapApiRoutes( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">3</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\JobController::public function get(Job $job) { /**/ } </div>
+                      <div class="block-cell-issue text-center">3</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\TemplateController::public function get(Template $template) { /**/ } </div>
+                      <div class="block-cell-issue text-center">3</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\UserController::public function details( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">3</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\auth\RegisterController::protected function validator(array $data) { /**/ } </div>
+                      <div class="block-cell-issue text-center">3</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\controllers\auth\RegisterController::protected function create(array $data) { /**/ } </div>
+                      <div class="block-cell-issue text-center">3</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Job::public function setMeta( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">2</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Template::public function getSubscribedUsers( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">2</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\BroadcastServiceProvider::public function boot( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">2</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\RouteServiceProvider::public function map( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">2</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\RouteServiceProvider::protected function mapWebRoutes( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">2</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\console\Kernel::protected function schedule(Schedule $schedule) { /**/ } </div>
+                      <div class="block-cell-issue text-center">2</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\console\Kernel::protected function commands( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">2</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Job::public function setCreator( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">1</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Template::public function setCreator( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">1</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\AuthServiceProvider::public function boot( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">1</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\Authenticate::protected function redirectTo($request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">1</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Job::public function setSubscribers( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Template::public function createSubscribedUsers($users) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Template::public static function getCreator($template) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Template::public function setSubscribers( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\Template::public static function getSubscribers($template) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\AppServiceProvider::public function register( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\EventServiceProvider::public function boot( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\providers\RouteServiceProvider::public function boot( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\jobs\CaldavSync::private function getCalendars( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\jobs\CaldavSync::private function getUpdatePeriod( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\exceptions\Handler::public function report(Exception $exception) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\console\commands\FooCommand::public function handle( ) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\AuthenticateAdmin::public static function checkAuth($request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\AuthenticateAuthor::public static function checkAuth($request) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div><div class="clearfix">
+                      <div class="block-cell-name">\app\http\middleware\ExecuteCron::public function handle($request, Closure $next) { /**/ } </div>
+                      <div class="block-cell-issue text-center">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- /.content -->
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+        <span class="logo-exakat">
+          <img src="images/logo.png" alt="Exakat">
+          An <a href="https://www.exakat.io" title="exakat">Exakat</a> report
+        </span>
+      </div>
+      <!-- Default to the left -->
+<strong>.</strong>
+      
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Create the tabs -->
+      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      </ul>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+  </div>
+  <!-- ./wrapper -->
+
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/exakat.js"></script>
+  <script src="scripts/facetedsearch.js"></script>
+    <script>
+    $(document).ready(function() {
+      Highcharts.theme = {
+         colors: ["#F56954", "#f7a35c", "#ffea6f", "#D2D6DE"],
+         chart: {
+            backgroundColor: null,
+            style: {
+               fontFamily: "Dosis, sans-serif"
+            }
+         },
+         title: {
+            style: {
+               fontSize: '16px',
+               fontWeight: 'bold',
+               textTransform: 'uppercase'
+            }
+         },
+         tooltip: {
+            borderWidth: 0,
+            backgroundColor: 'rgba(219,219,216,0.8)',
+            shadow: false
+         },
+         legend: {
+            itemStyle: {
+               fontWeight: 'bold',
+               fontSize: '13px'
+            }
+         },
+         xAxis: {
+            gridLineWidth: 1,
+            labels: {
+               style: {
+                  fontSize: '12px'
+               }
+            }
+         },
+         yAxis: {
+            minorTickInterval: 'auto',
+            title: {
+               style: {
+                  textTransform: 'uppercase'
+               }
+            },
+            labels: {
+               style: {
+                  fontSize: '12px'
+               }
+            }
+         },
+         plotOptions: {
+            candlestick: {
+               lineColor: '#404048'
+            }
+         },
+
+
+         // General
+         background2: '#F0F0EA'
+      };
+
+      // Apply the theme
+      Highcharts.setOptions(Highcharts.theme);
+
+      $('#filename').highcharts({
+          credits: {
+            enabled: false
+          },
+
+          exporting: {
+            enabled: false
+          },
+
+          chart: {
+              type: 'column'
+          },
+          title: {
+              text: ''
+          },
+          xAxis: {
+              categories: ['public function update(Request $request, Job $job, $isParent = true) { /**/ } ', 'public function update(Request $request, Template $template, $isParent = true) { /**/ } ', 'public function create(Request $request, $isParent = true) { /**/ } ', 'public function create(Request $request, $isParent = true) { /**/ } ', 'public function getAll(Request $request) { /**/ } ', 'private function syncEvent($calendar, $event) { /**/ } ', 'public function deleteSubscriber(Request $request, Job $job) { /**/ } ', 'private function syncCalendar($calendar = [ ]) { /**/ } ', 'public function addSubscriber(Request $request, Job $job) { /**/ } ', 'public function handle( ) { /**/ } ', 'private function createChild(Request $request) { /**/ } ', 'private function updateChild(Request $request, Job $job) { /**/ } ', 'private function setLastUpdate($time = null) { /**/ } ', 'public function register(Request $request) { /**/ } ', 'public function getActivities(Job $job) { /**/ } ', 'private function createChild(Request $request) { /**/ } ', 'private function updateChild(Request $request, Template $template) { /**/ } ', 'public function delete(Job $job) { /**/ } ', 'public function getAll(Request $request) { /**/ } ', 'public function delete(Template $template) { /**/ } ', 'private function fetchEventsFromCalendar($calendar = [ ], $fromDate = null, $toDate = null) { /**/ } ', 'public function render($request, Exception $exception) { /**/ } ', 'public function login( ) { /**/ } ', 'public function setChilds($setChildMeta = true) { /**/ } ', 'public function boot( ) { /**/ } ', 'public function handle($request, Closure $next) { /**/ } ', 'public function handle($request, Closure $next) { /**/ } ', 'public static function getSubscribersFromRequest($data, Request $request) { /**/ } ', 'public function setChilds( ) { /**/ } ', 'public static function getSubscribersFromRequest($data, Request $request) { /**/ } ', 'private function getLastUpdate( ) { /**/ } ', 'public function handle($request, Closure $next) { /**/ } ', 'public static function checkAuth($request) { /**/ } ', 'public function handle($request, Closure $next, $guard = null) { /**/ } ', 'public function getAllPublic(Request $request) { /**/ } ', 'public static function getStartAtFromRequest($data, Request $request) { /**/ } ', 'public static function getEndAtFromRequest($data, Request $request) { /**/ } ', 'protected function mapApiRoutes( ) { /**/ } ', 'public function get(Job $job) { /**/ } ', 'public function get(Template $template) { /**/ } ', 'public function details( ) { /**/ } ', 'protected function validator(array $data) { /**/ } ', 'protected function create(array $data) { /**/ } ', 'public function setMeta( ) { /**/ } ', 'public function getSubscribedUsers( ) { /**/ } ', 'public function boot( ) { /**/ } ', 'public function map( ) { /**/ } ', 'protected function mapWebRoutes( ) { /**/ } ', 'protected function schedule(Schedule $schedule) { /**/ } ', 'protected function commands( ) { /**/ } ']
+          },
+          yAxis: {
+              min: 0,
+              title: {
+                  text: ''
+              },
+              stackLabels: {
+                  enabled: false,
+                  style: {
+                      fontWeight: 'bold',
+                      color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                  }
+              }
+          },
+          legend: {
+              align: 'right',
+              x: 0,
+              verticalAlign: 'top',
+              y: -10,
+              floating: false,
+              backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+              borderColor: '#CCC',
+              borderWidth: 1,
+              shadow: false
+          },
+          tooltip: {
+              headerFormat: '<b>{point.x}</b><br/>',
+              pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+          },
+          plotOptions: {
+              column: {
+                  stacking: 'normal',
+                  dataLabels: {
+                      enabled: false,
+                      color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                      style: {
+                          textShadow: '0 0 3px black'
+                      }
+                  }
+              }
+          },
+          series: [{
+              name: 'Lines',
+              data: [66, 64, 46, 42, 39, 37, 26, 24, 24, 19, 18, 18, 15, 15, 14, 12, 12, 11, 11, 11, 10, 9, 8, 7, 7, 7, 6, 5, 5, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2]
+          }]
+      });
+
+    });
+  </script>
+
+</body>
+</html>
+        

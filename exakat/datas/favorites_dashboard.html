@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="jobbar-app : PHP static analysis report by Exakat (https://www.exakat.io/) ">
+  <meta name="generator" content="Exakat 1.6.0 (build 849)">
+  <title>Favorites' dashboard, by Exakat</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="styles/vendor.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/tree.css">
+  
+  <script src="scripts/vendor/modernizr.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-yellow-light sidebar-mini">
+  <div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>J</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg">jobbar-app</span>
+      </a>
+
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+                <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+          <li class="header">&nbsp;</li>
+          <!-- Optionally, you can add icons to the links -->
+          <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+          <li><a href="files.html"><i class="fa fa-file-code-o"></i> <span>Files</span></a></li>
+          <li><a href="analyzers.html"><i class="fa fa-line-chart"></i> <span>Analyzers</span></a></li>
+          <li><a href="neoissues.html"><i class="fa fa-flag"></i> <span>New Issues</span></a></li>
+          <li><a href="issues.html"><i class="fa fa-flag"></i> <span>Issues</span></a></li>
+          <li><a href="security_issues.html"><i class="fa fa-flag"></i> <span>Security</span></a></li>
+          <li><a href="performances_issues.html"><i class="fa fa-flag"></i> <span>Performances</span></a></li>
+          <li><a href="deadcode_issues.html"><i class="fa fa-flag"></i> <span>Dead code</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-certificate"></i> <span>Compatibility</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="compatibility_compilations.html"><i class="fa fa-circle-o"></i>Compilations</a></li>
+              <li><a href="compatibility_version.html"><i class="fa fa-circle-o"></i>PHP Version</a></li>
+                            <li><a href="compatibility_php74.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.4</a></li>
+
+              <li><a href="compatibility_php73.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.3</a></li>
+
+              <li><a href="compatibility_php72.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.2</a></li>
+
+              <li><a href="compatibility_php71.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.1</a></li>
+
+              <li><a href="compatibility_php70.html"><i class="fa fa-circle-o"></i>Compatibility PHP 7.0</a></li>
+
+              <li><a href="compatibility_php56.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.6</a></li>
+
+              <li><a href="compatibility_php55.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.5</a></li>
+
+              <li><a href="compatibility_php54.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.4</a></li>
+
+              <li><a href="compatibility_php53.html"><i class="fa fa-circle-o"></i>Compatibility PHP 5.3</a></li>
+
+              <li><a href="compatibility_issues.html"><i class="fa fa-circle-o"></i>Compatibility Violations</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-certificate"></i> <span>Favorites</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="favorites_dashboard.html"><i class="fa fa-circle-o"></i>Overview</a></li>
+              <li><a href="favorites_issues.html"><i class="fa fa-circle-o"></i>Violations</a></li>
+            </ul>
+          </li>
+          <li><a href="suggestions.html"><i class="fa fa-flag"></i> <span>Suggestions</span></a></li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-sliders"></i> <span>Audit logs</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="appinfo.html"><i class="fa fa-circle-o"></i>Appinfo()</a></li>
+              <li><a href="bugfixes.html"><i class="fa fa-circle-o"></i>Bugfixes</a></li>
+              <li><a href="php_compilation.html"><i class="fa fa-circle-o"></i>PHP Compilation Directives</a></li>
+              <li><a href="directive_list.html"><i class="fa fa-circle-o"></i>Directive List</a></li>
+              <li><a href="altered_directives.html"><i class="fa fa-circle-o"></i>Altered Directive</a></li>
+              <li><a href="extension_list.html"><i class="fa fa-circle-o"></i>Extensions usage</a></li>
+              <li><a href="ext_lib.html"><i class="fa fa-circle-o"></i>External Libraries</a></li>
+              <li><a href="external_services.html"><i class="fa fa-circle-o"></i>External services</a></li>
+              <li><a href="parameters_counts.html"><i class="fa fa-circle-o"></i>Parameters counts</a></li>
+              <li><a href="changed_classes.html"><i class="fa fa-circle-o"></i>Changed classes</a></li>
+              <li><a href="stats.html"><i class="fa fa-circle-o"></i>Statistics</a></li>
+              <li><a href="visibility_suggestions.html"><i class="fa fa-circle-o"></i>Visibility Review</a></li>
+              <li><a href="class_options_suggestions.html"><i class="fa fa-circle-o"></i>Final/Abstract Review</a></li>
+              <li><a href="complex_expressions.html"><i class="fa fa-circle-o"></i>Complex Expressions</a></li>
+              <li><a href="cit_size.html"><i class="fa fa-circle-o"></i>Classes size</a></li>
+              <li><a href="method_size.html"><i class="fa fa-circle-o"></i>Method size</a></li>
+              <li><a href="no_issues.html"><i class="fa fa-circle-o"></i>No Issues</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-list-ul"></i> <span>Inventories</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="dynamic_code.html"><i class="fa fa-circle-o"></i>Dynamic codes</a></li>
+              <li><a href="globals.html"><i class="fa fa-circle-o"></i>Global variables</a></li>
+              <li><a href="error_messages.html"><i class="fa fa-circle-o"></i>Error messages</a></li>
+              <li><a href="inventories_exceptions.html"><i class="fa fa-circle-o"></i>Exceptions tree</a></li>
+              <li><a href="inventories_namespaces.html"><i class="fa fa-circle-o"></i>Namespaces tree</a></li>
+              <li><a href="inventories_classtree.html"><i class="fa fa-circle-o"></i>Classes tree</a></li> 
+              <li><a href="inventories_traittree.html"><i class="fa fa-circle-o"></i>Traits tree</a></li> 
+              <li><a href="inventories_traitmatrix.html"><i class="fa fa-circle-o"></i>Traits matrix</a></li> 
+              <li><a href="inventories_interfacetree.html"><i class="fa fa-circle-o"></i>Interfaces tree</a></li> 
+              <li><a href="phpfunctions_list.html"><i class="fa fa-circle-o"></i>PHP native function usage</a></li>
+              <li><a href="phpconstants_list.html"><i class="fa fa-circle-o"></i>PHP native constants usage</a></li>
+              <li><a href="phpclasses_list.html"><i class="fa fa-circle-o"></i>PHP native classes usage</a></li>
+              <li><a href="files_tree.html"><i class="fa fa-circle-o"></i>Files dependencies</a></li>
+              <li><a href="variables_confusing.html"><i class="fa fa-circle-o"></i>Confusing variables</a></li>
+                            <li><a href="inventories_constants.html"><i class="fa fa-circle-o"></i>Constants</a></li>
+
+              <li><a href="inventories_classes.html"><i class="fa fa-circle-o"></i>Classes</a></li>
+
+              <li><a href="inventories_interfaces.html"><i class="fa fa-circle-o"></i>Interfaces</a></li>
+
+              <li><a href="inventories_functions.html"><i class="fa fa-circle-o"></i>Functions</a></li>
+
+              <li><a href="inventories_traits.html"><i class="fa fa-circle-o"></i>Traits</a></li>
+
+              <li><a href="inventories_namespaces.html"><i class="fa fa-circle-o"></i>Namespaces</a></li>
+
+              <li><a href="inventories_url.html"><i class="fa fa-circle-o"></i>URL</a></li>
+
+              <li><a href="inventories_sql.html"><i class="fa fa-circle-o"></i>SQL</a></li>
+
+              <li><a href="inventories_email.html"><i class="fa fa-circle-o"></i>Email</a></li>
+
+              <li><a href="inventories_path.html"><i class="fa fa-circle-o"></i>Paths</a></li>
+
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-sticky-note-o"></i> <span>Annexes</span><i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="annex_settings.html"><i class="fa fa-circle-o"></i>Analyzer Settings</a></li>
+              <li><a href="proc_files.html"><i class="fa fa-circle-o"></i>Processed Files</a></li>
+              <li><a href="proc_analyzers.html"><i class="fa fa-circle-o"></i>Processed Analyzers</a></li>
+              <li><a href="analyzers_doc.html"><i class="fa fa-circle-o"></i>Analyzers Documentation</a></li>
+              <li><a href="codes.html"><i class="fa fa-circle-o"></i>Codes</a></li>
+              <li><a href="credits.html"><i class="fa fa-circle-o"></i>Credits</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div id="main">
+      <div class="content-wrapper" id="ajax-content">
+        <!-- Main content -->
+        <!-- Content Header (Page header) -->
+                  <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Favorites
+          </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content" id="dashboard">
+
+          <div class="row">
+            <div class="row"> 
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Constants/InconsistantCase" title="True False Inconsistant Case">True False Inconsistant Case</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_True False Inconsistant Case"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">lowercase</div>
+                   <div class="block-cell text-center">63</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">UPPERCASE</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">Mixed</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Structures/ConstantComparisonConsistance" title="Constant Comparison">Constant Comparison</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Constant Comparison"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">To the left</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">To the right</div>
+                   <div class="block-cell text-center">21</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Arrays/ArrayBracketConsistence" title="Array() / [  ] Consistence">Array() / [  ] Consistence</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Array() / [  ] Consistence"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">array()</div>
+                   <div class="block-cell text-center">7</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">[]</div>
+                   <div class="block-cell text-center">137</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Php/UnsetOrCast" title="Unset() Or (unset)">Unset() Or (unset)</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Unset() Or (unset)"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">(unset)</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">unset( )</div>
+                   <div class="block-cell text-center">2</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Php/CloseTagsConsistency" title="Close Tags Consistency">Close Tags Consistency</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Close Tags Consistency"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">with ?&gt;</div>
+                   <div class="block-cell text-center">1</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">without ?&gt;</div>
+                   <div class="block-cell text-center">51</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Structures/OneExpressionBracketsConsistency" title="One Expression Brackets Consistency">One Expression Brackets Consistency</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_One Expression Brackets Consistency"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">Bracketed</div>
+                   <div class="block-cell text-center">53</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">Bracketless</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Classes/NewOnFunctioncallOrIdentifier" title="New On Functioncall Or Identifier">New On Functioncall Or Identifier</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_New On Functioncall Or Identifier"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">className()</div>
+                   <div class="block-cell text-center">9</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">className</div>
+                   <div class="block-cell text-center">8</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Arrays/EmptyFinal" title="Empty Final Element">Empty Final Element</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Empty Final Element"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">Empty</div>
+                   <div class="block-cell text-center">87</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">Filled</div>
+                   <div class="block-cell text-center">57</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Structures/ConcatenationInterpolationFavorite" title="Concatenation Interpolation Consistence">Concatenation Interpolation Consistence</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Concatenation Interpolation Consistence"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">concatenation</div>
+                   <div class="block-cell text-center">7</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">string</div>
+                   <div class="block-cell text-center">3</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Php/DeclareStrict" title="strict_types Preference">strict_types Preference</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_strict_types Preference"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">strict types</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">relaxed types</div>
+                   <div class="block-cell text-center">52</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Php/LetterCharsLogicalFavorite" title="Logical Operators Favorite">Logical Operators Favorite</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Logical Operators Favorite"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">&amp;&amp;, ||, ^</div>
+                   <div class="block-cell text-center">21</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">and, or, xor</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Classes/PPPDeclarationStyle" title="Properties Declaration Consistence">Properties Declaration Consistence</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Properties Declaration Consistence"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">unique</div>
+                   <div class="block-cell text-center">44</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">multiple</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Structures/ComparisonFavorite" title="Strict Or Relaxed Comparison">Strict Or Relaxed Comparison</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Strict Or Relaxed Comparison"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">strict</div>
+                   <div class="block-cell text-center">9</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">relaxed</div>
+                   <div class="block-cell text-center">11</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Structures/GtOrLtFavorite" title="> Or < Comparisons">> Or < Comparisons</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_> Or < Comparisons"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">&gt;</div>
+                   <div class="block-cell text-center">4</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&lt;</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Constants/ConstDefinePreference" title="Const Or Define Preference">Const Or Define Preference</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Const Or Define Preference"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">const</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">define</div>
+                   <div class="block-cell text-center">1</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title"><a href="favorites_issues.html#analyzer=Constants/DefineInsensitivePreference" title="Constant Case Preference">Constant Case Preference</a></h3>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div id="donut-chart_Constant Case Preference"></div>
+                  <div class="clearfix">
+                    <div class="block-cell bold">Number</div>
+                    <div class="block-cell bold text-center">Count</div>
+                  </div>
+                  
+                <div class="clearfix">
+                   <div class="block-cell">sensitive</div>
+                   <div class="block-cell text-center">1</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">insensitive</div>
+                   <div class="block-cell text-center">0</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                <div class="clearfix">
+                   <div class="block-cell">&nbsp;</div>
+                   <div class="block-cell text-center">&nbsp;</div>
+                 </div>
+
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          </div>
+        </section>
+
+        <!-- /.content -->
+      </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+        <span class="logo-exakat">
+          <img src="images/logo.png" alt="Exakat">
+          An <a href="https://www.exakat.io" title="exakat">Exakat</a> report
+        </span>
+      </div>
+      <!-- Default to the left -->
+<strong>.</strong>
+      
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Create the tabs -->
+      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      </ul>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+  </div>
+  <!-- ./wrapper -->
+
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/exakat.js"></script>
+  <script src="scripts/facetedsearch.js"></script>
+    <script>
+    $(document).ready(function() {
+            Morris.Donut({
+        element: 'donut-chart_True False Inconsistant Case',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"lowercase", value:63}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Constant Comparison',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"To the right", value:21}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Array() / [  ] Consistence',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"array()", value:7}, {label:"[]", value:137}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Unset() Or (unset)',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"unset( )", value:2}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Close Tags Consistency',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"with ?>", value:1}, {label:"without ?>", value:51}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_One Expression Brackets Consistency',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"Bracketed", value:53}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_New On Functioncall Or Identifier',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"className()", value:9}, {label:"className", value:8}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Empty Final Element',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"Empty", value:87}, {label:"Filled", value:57}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Concatenation Interpolation Consistence',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"concatenation", value:7}, {label:"string", value:3}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_strict_types Preference',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"relaxed types", value:52}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Logical Operators Favorite',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"&&, ||, ^", value:21}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Properties Declaration Consistence',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"unique", value:44}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Strict Or Relaxed Comparison',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"strict", value:9}, {label:"relaxed", value:11}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_> Or < Comparisons',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:">", value:4}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Const Or Define Preference',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"define", value:1}]
+      });
+
+      Morris.Donut({
+        element: 'donut-chart_Constant Case Preference',
+        resize: true,
+        colors: ["#3c8dbc", "#f56954", "#00a65a", "#1424b8"],
+        data: [{label:"sensitive", value:1}]
+      });
+
+      Highcharts.theme = {
+         colors: ["#F56954", "#f7a35c", "#ffea6f", "#D2D6DE"],
+         chart: {
+            backgroundColor: null,
+            style: {
+               fontFamily: "Dosis, sans-serif"
+            }
+         },
+         title: {
+            style: {
+               fontSize: '16px',
+               fontWeight: 'bold',
+               textTransform: 'uppercase'
+            }
+         },
+         tooltip: {
+            borderWidth: 0,
+            backgroundColor: 'rgba(219,219,216,0.8)',
+            shadow: false
+         },
+         legend: {
+            itemStyle: {
+               fontWeight: 'bold',
+               fontSize: '13px'
+            }
+         },
+         xAxis: {
+            gridLineWidth: 1,
+            labels: {
+               style: {
+                  fontSize: '12px'
+               }
+            }
+         },
+         yAxis: {
+            minorTickInterval: 'auto',
+            title: {
+               style: {
+                  textTransform: 'uppercase'
+               }
+            },
+            labels: {
+               style: {
+                  fontSize: '12px'
+               }
+            }
+         },
+         plotOptions: {
+            candlestick: {
+               lineColor: '#404048'
+            }
+         },
+
+
+         // General
+         background2: '#F0F0EA'
+      };
+
+      // Apply the theme
+      Highcharts.setOptions(Highcharts.theme);
+
+      $('#filename').highcharts({
+          credits: {
+            enabled: false
+          },
+
+          exporting: {
+            enabled: false
+          },
+
+          chart: {
+              type: 'column'
+          },
+          title: {
+              text: ''
+          },
+          xAxis: {
+              categories: [SCRIPTDATAFILES]
+          },
+          yAxis: {
+              min: 0,
+              title: {
+                  text: ''
+              },
+              stackLabels: {
+                  enabled: false,
+                  style: {
+                      fontWeight: 'bold',
+                      color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                  }
+              }
+          },
+          legend: {
+              align: 'right',
+              x: 0,
+              verticalAlign: 'top',
+              y: -10,
+              floating: false,
+              backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+              borderColor: '#CCC',
+              borderWidth: 1,
+              shadow: false
+          },
+          tooltip: {
+              headerFormat: '<b>{point.x}</b><br/>',
+              pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+          },
+          plotOptions: {
+              column: {
+                  stacking: 'normal',
+                  dataLabels: {
+                      enabled: false,
+                      color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                      style: {
+                          textShadow: '0 0 3px black'
+                      }
+                  }
+              }
+          },
+          series: [{
+              name: 'Critical',
+              data: [SCRIPTDATACRITICAL]
+          }, {
+              name: 'Major',
+              data: [SCRIPTDATAMAJOR]
+          }, {
+              name: 'Minor',
+              data: [SCRIPTDATAMINOR]
+          }, {
+              name: 'None',
+              data: [SCRIPTDATANONE]
+          }]
+      });
+
+      $('#container').highcharts({
+          credits: {
+            enabled: false
+          },
+
+          exporting: {
+            enabled: false
+          },
+
+          chart: {
+              type: 'column'
+          },
+          title: {
+              text: ''
+          },
+          xAxis: {
+              categories: [SCRIPTDATAANALYZERLIST]
+          },
+          yAxis: {
+              min: 0,
+              title: {
+                  text: ''
+              },
+              stackLabels: {
+                  enabled: false,
+                  style: {
+                      fontWeight: 'bold',
+                      color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                  }
+              }
+          },
+          legend: {
+              align: 'right',
+              x: 0,
+              verticalAlign: 'top',
+              y: -10,
+              floating: false,
+              backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+              borderColor: '#CCC',
+              borderWidth: 1,
+              shadow: false
+          },
+          tooltip: {
+              headerFormat: '<b>{point.x}</b><br/>',
+              pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+          },
+          plotOptions: {
+              column: {
+                  stacking: 'normal',
+                  dataLabels: {
+                      enabled: false,
+                      color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                      style: {
+                          textShadow: '0 0 3px black'
+                      }
+                  }
+              }
+          },
+          series: [{
+              name: 'Critical',
+              data: [SCRIPTDATAANALYZERCRITICAL]
+          }, {
+              name: 'Major',
+              data: [SCRIPTDATAANALYZERMAJOR]
+          }, {
+              name: 'Minor',
+              data: [SCRIPTDATAANALYZERMINOR]
+          }, {
+              name: 'None',
+              data: [SCRIPTDATAANALYZERNONE]
+          }]
+      });
+    });
+  </script>
+
+
+</body>
+</html>
+        
