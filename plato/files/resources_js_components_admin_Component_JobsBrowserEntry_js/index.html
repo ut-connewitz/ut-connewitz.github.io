@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - resources/js/components/admin/Component_JobsBrowserEntry.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>resources/js/components/admin/Component_JobsBrowserEntry.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">71.79</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">229</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">42.78</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">1.66</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">import React, { Component} from &quot;react&quot;;
+import moment from &#039;moment&#039;;
+import { Checkbox } from &#039;semantic-ui-react&#039;
+
+import {request} from &#039;../../utils/helper&#039;;
+import { alertError } from &#039;../etc/Error_Tools&#039;;
+
+const settingsDefault = {
+    // show_fields: [ &#039;title&#039;, &#039;...&#039; ],
+    hide_fields: [ &#039;users_required&#039;, &#039;users_subscribed&#039; ],
+    allow_childJobs: false,
+}
+
+const childSettingsDefault = {
+    hide_fields: [ &#039;state&#039;, &#039;start_date&#039;, &#039;end_date&#039;, &#039;description&#039; ],
+    allow_childJobs: false,
+}
+
+class JobsListEntry extends Component{
+
+    constructor(props) {
+        super(props);
+
+        this.settings = {
+            ...settingsDefault,
+            ...props.settings
+        };
+
+        // this.job = props.job
+
+        const isChildJob = props.isChildJob || false
+
+        this.state = {
+            isChildJob: isChildJob,
+            job: props.job,
+            templates: props.templates,
+            nick: &#039;&#039;
+        };
+
+        this.handleChangeNick = this.handleChangeNick.bind(this);
+
+        this.handleAddUser = this.handleAddUser.bind(this);
+        this.handleRemoveUser = this.handleRemoveUser.bind(this);
+        this.handleToggleJobState = this.handleToggleJobState.bind(this);
+        this.handleDeleteJob = props.handleDeleteJob;
+        this.handleEditJob = this.handleEditJob.bind(this);
+
+        this.parentHandlerEditJob = props.parentHandlerEditJob;
+        this.parentHandlerAfterUpdate = props.parentHandlerAfterUpdate;
+    }
+
+    componentDidMount() {
+    }
+
+    handleChangeNick(e) {
+        this.setState({nick: e.target.value});
+    }
+
+    handleAddUser(e) {
+        const job = {...this.state.job};
+        const nick = this.state.nick;
+        const prevState = JSON.stringify(this.state);
+
+        if (nick == &#039;&#039;) {
+            alert(&#039;Empty nickname!&#039;);
+            e.preventDefault();
+            return;
+        }
+
+        job.users_subscribed.push({nick});
+        this.setState({
+            job,
+            nick: &#039;&#039;
+        });
+
+        request(`jobs/${job.id}/subscriber`, &#039;&#039;, &#039;POST&#039;, {nick})
+        .then(() =&gt; {
+            this.parentHandlerAfterUpdate(job);
+        })
+        .catch(error =&gt; {
+            this.setState({...JSON.parse(prevState)});
+            alertError(error);
+        })
+
+        e.preventDefault();
+    }
+
+    handleRemoveUser(e, userId) {
+        const job = {...this.state.job};
+        const prevState = JSON.stringify(this.state);
+
+        job.users_subscribed.splice(userId, 1);
+        this.setState({ job });
+
+        request(`jobs/${job.id}/subscriber`, &#039;&#039;, &#039;DELETE&#039;, {user: userId})
+        .then(() =&gt; {
+            this.parentHandlerAfterUpdate(job);
+        })
+        .catch(error =&gt; {
+            this.setState({...JSON.parse(prevState)});
+            alertError(error);
+        })
+
+        e.preventDefault();
+    }
+
+    handleToggleJobState(e) {
+        const prevState = JSON.stringify(this.state);
+        const job = {...this.state.job};
+        const newState = job.state == &#039;public&#039; ? &#039;private&#039; : &#039;public&#039;;
+
+        job.state = newState;
+        this.setState({ job })
+
+        request(&#039;jobs/&#039;+job.id, &#039;&#039;, &#039;PUT&#039;, {state: newState})
+        .then(() =&gt; {
+            this.parentHandlerAfterUpdate(job);
+        })
+        .catch(error =&gt; {
+            this.setState({...JSON.parse(prevState)});
+            alertError(error);
+        })
+
+        e.preventDefault();
+    }
+
+    handleEditJob(e) {
+        const job = {...this.state.job};
+        this.parentHandlerEditJob(e, job);
+        e.preventDefault();
+    }
+
+    render(){
+        const {job, templates, isChildJob, nick} = this.state;
+        const childJobs = job.has_jobs || [];
+
+        if (job.state == &quot;deleted&quot;) {
+            return (&lt;div&gt;&lt;/div&gt;);
+        }
+
+        return(
+                &lt;div className={`item job-entry ${isChildJob ? &#039;child-job&#039; : &#039;parent-job&#039;} state-${job.state}`}&gt;
+                    &lt;div className=&quot;content&quot;&gt;
+                        &lt;div className=&quot;header&quot;&gt;
+                            &lt;a onClick={this.handleEditJob}&gt;{job.title}&lt;/a&gt;
+                            {job.users_required != null &amp;&amp;
+                                &lt;span className={`job-users-subscriptions ${job.users_subscribed.length &gt;= job.users_required ? &#039;good&#039; : &#039;bad&#039;}`}&gt;
+                                    {job.users_subscribed.length} / {job.users_required}
+                                &lt;/span&gt;
+                            }
+                        &lt;/div&gt;
+
+                        &lt;div className=&quot;meta&quot;&gt;
+                            {! isChildJob &amp;&amp;
+                                &lt;div className=&quot;actions&quot;&gt;
+                                    &lt;Checkbox toggle checked={job.state === &quot;public&quot;} className=&quot;job-is-public-toggle&quot; onChange={this.handleToggleJobState} /&gt;
+                                    &lt;a onClick={this.handleEditJob}&gt;&lt;i className=&quot;edit icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                                    &lt;a onClick={(e) =&gt; this.handleDeleteJob(e, job.id)}&gt;&lt;i className=&quot;trash icon red&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                                &lt;/div&gt;
+                            }
+                            {job.start_time != null &amp;&amp;
+                                &lt;div&gt;&lt;small&gt;{moment.utc(job.start_time, &quot;HH:mm&quot;).format(&quot;LT [Uhr]&quot;)}&lt;/small&gt;&lt;/div&gt;
+                            }
+                            {job.description != null &amp;&amp;
+                                &lt;span&gt;{job.description}&lt;/span&gt;
+                            }
+                        &lt;/div&gt;
+                        &lt;div className=&quot;description&quot;&gt;
+
+                            {job.users_required != null &amp;&amp;
+                                &lt;div&gt;
+                                    {/* &lt;span className={`job-users-subscriptions ${job.users_subscribed.length &gt;= job.users_required ? &#039;good&#039; : &#039;bad&#039;}`}&gt;
+                                        {job.users_subscribed.length} / {job.users_required}
+                                    &lt;/span&gt; */}
+                                    &lt;form className=&quot;ui mini action input&quot; onSubmit={this.handleAddUser}&gt;
+                                        &lt;input type=&quot;text&quot; placeholder=&quot;Name&quot; value={nick} onChange={this.handleChangeNick} /&gt;
+                                        &lt;button className=&quot;ui button&quot; type=&quot;submit&quot; disabled={nick == &#039;&#039;} onClick={this.handleAddUser}&gt;Add&lt;/button&gt;
+                                    &lt;/form&gt;
+                                    &lt;div className=&quot;subscribed_users&quot;&gt;
+                                        {job.users_subscribed.map((user, uidx) =&gt;
+                                            &lt;div className=&quot;ui label&quot; key={uidx}&gt;
+                                                {user.nick}
+                                                &lt;i className=&quot;delete icon&quot; onClick={e =&gt; this.handleRemoveUser(e, uidx)}&gt;&lt;/i&gt;
+                                            &lt;/div&gt;
+                                        )}
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            }
+
+                            {this.settings.allow_childJobs &amp;&amp;
+                                &lt;div className=&quot;ui items child-jobs&quot;&gt;
+                                    {childJobs.map((childJob, cjidx) =&gt; {
+                                        return (
+                                                &lt;JobsListEntry key={cjidx}
+                                                    job={childJob}
+                                                    isChildJob={true}
+                                                    templates={templates}
+                                                    settings={childSettingsDefault}
+                                                    parentHandlerAfterUpdate = {this.parentHandlerAfterUpdate}
+                                                /&gt;
+                                        );
+                                    })}
+                                &lt;/div&gt;
+                            }
+
+                            &lt;div&gt;
+                                {/* &lt;Dropdown text=&#039;New Subtask&#039; icon=&#039;file&#039; floating labeled button className=&#039;icon&#039;&gt;
+                                    &lt;Dropdown.Menu&gt;
+                                        &lt;Dropdown.Item text=&quot;New&quot; value={0} onClick={this.handleAddChildJob} /&gt;
+                                        &lt;Dropdown.Divider /&gt;
+                                        &lt;Dropdown.Header content=&#039;Based on template:&#039; icon=&#039;tags&#039; /&gt;
+                                        &lt;Dropdown.Menu scrolling&gt;
+                                            {templates.map(tml =&gt;
+                                                &lt;Dropdown.Item key={tml.id} text={tml.title} value={tml.id} onClick={(e) =&gt; this.handleAddChildJob(e, tml)} /&gt;
+                                            )}
+                                        &lt;/Dropdown.Menu&gt;
+                                    &lt;/Dropdown.Menu&gt;
+                                &lt;/Dropdown&gt; */}
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+                        {/* &lt;div className=&quot;extra&quot;&gt;&lt;/div&gt; */}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        );
+  }
+}
+
+export default JobsListEntry;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

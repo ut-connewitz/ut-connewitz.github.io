@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - resources/js/components/admin/TemplatesForm.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>resources/js/components/admin/TemplatesForm.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">67.05</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">257</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">60.80</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">1.80</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">import React, { Component} from &quot;react&quot;;
+import { Message } from &#039;semantic-ui-react&#039;
+
+// TODO we can merge job-form componewnt and this component !!!!
+
+class TemplatesForm extends Component{
+
+    constructor(props) {
+        super(props);
+
+        const allow_childJobs = props.allow_childJobs || false;
+
+        let values =  {
+            title: &#039;&#039;,
+            description: &#039;&#039;,
+
+            has_additionals: [
+                {type: &#039;location&#039;, value: &#039;&#039;},
+                {type: &#039;category&#039;, value: &#039;&#039;}
+            ],
+
+            users_required: &#039;&#039;,
+            users_subscribed: [],
+            has_jobs: [],
+        };
+
+        if (typeof props.values !== &#039;undefined&#039;) {
+            // manually merge props.values, we need to check for null values
+            Object.keys(props.values).forEach(key =&gt; {
+                if (props.values[key] !== null) {
+                    values[key] = props.values[key]
+                }
+            });
+        }
+
+        values.has_jobs = values.has_jobs.map(childJobValues =&gt; {
+            return {
+                ref: React.createRef(),
+                inValues: childJobValues
+            };
+        })
+
+
+        console.log(&quot;TemplatesForm values&quot;, values);
+
+        this.state = {
+            allow_childJobs,
+            values,
+            user: {nick: &#039;&#039;}
+        };
+
+        this.getPreparedValues = this.getPreparedValues.bind(this);
+        this.handleChangeInput = this.handleChangeInput.bind(this);
+        this.handleAddChildJob = this.handleAddChildJob.bind(this);
+        this.handleAddUser = this.handleAddUser.bind(this);
+        this.handleRemoveUser = this.handleRemoveUser.bind(this);
+    }
+
+    componentDidMount() {
+    }
+
+    getPreparedValues() {
+        let values = {...this.state.values}; // copy object to avoid affetcs on form values
+
+        let additionals = [];
+        values.has_additionals.forEach(entry =&gt; {
+            const type = `has_additionals[${entry.type}]`;
+            if (typeof values[type] !== &#039;undefined&#039;) {
+                console.log(&#039;values[type]&#039;, values[type]);
+                values[type].forEach(value =&gt; {
+                    if (value != &quot;&quot;) {
+                        additionals.push({
+                            type: entry.type,
+                            value
+                        });
+                    }
+                })
+            }
+
+        })
+
+        values.has_jobs = values.has_jobs.map(entry =&gt; {
+            return entry.ref.current.getPreparedValues();
+        });
+
+        values.users_subscribed = JSON.stringify(values.users_subscribed);
+
+        return values;
+    }
+
+    handleAddChildJob(e, childValues = {}) {
+
+        if (&quot;has_jobs&quot; in childValues &amp;&amp; childValues.has_jobs.length &gt; 0) {
+            alert(&quot;Adding Childjobs with childs is currently not implemented...&quot;);
+            childValues.has_jobs = [];
+        }
+        // BUGFIX remove templates child id
+        // TODO the backend should create a new child job if given child id comes from a template!
+        if (&quot;id&quot; in childValues) {
+            childValues.id = null;
+        }
+
+        const values = this.state.values;
+        values.has_jobs.push({
+            ref: React.createRef(),
+            inValues: childValues
+        });
+        this.setState({ values });
+        e.preventDefault();
+    }
+
+    handleRemoveUser(e, uidx) {
+        const values = this.state.values;
+        values.users_subscribed.splice(uidx, 1);
+        this.setState({ values });
+        e.preventDefault();
+
+    }
+
+    handleAddUser(e) {
+        let user = this.state.user;
+        let values = this.state.values;
+        values.users_subscribed.push(
+            {nick: user.nick}
+        );
+        user.nick = &#039;&#039;;
+        this.setState({ values, user });
+
+        e.preventDefault();
+    }
+
+    handleChangeInput(e) {
+        const values = this.state.values;
+        const target = e.target;
+        //const value = target.type === &#039;checkbox&#039; ? target.checked : target.value;
+        const name = target.name
+        let value = target.value;
+        if (target.type === &#039;checkbox&#039;) {
+            value = target.checked;
+        }
+        else if (target.type === &#039;select-multiple&#039;) {
+            value = [];
+            for (var i = 0, l = target.options.length; i &lt; l; i++) {
+                if (target.options[i].selected) {
+                  value.push(target.options[i].value);
+                }
+            }
+        }
+
+        if (name == &quot;nick&quot;) {
+            let user = this.state.user;
+            user.nick = value;
+            this.setState({user});
+            e.preventDefault();
+            return;
+        }
+
+        values[name] = value;
+
+        this.setState({values});
+
+        e.preventDefault();
+    }
+
+    render() {
+        const values = this.state.values;
+        const errors = this.props.errors;
+
+        return(
+            &lt;div className=&quot;ui grid jobs-form-component&quot;&gt;
+                {errors.length &gt; 0 &amp;&amp;
+                    &lt;div className=&quot;sixteen wide column&quot;&gt;
+                        {errors.map((error, ei) =&gt; {
+                            return (
+                                &lt;Message key={ei} negative
+                                    header=&#039;Error&#039;
+                                    content={error.message}
+                                /&gt;
+                            )
+                        })}
+                    &lt;/div&gt;
+                }
+                &lt;div className=&quot;ten wide column&quot;&gt;
+                    &lt;div className=&quot;required field&quot;&gt;
+                        &lt;label&gt;Title&lt;/label&gt;
+                        &lt;input required={true} type=&quot;text&quot; name=&quot;title&quot; placeholder=&quot;Title&quot; value={values.title} onChange={this.handleChangeInput} /&gt;
+                    &lt;/div&gt;
+                    &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Description&lt;/label&gt;
+                        &lt;textarea name=&quot;description&quot; rows=&quot;1&quot; value={values.description} onChange={this.handleChangeInput}&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+
+                    &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Required Users&lt;/label&gt;
+                        &lt;input type=&quot;number&quot; name=&quot;users_required&quot; value={values.users_required} placeholder=&quot;Required Users, e.g. 2&quot; onChange={this.handleChangeInput} /&gt;
+                    &lt;/div&gt;
+                    &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Subscribed Users&lt;/label&gt;
+                        {values.users_subscribed.map((user, uidx) =&gt; {
+                            return (
+                                &lt;div className=&quot;ui label&quot; key={uidx}&gt;
+                                    {user.nick}
+                                    &lt;i className=&quot;delete icon&quot; onClick={(e) =&gt; this.handleRemoveUser(e, uidx)}&gt;&lt;/i&gt;
+                                &lt;/div&gt;
+                            );
+                        })}
+                        &lt;div className=&quot;ui mini action input&quot;&gt;
+                            &lt;input type=&quot;text&quot; name=&quot;nick&quot; placeholder=&quot;Name&quot; value={this.state.user.nick} onChange={this.handleChangeInput} /&gt;
+                            &lt;button className=&quot;ui button&quot; disabled={this.state.user.nick == &#039;&#039;} onClick={this.handleAddUser}&gt;Add&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    {values.has_jobs.map((childJob, cjidx) =&gt; {
+                        return (
+                            &lt;div className=&quot;field has_job&quot; key={cjidx}&gt;
+                                &lt;div className=&quot;field&quot;&gt;
+                                    Subtask {1+cjidx}
+                                &lt;/div&gt;
+                                &lt;TemplatesForm ref={childJob.ref}
+                                    values={childJob.inValues}
+                                    allow_childJobs={false}
+                                    errors={[]}
+                                /&gt;
+                            &lt;/div&gt;
+                        );
+                    })}
+                    {this.state.allow_childJobs &amp;&amp;
+                        &lt;div&gt;
+                            &lt;button className=&quot;ui button&quot; onClick={this.handleAddChildJob}&gt;Add Subtask {1 + values.has_jobs.length}&lt;/button&gt;
+                        &lt;/div&gt;
+                    }
+                &lt;/div&gt;
+
+                &lt;div className=&quot;six wide column&quot;&gt;
+                    {/* &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Location&lt;/label&gt;
+                        &lt;select multiple name=&quot;has_additionals[location]&quot; className=&quot;ui fluid dropdown&quot; onChange={this.handleChangeInput}&gt;
+                            &lt;option value=&quot;&quot;&gt;Select Location...&lt;/option&gt;
+                            &lt;option value=&quot;3&quot; &gt;Leipzig&lt;/option&gt;
+                            &lt;option value=&quot;4&quot; &gt;Amerika&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Category&lt;/label&gt;
+                        &lt;select multiple name=&quot;has_additionals[category]&quot; className=&quot;ui dropdown&quot; onChange={this.handleChangeInput}&gt;
+                            &lt;option value=&quot;&quot;&gt;Select Category...&lt;/option&gt;
+                            &lt;option value=&quot;1&quot; &gt;Konzert&lt;/option&gt;
+                            &lt;option value=&quot;2&quot; &gt;Lesung&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt; */}
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+        );
+  }
+}
+
+export default TemplatesForm;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

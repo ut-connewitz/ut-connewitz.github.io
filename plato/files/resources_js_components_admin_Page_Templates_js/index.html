@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - resources/js/components/admin/Page_Templates.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>resources/js/components/admin/Page_Templates.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">74.54</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">301</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">47.26</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">1.93</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">import React, { Component} from &quot;react&quot;;
+import {request} from &#039;../../utils/helper&#039;;
+import { Route, Link } from &quot;react-router-dom&quot;;
+import { Modal, Form, Button } from &#039;semantic-ui-react&#039;
+
+
+import Component_TemplatesEntry from &#039;./Component_TemplatesEntry&#039;;
+// import TemplatesForm from &#039;./TemplatesForm&#039;;
+import TemplatesForm from &#039;./Component_JobsForm&#039;;
+
+import { alertError } from &#039;../etc/Error_Tools&#039;;
+
+const templatesFormSettings = {
+    hide_fields: [ &#039;state&#039;, &#039;start_date&#039;, &#039;start_time&#039;, &#039;end_date&#039;, &#039;end_time&#039; ],
+    allow_childJobs: true,
+    allow_childJobs_from_templates: false,
+    childSettings: {
+        hide_fields: [ &#039;state&#039;, &#039;start_date&#039;, &#039;end_date&#039;, &#039;description&#039; ],
+        allow_childJobs: false,
+    }
+}
+
+class Page_Templates extends Component{
+
+    constructor(props) {
+        super(props);
+
+        this.formRef = React.createRef();
+
+        this.state = {
+            templates: [],
+            newFormOpen: false,
+            editFormOpen: false,
+
+            formErrors: [],
+
+            editTemplateValues: {},
+            formLoading: false
+        };
+
+        this.handleOpenNewForm = this.handleOpenNewForm.bind(this);
+        this.handleCloseNewForm = this.handleCloseNewForm.bind(this);
+        this.handleSaveNewForm = this.handleSaveNewForm.bind(this);
+
+        this.handleOpenEditForm = this.handleOpenEditForm.bind(this);
+        this.handleCloseEditForm = this.handleCloseEditForm.bind(this);
+        this.handleSaveEditForm = this.handleSaveEditForm.bind(this);
+
+        this.handleDeleteTemplate = this.handleDeleteTemplate.bind(this);
+    }
+
+    componentDidMount() {
+        request(&#039;templates&#039;, &#039;&#039;, &#039;GET&#039;, {order: &#039;desc&#039;})
+        .then(res =&gt; {
+            const templates = res.data;
+            this.setState({ templates });
+        })
+        .catch(error =&gt; {
+            alertError(error);
+        })
+    }
+
+    handleOpenNewForm(e) {
+        this.setState({
+            newFormOpen: true,
+            editTemplateValues: {}
+        })
+        e.preventDefault()
+    }
+
+    handleCloseNewForm() {
+        this.setState({
+            newFormOpen: false,
+            formLoading: false
+        })
+    }
+
+    handleSaveNewForm(e) {
+        const self = this;
+        const values = this.formRef.current.getPreparedValues();
+        let templates = [...this.state.templates];
+        const formErrors = [...this.state.formErrors];
+        self.setState({formLoading: true})
+
+        // TODO disable form / loading state !
+
+        request(&#039;templates&#039;, &#039;&#039;, &#039;POST&#039;, values)
+        .then(result =&gt; {
+            templates.push(result.data);
+            self.setState({ templates });
+            self.handleCloseNewForm();
+        })
+        .catch(error =&gt; {
+            formErrors.push(error);
+            self.setState({ formErrors });
+        })
+
+        e.preventDefault();
+    }
+
+    handleOpenEditForm(e, values) {
+        this.setState({
+            editFormOpen: true,
+            editTemplateValues: values
+        })
+        e.preventDefault()
+    }
+
+    handleCloseEditForm() {
+        this.setState({
+            editFormOpen: false,
+            formLoading: false
+        })
+    }
+
+    handleSaveEditForm(e) {
+        const self = this;
+        const values = this.formRef.current.getPreparedValues();
+        const tmlId = values.id;
+        const templates = [...this.state.templates];
+        const formErrors = [...this.state.formErrors];
+        self.setState({formLoading: true})
+
+        request(&#039;templates/&#039;+tmlId, &#039;&#039;, &#039;PUT&#039;, values)
+        .then(result =&gt; {
+
+            // BUGFIX remove job from state and add updated
+            // otherwise the job-entry component will not update! But why...?
+            const i = templates.findIndex(j =&gt; j.id === tmlId);
+            templates.splice(i, 1);
+            self.setState({ templates });
+
+            setTimeout(() =&gt; {
+                templates.splice(i, 0, result.data);
+                self.setState({ templates });
+                self.handleCloseEditForm();
+            }, 1);
+
+        })
+        .catch(error =&gt; {
+            formErrors.push(error);
+            self.setState({ formErrors });
+        })
+
+        e.preventDefault();
+    }
+
+    handleDeleteTemplate(e, tmlId) {
+        const templates = [...this.state.templates];
+
+        request(&#039;templates/&#039;+tmlId, &#039;&#039;, &#039;DELETE&#039;)
+        .then(() =&gt; {
+            const i = templates.findIndex(j =&gt; j.id === tmlId);
+            templates.splice(i, 1);
+            this.setState({ templates });
+        })
+        .catch(error =&gt; {
+            alertError(error);
+        })
+
+        e.preventDefault();
+    }
+
+    render(){
+        const {templates, formLoading} = this.state;
+
+        const modalFormNew = (
+            &lt;Modal
+                open={this.state.newFormOpen}
+                onClose={this.handleCloseNewForm}
+                closeOnDimmerClick={false}
+                closeOnEscape={false}
+                centered={false}
+            &gt;
+                &lt;Modal.Header&gt;
+                    &lt;Button className=&quot;right floated&quot; onClick={this.handleCloseNewForm}&gt;Cancel&lt;/Button&gt;
+                    &lt;Button className=&quot;primary right floated&quot; onClick={this.handleSaveNewForm} disabled={formLoading}&gt;Save&lt;/Button&gt;
+                    New Template
+                &lt;/Modal.Header&gt;
+                &lt;Modal.Content&gt;
+                    &lt;Form className=&quot;jobs-form&quot; onSubmit={this.handleSaveNewForm} loading={formLoading}&gt;
+                        &lt;TemplatesForm ref={this.formRef}
+                            settings={templatesFormSettings}
+                            values={this.state.editTemplateValues}
+                            errors={this.state.formErrors}
+                        /&gt;
+                    &lt;/Form&gt;
+                &lt;/Modal.Content&gt;
+            &lt;/Modal&gt;
+        );
+
+        const modalFormEdit = (
+            &lt;Modal
+                open={this.state.editFormOpen}
+                onClose={this.handleCloseEditForm}
+                closeOnDimmerClick={false}
+                closeOnEscape={false}
+                centered={false}
+            &gt;
+                &lt;Modal.Header&gt;
+                    &lt;Button className=&quot;right floated&quot; onClick={this.handleCloseEditForm}&gt;Cancel&lt;/Button&gt;
+                    &lt;Button className=&quot;primary right floated&quot; onClick={this.handleSaveEditForm} disabled={formLoading}&gt;Save&lt;/Button&gt;
+                    Edit Template
+                &lt;/Modal.Header&gt;
+                &lt;Modal.Content&gt;
+                    &lt;Form className=&quot;jobs-form&quot; onSubmit={this.handleSaveEditForm} loading={formLoading}&gt;
+                        &lt;TemplatesForm ref={this.formRef}
+                            settings={templatesFormSettings}
+                            values={this.state.editTemplateValues}
+                            errors={this.state.formErrors}
+                        /&gt;
+                    &lt;/Form&gt;
+                &lt;/Modal.Content&gt;
+            &lt;/Modal&gt;
+        );
+
+        return(
+            &lt;div className=&quot;&quot;&gt;
+
+                {modalFormNew}
+                {modalFormEdit}
+
+                &lt;Route path=&quot;/admin/templates&quot; exact={true} render={(props) =&gt; {
+                    return (
+                    &lt;div&gt;
+                        &lt;div&gt;
+                            &lt;Link className=&quot;ui button&quot; to={`/admin/templates/new`} onClick={this.handleOpenNewForm}&gt;New Template&lt;/Link&gt;
+                        &lt;/div&gt;
+                        &lt;table className=&quot;ui selectable celled table&quot;&gt;
+                            &lt;thead&gt;
+                                &lt;tr&gt;
+                                &lt;th&gt;&lt;/th&gt;
+                                &lt;th&gt;Title&lt;/th&gt;
+                                &lt;th&gt;Users Required&lt;/th&gt;
+                                &lt;th&gt;Users Subscribed&lt;/th&gt;
+                                &lt;th&gt;Tasks&lt;/th&gt;
+                            &lt;/tr&gt;&lt;/thead&gt;
+                            {templates.map((template, jidx) =&gt; {
+                                return (
+                                    &lt;Component_TemplatesEntry key={template.id}
+                                        template={template}
+                                        handleOpenEditForm={this.handleOpenEditForm}
+                                        handleDeleteTemplate={this.handleDeleteTemplate}
+                                    /&gt;
+                                );
+                            })}
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                )}} /&gt;
+
+                &lt;Route path=&quot;/admin/templates/new&quot; render={(props) =&gt; {
+                    return (
+                        &lt;Form className=&quot;jobs-form&quot; onSubmit={this.handleSaveNewForm} loading={formLoading}&gt;
+                            &lt;Button onClick={this.handleCloseNewForm}&gt;Cancel&lt;/Button&gt;
+                            &lt;Button className=&quot;primary&quot; onClick={this.handleSaveNewForm} disabled={formLoading}&gt;Save&lt;/Button&gt;
+                            &lt;TemplatesForm ref={this.formRef}
+                                settings={templatesFormSettings}
+                                values={this.state.editTemplateValues}
+                                errors={this.state.formErrors}
+                            /&gt;
+                        &lt;/Form&gt;
+                    );
+                }} /&gt;
+
+                &lt;Route path=&quot;/admin/templates/edit/:id&quot; render={(props) =&gt; {
+                    const tmlId = props.match.params.id;
+                    const template = this.state.templates.find(el =&gt; {
+                        return el.id == tmlId;
+                    })
+
+                    if (typeof template === &quot;undefined&quot;) {
+                        // return (
+                        //     &lt;form className=&quot;ui loading form&quot;&gt;
+                        //         &lt;TemplatesForm ref={this.formRef} allow_childJobs={true} /&gt;
+                        //     &lt;/form&gt;
+                        // );
+                        return (&lt;div&gt;Error: template not found...&lt;/div&gt;);
+                    }
+
+                    return (
+                        &lt;Form className=&quot;jobs-form&quot; onSubmit={this.handleSaveEditForm} loading={formLoading}&gt;
+                            &lt;div className=&quot;field&quot;&gt;
+                                &lt;Button onClick={this.handleCloseEditForm}&gt;Cancel&lt;/Button&gt;
+                                &lt;Button className=&quot;primary&quot; onClick={this.handleSaveEditForm} disabled={formLoading}&gt;Save&lt;/Button&gt;
+                            &lt;/div&gt;
+                            &lt;TemplatesForm ref={this.formRef}
+                                settings={templatesFormSettings}
+                                values={this.state.editTemplateValues}
+                                errors={this.state.formErrors}
+                            /&gt;
+                        &lt;/Form&gt;
+                    );
+                }} /&gt;
+
+
+            &lt;/div&gt;
+        );
+  }
+}
+
+export default Page_Templates;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

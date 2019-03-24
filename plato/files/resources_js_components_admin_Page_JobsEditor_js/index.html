@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - resources/js/components/admin/Page_JobsEditor.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>resources/js/components/admin/Page_JobsEditor.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">76.48</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">97</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">25.75</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">0.71</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">import React, { Component} from &quot;react&quot;;
+import { Redirect, Link } from &quot;react-router-dom&quot;;
+
+import {request} from &#039;../../utils/helper&#039;;
+
+import JobsForm from &#039;./Component_JobsForm&#039;;
+
+class JobsEditor extends Component{
+
+    constructor(props) {
+        super(props);
+
+        const jobId = props.match.params.id;
+        this.formRef = React.createRef();
+
+        this.state = {
+            redirectTo: false,
+            jobId: jobId,
+            values: {}
+        };
+
+        this.handleSaveForm = this.handleSaveForm.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+
+    componentDidMount() {
+        request(&#039;jobs&#039;, &#039;getOne&#039;, &#039;GET&#039;, {id: this.state.jobId})
+        .then(res =&gt; {
+            const values = res.data;
+            this.setState({ values });
+        })
+        .catch(error =&gt; {
+            console.log(&quot;Error occurred while fetching Job&quot;);
+            console.error(error);
+        })
+    }
+
+    handleSaveForm(e) {
+        const values = this.formRef.current.getPreparedValues();
+        console.log(&#039;Save Job&#039;, values);
+
+        request(&#039;jobs&#039;, &#039;update&#039;, &#039;PUT&#039;, {id: this.state.jobId, ...values})
+        .then(result =&gt; {
+            console.log(&quot;Axios result: &quot;, result);
+        })
+        .catch(error =&gt; {
+            console.log(&quot;Axios error: &quot;, error);
+        })
+
+        e.preventDefault();
+    }
+
+    handleDelete(e) {
+        console.log(&#039;Delete Job&#039;, this.state.jobId);
+
+        request(&#039;jobs&#039;, &#039;update&#039;, &#039;PUT&#039;, {id: this.state.jobId, state: &quot;deleted&quot;})
+        .then(result =&gt; {
+            console.log(&quot;Axios result: &quot;, result);
+            this.setState({redirectTo: &quot;/admin/jobs&quot;})
+        })
+        .catch(error =&gt; {
+            console.log(&quot;Axios error: &quot;, error);
+        })
+
+        e.preventDefault();
+
+    }
+
+    render(){
+        const job = Object.keys(this.state.values).length &gt; 0 ? this.state.values : false;
+        return(
+            &lt;div className=&quot;adminpage-jobs-edit&quot;&gt;
+                {this.state.redirectTo !== false &amp;&amp;
+                    &lt;Redirect to={this.state.redirectTo} /&gt;
+                }
+                {!job &amp;&amp;
+                    &lt;form className=&quot;ui loading form&quot;&gt;
+                        &lt;JobsForm ref={this.formRef} allow_childJobs={true} /&gt;
+                    &lt;/form&gt;
+                }
+                {job &amp;&amp;
+                    &lt;form className=&quot;ui form jobs-form&quot;&gt;
+                        &lt;div className=&quot;field&quot;&gt;
+                            &lt;button className=&quot;ui button primary&quot; type=&quot;submit&quot; onClick={this.handleSaveForm}&gt;Apply&lt;/button&gt;
+                            &lt;Link className=&quot;ui button&quot; to={`/admin/jobs`}&gt;Cancel&lt;/Link&gt;
+                            &lt;button className=&quot;ui button&quot; onClick={this.handleDelete}&gt;Delete&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;JobsForm ref={this.formRef} allow_childJobs={true} values={job} /&gt;
+                    &lt;/form&gt;
+                }
+            &lt;/div&gt;
+
+        );
+  }
+}
+
+export default JobsEditor;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

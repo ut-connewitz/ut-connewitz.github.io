@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - resources/js/components/App.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>resources/js/components/App.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">71.30</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">206</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">34.92</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">1.14</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">import React, { Component} from &quot;react&quot;;
+import { BrowserRouter as Router, Route, Redirect, Switch, withRouter } from &quot;react-router-dom&quot;;
+import { Modal } from &#039;semantic-ui-react&#039;
+import moment from &#039;moment&#039;;
+
+import {request, getAccessToken, setAccessToken} from &quot;../utils/helper&quot;;
+import { getErrors, setErrorHandler } from &#039;./etc/Error_Tools&#039;;
+import * as plugins from &#039;./plugins&#039;;
+
+import Login from &quot;./Page_Login&quot;;
+import Pages from &quot;./Pages&quot;;
+
+// moment.locale(&quot;de&quot;);
+const env = process.env.NODE_ENV || &#039;production&#039;;
+const config = require(&#039;../config&#039;)[env];
+
+const defaultUser = {
+    name: null,
+    role: null,
+    token: null,
+    isAuthenticated: false,
+};
+
+class App extends Component{
+
+    constructor(props) {
+        super(props);
+
+        // TODO may check login credentials with backend route &#039;isAuthenticated&#039;, otherwise redirect to login page
+        const localUser = JSON.parse(localStorage.getItem(&#039;user&#039;));
+
+        this.state = {
+            user: {...defaultUser, ...localUser},
+
+            globalErrors: [],
+
+            hasJSError: false,
+            jsErrorInfo: null,
+
+            redirectToHome: false,
+            // redirectToLogin: localUser === null
+        };
+
+        this.plugins = [];
+
+        for (const plugin in plugins) {
+            const plg = new plugins[plugin];
+            this.plugins.push(plg);
+        }
+
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
+
+        this.errorHandler = this.errorHandler.bind(this);
+        this.handleCloseErrorAlert = this.handleCloseErrorAlert.bind(this);
+
+        // set acces token for axios requests
+        setAccessToken(this.state.user.token);
+
+        // set error handler to show global errors
+        setErrorHandler(this.errorHandler);
+    }
+
+    componentDidMount() {
+
+        // set moments js language
+        moment.locale(&quot;de&quot;);
+
+        // Only Chrome &amp; Opera pass the error object.
+        // window.onerror = function (message, file, line, col, error) {
+        //     // console.log(message, &quot;from&quot;, error.stack);
+        // };
+        // // Only Chrome &amp; Opera have an error attribute on the event.
+        // window.addEventListener(&quot;error&quot;, function (e) {
+        //     // console.log(e.error.message, &quot;from&quot;, e.error.stack);
+        //     console.log(&quot;Catch error&quot;, e);
+        // });
+
+    }
+
+    errorHandler(error) {
+        const globalErrors = [...this.state.globalErrors];
+        globalErrors.push(error);
+        console.log(&quot;global Errors&quot;, globalErrors);
+        this.setState({globalErrors})
+    }
+
+    handleCloseErrorAlert() {
+        this.setState({globalErrors: []})
+    }
+
+    componentDidCatch(error, info) {
+        console.log(&quot;Error&quot;, error, info);
+        this.setState({
+            hasJSError: error,
+            jsErrorInfo: info
+        });
+    }
+
+    handleLogin(data, callback) {
+        let user = {
+            name: data.name,
+            role: data.role,
+            token: data.token,
+            isAuthenticated: true
+        }
+        user = {...this.state.user, ...user};
+        console.log(&#039;handleLogin&#039;, user);
+
+        // set access token for axios backend requests
+        setAccessToken(data.token);
+
+        // save login data in local storage
+        localStorage.setItem(&#039;user&#039;, JSON.stringify(user))
+
+        this.setState({
+            user,
+            // redirectToHome: true
+        });
+        callback();
+    }
+
+    handleLogout() {
+        // destroy localUser
+        localStorage.removeItem(&#039;user&#039;);
+
+        // nullify access token
+        setAccessToken(null);
+
+        this.setState({
+            user: defaultUser,
+            // redirectToHome: true
+        });
+
+        // callback();
+    }
+
+    render() {
+
+        if (this.state.hasJSError) {
+            return (
+                &lt;div&gt;
+                    &lt;h1&gt;Something went wrong with our application.&lt;/h1&gt;
+                    &lt;p&gt;Please send the following error to our webmaster/application developer/admin/...&lt;/p&gt;
+                    &lt;details style={{ whiteSpace: &#039;pre-wrap&#039; }}&gt;
+                        {this.state.jsErrorInfo.componentStack}
+                    &lt;/details&gt;
+                &lt;/div&gt;
+            );
+        }
+
+        const errorAlert = (
+            &lt;Modal
+                open={this.state.globalErrors.length &gt; 0}
+                onClose={this.handleCloseErrorAlert}
+                closeIcon
+                centered={false}
+                size={&#039;small&#039;}
+            &gt;
+                &lt;Modal.Header&gt;
+                    Error
+                &lt;/Modal.Header&gt;
+                &lt;Modal.Content&gt;
+                    {this.state.globalErrors.map((error, k) =&gt; {
+                        return (
+                            &lt;div key={k}&gt;
+                                {error.message}
+                            &lt;/div&gt;
+                        );
+                    })}
+                &lt;/Modal.Content&gt;
+            &lt;/Modal&gt;
+        );
+
+        const RouteLogout = () =&gt; {
+            this.handleLogout();
+            return(&lt;Redirect to=&quot;/&quot; /&gt;);
+        }
+
+        const routerBasename = typeof config.publicBasePath === &quot;undefined&quot; ? &quot;&quot; : config.publicBasePath;
+
+        return(
+            &lt;Router basename={routerBasename}&gt;
+                &lt;div className=&quot;app&quot;&gt;
+
+                    {errorAlert}
+
+                    &lt;Switch&gt;
+                        &lt;Route path=&quot;/login/:p?&quot; render={props =&gt;
+                            &lt;Login handleLogin={this.handleLogin} {...props} /&gt;
+                        } /&gt;
+
+                        &lt;Route path=&quot;/logout&quot; component={RouteLogout} /&gt;
+
+                        &lt;Route path=&quot;/&quot; render={props =&gt;
+                            &lt;Pages plugins={this.plugins} user={this.state.user} {...props} /&gt;
+                        } /&gt;
+                    &lt;/Switch&gt;
+
+                &lt;/div&gt;
+            &lt;/Router&gt;
+        );
+  }
+}
+
+export default App;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

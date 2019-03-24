@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - resources/js/components/admin/Component_JobsForm.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>resources/js/components/admin/Component_JobsForm.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">67.50</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">471</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">78.98</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">3.92</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">import React, { Component} from &quot;react&quot;;
+import moment, { relativeTimeThreshold } from &#039;moment&#039;;
+import {request} from &#039;../../utils/helper&#039;;
+
+import { Icon, Button, Checkbox, Dropdown, Message } from &#039;semantic-ui-react&#039;
+
+const childSettingsDefault = {
+    hide_fields: [ &#039;state&#039; ],
+    allow_childJobs: false,
+    allow_childJobs_from_templates: false
+}
+
+const settingsDefault = {
+    hide_fields: [  ],
+    allow_childJobs: true,
+    allow_childJobs_from_templates: true,
+    childSettings: childSettingsDefault
+}
+
+class Component_JobsForm extends Component{
+
+    constructor(props) {
+        super(props);
+
+        let values =  {
+            state: &quot;private&quot;,
+            title: &#039;&#039;,
+            description: &#039;&#039;,
+            start_date: &#039;&#039;,
+            start_time: &#039;&#039;,
+            end_date: &#039;&#039;,
+            end_time: &#039;&#039;,
+
+            // has_additionals: [
+            //     {type: &#039;location&#039;, value: &#039;&#039;},
+            //     {type: &#039;category&#039;, value: &#039;&#039;}
+            // ],
+            // location: [],
+            // category: [],
+
+            users_required: &#039;&#039;,
+            users_subscribed: [],
+            has_jobs: [],
+        };
+
+        // merge given jobs properties to this state value
+        if (typeof props.values !== &#039;undefined&#039;) {
+            Object.keys(props.values).forEach(key =&gt; {
+                if (props.values[key] !== null) {
+                    values[key] = props.values[key]
+                }
+            });
+        }
+
+        // create react refs for child forms if given job has child jobs
+        values.has_jobs = values.has_jobs.map(childJobValues =&gt; {
+            return {
+                ref: React.createRef(),
+                values: childJobValues
+            };
+        })
+
+        console.log(&quot;JobsForm values&quot;, values);
+
+        values.start_date = values.start_date === &#039;&#039; ? &#039;&#039; : moment(values.start_date).format(&quot;YYYY-MM-DD&quot;);
+        values.start_time = values.start_time === &#039;&#039; ? &#039;&#039; : moment.utc(values.start_time, &quot;HH:mm&quot;).format(&quot;HH:mm&quot;);
+        values.end_date = values.end_date === &#039;&#039; ? &#039;&#039; : moment(values.end_date).format(&quot;YYYY-MM-DD&quot;);
+        values.end_time = values.end_time === &#039;&#039; ? &#039;&#039; : moment.utc(values.end_time, &quot;HH:mm&quot;).format(&quot;HH:mm&quot;);
+
+        this.isChildJob = props.isChildJob || false;
+        this.isNewJob = typeof props.values === &#039;undefined&#039; || ! &quot;id&quot; in props.values || props.values.id === null;
+
+        this.settings = &quot;settings&quot; in props
+            ? {...settingsDefault, ...props.settings}
+            : settingsDefault;
+        this.settings.childSettings = &quot;settings&quot; in props &amp;&amp; &quot;childSettings&quot; in props.settings
+            ? {...childSettingsDefault, ...props.settings.childSettings}
+            : childSettingsDefault;
+
+        this.state = {
+            values: values,
+            templates: &quot;templates&quot; in props ? props.templates : [],
+            activity: [],
+            user: {nick: &#039;&#039;},
+        };
+
+        this.getPreparedValues = this.getPreparedValues.bind(this);
+        this.handleChangeInput = this.handleChangeInput.bind(this);
+        this.handleToggleState = this.handleToggleState.bind(this);
+        this.handleAddChildJob = this.handleAddChildJob.bind(this);
+        this.handleRemoveChildJob = this.handleRemoveChildJob.bind(this);
+        this.handleAddUser = this.handleAddUser.bind(this);
+        this.handleRemoveUser = this.handleRemoveUser.bind(this);
+        this.showField = this.showField.bind(this);
+    }
+
+    componentDidMount() {
+
+        if (this.state.templates.length == 0) {
+            // TODO may given templates-list is empty??!! WE dont mneed to fetch them again!
+            request(&#039;templates&#039;, &#039;&#039;, &#039;GET&#039;)
+            .then(res =&gt; {
+                const templates = res.data;
+                this.setState({ templates });
+            })
+            .catch(error =&gt; {
+                console.error(error);
+            })
+        }
+
+        if (!this.isNewJob &amp;&amp; !this.isChildJob &amp;&amp; this.state.values.id) {
+            request(`jobs/${this.state.values.id}/activities`, &#039;&#039;, &#039;GET&#039;)
+            .then(result =&gt; {
+                this.setState({activity: result.data})
+            })
+            .catch(error =&gt; {
+                alertError(new Error(error))
+            })
+        }
+
+    }
+
+    getPreparedValues() {
+        let values = {...this.state.values}; // copy object to avoid affetcs on form values
+
+        values.start_date = values.start_date === &#039;&#039; ? &#039;&#039; : moment(values.start_date).format(&quot;YYYY-MM-DD&quot;);
+        values.start_time = values.start_time === &#039;&#039; ? &#039;&#039; : moment.utc(values.start_time, &quot;HH:mm&quot;).format(&quot;HH:mm&quot;);
+        values.end_date = values.end_date === &#039;&#039; ? &#039;&#039; : moment(values.end_date).format(&quot;YYYY-MM-DD&quot;);
+        values.end_time = values.end_time === &#039;&#039; ? &#039;&#039; : moment.utc(values.end_time, &quot;HH:mm&quot;).format(&quot;HH:mm&quot;);
+
+        // let additionals = [];
+        // values.has_additionals.forEach(entry =&gt; {
+        //     const type = `has_additionals[${entry.type}]`;
+        //     if (typeof values[type] !== &#039;undefined&#039;) {
+        //         console.log(&#039;values[type]&#039;, values[type]);
+        //         values[type].forEach(value =&gt; {
+        //             if (value != &quot;&quot;) {
+        //                 additionals.push({
+        //                     type: entry.type,
+        //                     value
+        //                 });
+        //             }
+        //         })
+        //     }
+        // })
+        // console.log(&quot;additionals: &quot;, additionals);
+
+        values.has_jobs = values.has_jobs.map(entry =&gt; {
+            return entry.ref.current.getPreparedValues();
+        });
+
+        // values.users_subscribed = JSON.stringify(values.users_subscribed);
+
+        let newValues = {};
+
+        // nullable empty values
+        Object.keys(values).forEach(key =&gt; {
+            if (values[key] !== &quot;&quot;) {
+                newValues[key] = values[key];
+            } else {
+                newValues[key] = null;
+            }
+        });
+
+        console.log(&quot;new values&quot;, newValues);
+
+        return newValues;
+    }
+
+    /**
+     *
+     * @param {*} e
+     * @param {*} childValues
+     */
+    handleAddChildJob(e, childValues = {}) {
+        const values = this.state.values;
+
+        if (&quot;has_jobs&quot; in childValues) {
+            childValues.has_jobs.forEach(childJob =&gt; {
+                childJob.id = null;
+                values.has_jobs.push({
+                    ref: React.createRef(),
+                    values: childJob
+                });
+            })
+        } else {
+            values.has_jobs.push({
+                ref: React.createRef()
+            });
+        }
+
+        this.setState({ values });
+        e.preventDefault();
+    }
+
+    handleRemoveChildJob(e, i) {
+        const values = {...this.state.values};
+        const childJobs = values.has_jobs;
+        // BUGFIX: we need to clear the childjobs first, remove it after a timeout
+        values.has_jobs = [];
+        this.setState({ values });
+
+        setTimeout(() =&gt; {
+            childJobs.splice(i, 1);
+            values.has_jobs = childJobs;
+            this.setState({ values });
+        }, 1);
+
+        e.preventDefault();
+    }
+
+    handleRemoveUser(e, uidx) {
+        const values = this.state.values;
+        values.users_subscribed.splice(uidx, 1);
+        this.setState({ values });
+        e.preventDefault();
+
+    }
+
+    handleAddUser(e) {
+        let user = this.state.user;
+        let values = this.state.values;
+        values.users_subscribed.push(
+            {nick: user.nick}
+        );
+        user.nick = &#039;&#039;;
+        this.setState({ values, user });
+
+        e.preventDefault();
+    }
+
+    handleChangeInput(e) {
+        const self = this;
+        const values = this.state.values;
+        const target = e.target;
+        //const value = target.type === &#039;checkbox&#039; ? target.checked : target.value;
+        const name = target.name
+        let value = target.value;
+        if (target.type === &#039;checkbox&#039;) {
+            value = target.checked;
+        }
+        else if (target.type === &#039;select-multiple&#039;) {
+            value = [];
+            for (var i = 0, l = target.options.length; i &lt; l; i++) {
+                if (target.options[i].selected) {
+                  value.push(target.options[i].value);
+                }
+            }
+        }
+
+        if (name == &quot;nick&quot;) {
+            let user = this.state.user;
+            user.nick = value;
+            this.setState({user});
+            e.preventDefault();
+            return;
+        }
+
+        // if (name.indexOf(&quot;has_additionals&quot;) &gt;= 0) {
+        //     const key = name.match(new RegExp(/\[(\w+)\]/))
+        //     console.log(&#039;Handle additionals: &#039;, key, value);
+        //     values[&#039;has_additionals&#039;][key] = value;
+        // }
+        // else {
+        //     values[name] = value;
+        // }
+
+        // console.log(&quot;Set value&quot;, name, value);
+
+        values[name] = value;
+
+        this.setState({values});
+        e.preventDefault();
+    }
+
+    handleToggleState() {
+        const values = this.state.values;
+        values.state = values.state == &quot;public&quot; ? &quot;private&quot; : &quot;public&quot;;
+        this.setState({ values })
+    }
+
+    showField(field) {
+        return !this.settings.hide_fields.includes(field);
+    }
+
+    render() {
+        const {values, templates} = this.state;
+        const errors = this.props.errors ? this.props.errors : [];
+
+        const startDate = (
+            &lt;div className=&quot;field&quot;&gt;
+                &lt;label&gt;Date Start&lt;/label&gt;
+                &lt;input type=&quot;date&quot; name=&quot;start_date&quot; value={values.start_date} placeholder=&quot;Date - YYYY/MM/DD&quot; onChange={this.handleChangeInput} /&gt;
+            &lt;/div&gt;
+        );
+
+        const startTime = (
+            &lt;div className=&quot;field&quot;&gt;
+                &lt;label&gt;Time Start&lt;/label&gt;
+                &lt;input type=&quot;time&quot; name=&quot;start_time&quot; value={values.start_time} placeholder=&quot;Time - HH:TT&quot; onChange={this.handleChangeInput} /&gt;
+            &lt;/div&gt;
+        );
+
+        const endDate = (
+            &lt;div className=&quot;field&quot;&gt;
+                &lt;label&gt;Date End&lt;/label&gt;
+                &lt;input type=&quot;date&quot; name=&quot;end_date&quot; value={values.end_date} placeholder=&quot;Date - YYYY/MM/DD&quot; onChange={this.handleChangeInput} /&gt;
+            &lt;/div&gt;
+        );
+
+        const endTime = (
+            &lt;div className=&quot;field&quot;&gt;
+                &lt;label&gt;Time End&lt;/label&gt;
+                &lt;input type=&quot;time&quot; name=&quot;end_time&quot; value={values.end_time} placeholder=&quot;Time - HH:TT&quot; onChange={this.handleChangeInput} /&gt;
+            &lt;/div&gt;
+        );
+
+        return(
+            &lt;div className=&quot;ui grid jobs-form-component&quot;&gt;
+                {errors.length &gt; 0 &amp;&amp;
+                    &lt;div className=&quot;sixteen wide column&quot;&gt;
+                        {errors.map((error, ei) =&gt; {
+                            return (
+                                &lt;Message key={ei} negative
+                                    header=&#039;Error&#039;
+                                    content={error.message}
+                                /&gt;
+                            )
+                        })}
+                    &lt;/div&gt;
+                }
+                &lt;div className=&quot;twelve wide column&quot;&gt;
+                    &lt;div className=&quot;required field&quot;&gt;
+                        &lt;label&gt;Title&lt;/label&gt;
+                        &lt;input required={true} type=&quot;text&quot; name=&quot;title&quot; placeholder=&quot;Title&quot; value={values.title} onChange={this.handleChangeInput} /&gt;
+                    &lt;/div&gt;
+
+                    {this.showField(&#039;description&#039;) &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Description / Notes&lt;/label&gt;
+                        &lt;textarea name=&quot;description&quot; rows=&quot;2&quot; value={values.description} onChange={this.handleChangeInput}&gt;&lt;/textarea&gt;
+                    &lt;/div&gt; }
+
+                    &lt;div className=&quot;two fields&quot;&gt;
+                        {/* TODO add handler onUpdateDate to auto-generate the other date (eg. date end 1 hour after date start) */}
+                        {(this.showField(&#039;start_date&#039;) &amp;&amp; this.showField(&#039;start_time&#039;)) &amp;&amp; &lt;div className=&quot;field two fields&quot;&gt;
+                            {startDate}
+                            {startTime}
+                        &lt;/div&gt;}
+
+                        {(this.showField(&#039;start_date&#039;) &amp;&amp; !this.showField(&#039;start_time&#039;)) &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                            {startDate}
+                        &lt;/div&gt;}
+
+                        {(!this.showField(&#039;start_date&#039;) &amp;&amp; this.showField(&#039;start_time&#039;)) &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                            {startTime}
+                        &lt;/div&gt;}
+
+                        {(this.showField(&#039;end_date&#039;) &amp;&amp; this.showField(&#039;end_time&#039;)) &amp;&amp; &lt;div className=&quot;field two fields&quot;&gt;
+                            {endDate}
+                            {endTime}
+                        &lt;/div&gt;}
+
+                        {(this.showField(&#039;end_date&#039;) &amp;&amp; !this.showField(&#039;end_time&#039;)) &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                            {endDate}
+                        &lt;/div&gt;}
+
+                        {(!this.showField(&#039;end_date&#039;) &amp;&amp; this.showField(&#039;end_time&#039;)) &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                            {endTime}
+                        &lt;/div&gt;}
+
+                    &lt;/div&gt;
+
+                    {values.has_jobs.map((childJob, cjidx) =&gt;
+                        &lt;div className=&quot;ui grid field has_job&quot; key={cjidx}&gt;
+                            &lt;div className=&quot;one wide column&quot;&gt;
+                                &lt;a onClick={e =&gt; this.handleRemoveChildJob(e, cjidx)}&gt;&lt;i className=&quot;trash icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;/div&gt;
+                            &lt;div className=&quot;fifteen wide column field&quot;&gt;
+                                &lt;Component_JobsForm ref={childJob.ref}
+                                    settings={this.settings.childSettings}
+                                    values={childJob.values}
+                                    templates={templates}
+                                    isChildJob={true}
+                                /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    )}
+
+                    {this.settings.allow_childJobs &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                        {!this.settings.allow_childJobs_from_templates &amp;&amp;
+                            &lt;button className=&quot;ui labeled icon button&quot; onClick={this.handleAddChildJob}&gt;&lt;i className=&quot;file icon&quot;&gt;&lt;/i&gt;New Subtask&lt;/button&gt;
+                        }
+                        {this.settings.allow_childJobs_from_templates &amp;&amp;
+                            &lt;Button.Group&gt;
+                                &lt;Button onClick={this.handleAddChildJob}&gt;&lt;Icon name=&#039;file&#039; /&gt;New Subtask&lt;/Button&gt;
+                                &lt;Dropdown floating button className=&#039;icon&#039;&gt;
+                                    &lt;Dropdown.Menu&gt;
+                                        &lt;Dropdown.Header content=&#039; Templates&#039; icon=&#039;tags&#039; /&gt;
+                                        &lt;Dropdown.Menu scrolling&gt;
+                                            {templates.map(tml =&gt;
+                                                &lt;Dropdown.Item key={tml.id} text={tml.title} value={tml.id} onClick={e =&gt; this.handleAddChildJob(e, tml)} /&gt;
+                                            )}
+                                        &lt;/Dropdown.Menu&gt;
+                                    &lt;/Dropdown.Menu&gt;
+                                &lt;/Dropdown&gt;
+                            &lt;/Button.Group&gt;
+                        }
+                    &lt;/div&gt; }
+
+                &lt;/div&gt;
+
+                &lt;div className=&quot;four wide column&quot;&gt;
+                    {this.showField(&#039;state&#039;) &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;State&lt;/label&gt;
+                        &lt;Checkbox toggle checked={values.state == &quot;public&quot;} name=&quot;state&quot; className=&quot;job-is-public-toggle&quot; onChange={this.handleToggleState} /&gt;
+                    &lt;/div&gt;}
+
+                    {/* &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Location&lt;/label&gt;
+                        &lt;select multiple name=&quot;has_additionals[location]&quot; className=&quot;ui fluid dropdown&quot; onChange={this.handleChangeInput}&gt;
+                            &lt;option value=&quot;&quot;&gt;Select Location...&lt;/option&gt;
+                            &lt;option value=&quot;3&quot; &gt;Leipzig&lt;/option&gt;
+                            &lt;option value=&quot;4&quot; &gt;Amerika&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                    &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Category&lt;/label&gt;
+                        &lt;select multiple name=&quot;has_additionals[category]&quot; className=&quot;ui dropdown&quot; onChange={this.handleChangeInput}&gt;
+                            &lt;option value=&quot;&quot;&gt;Select Category...&lt;/option&gt;
+                            &lt;option value=&quot;1&quot; &gt;Konzert&lt;/option&gt;
+                            &lt;option value=&quot;2&quot; &gt;Lesung&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt; */}
+
+                    {this.showField(&#039;users_required&#039;) &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Required Users&lt;/label&gt;
+                        &lt;input type=&quot;number&quot; name=&quot;users_required&quot; value={values.users_required} placeholder=&quot;Required Users, e.g. 2&quot; onChange={this.handleChangeInput} /&gt;
+                    &lt;/div&gt;}
+
+                    {this.showField(&#039;users_subscribed&#039;) &amp;&amp; &lt;div className=&quot;field&quot;&gt;
+                        &lt;label&gt;Subscribed Users&lt;/label&gt;
+                        {values.users_subscribed.map((user, uidx) =&gt;
+                            &lt;div className=&quot;ui label&quot; key={uidx}&gt;
+                                {user.nick}
+                                &lt;i className=&quot;delete icon&quot; onClick={(e) =&gt; this.handleRemoveUser(e, uidx)}&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                        )}
+                        &lt;div className=&quot;ui mini action input&quot;&gt;
+                            &lt;input type=&quot;text&quot; name=&quot;nick&quot; placeholder=&quot;Name&quot; value={this.state.user.nick} onChange={this.handleChangeInput} /&gt;
+                            &lt;button className=&quot;ui button&quot; disabled={this.state.user.nick == &#039;&#039;} onClick={this.handleAddUser}&gt;Add&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;}
+
+                    {this.state.activity.length &gt; 0 &amp;&amp;
+                        &lt;div className=&quot;field&quot;&gt;
+                            &lt;h3&gt;Activities&lt;/h3&gt;
+                            &lt;ul&gt;
+                                {this.state.activity.map(entry =&gt;
+                                    &lt;li key={entry.id}&gt;{entry.meta_value}&lt;/li&gt;
+                                )}
+                            &lt;/ul&gt;
+                    &lt;/div&gt;}
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        );
+  }
+}
+
+export default Component_JobsForm;</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>
